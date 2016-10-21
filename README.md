@@ -135,7 +135,7 @@ xcodebuild -project /Users/admini/WebDriverAgent/WebDriverAgent.xcodeproj \
 
 
 ###### step2. 修改ViewContronller中的测试代码.提供UDID和对应的BundleID 
-![Snip20161021_11](https://testerhome.com/photo/2016/1356dd71ab39bbf50201b553368ddbf4.png)
+![Snip20161021_11](https://github.com/sixleaves/WDUSBClient/blob/master/screenshots/Snip20161021_11.png)
 
 
 
