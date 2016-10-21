@@ -1,4 +1,8 @@
 # WDUSBClient(only support iOS9+, iOS10+)
+
+- 该框架主要是用来实现iOS真机的UI自动化.
+- 也可用来实现例如按键精灵的一些小程序.
+
 ##Features
 - 更加快速的通信效率, 直接使用socket通信, 而非http.
 - 无需担心设备没有连接上wifi等影响.物理层走的是USB数据线.
