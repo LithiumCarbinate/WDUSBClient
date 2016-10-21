@@ -8,8 +8,8 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 - 无需担心设备没有连接上wifi等影响.物理层走的是USB数据线.
 - 基于facebook的WebDriverAgent驱动进行开发.
 - 基于OC语言, 可供广大iOS开发者方便的实现自动化UI, 提供App稳定性.
-- 支持多机并发测试。
-- 非侵入式框架, 无需在项目中嵌入
+- 支持多机并发测试.
+- 非侵入式框架, 无需在项目中嵌入.
 
 ##Update
 - 新添加微信自动发消息范例
@@ -93,6 +93,10 @@ https://github.com/sixleaves/WebDriverAgent
 ## 安装
 
 #### 安装WebDriverAgent到真机上
+
+- 现在WebDriverAgent目录下执行下面这条命令构建依赖
+- 有问题的可以直接加群, 群上有完整的压缩包
+`./Scripts/bootstrap.sh`
 
 - 需要你先获取手机的udid。
 - WebDriverAgent的项目根目录。
