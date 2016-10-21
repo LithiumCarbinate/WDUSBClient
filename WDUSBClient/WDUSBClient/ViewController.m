@@ -64,7 +64,7 @@
                     
                     for (;1;) {
                         // 开始写消息
-                        NSArray *textViews = [client findElementsByClassName:@"XCUIElementTypeTextView"];
+                        NSArray *textViews = [client findElementsByClassName:@"XCUIElementTypeTable"];
                         WDElement *textView = [textViews firstObject];
                         [textView typeText:@"你好!!!"];
                         
