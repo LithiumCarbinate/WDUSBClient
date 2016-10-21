@@ -71,7 +71,7 @@ https://github.com/sixleaves/WebDriverAgent
 
 - 输入pack，如图，修改Product Bundle identifier。
 
-   ![Snip20161021_4](https://testerhome.com/photo/2016/a35ed753344632cf6099a602313f29c5.png)
+   ![Snip20161021_4](https://github.com/sixleaves/WDUSBClient/blob/master/screenshots/Snip20161021_4.png)
 
 
 
