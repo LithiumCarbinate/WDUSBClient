@@ -13,6 +13,7 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 
 ##Update
 - 新添加微信自动发消息范例
+- 直接将WDA驱动集成进来, 无需另外下载.(WDA的编译请看下面介绍)
 
 ## 交流QQ群
 `QQ群: 114577285`
