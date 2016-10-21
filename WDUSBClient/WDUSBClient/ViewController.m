@@ -33,24 +33,53 @@
     
     FBHTTPOverUSBClient *client = [[WDClient alloc] initWithDeviceUDID:@"a49bcbd6a9d3b24b8f70b8adde348925a5bfac6e"];
     [self.clients addObject:client];
-    [self testAppForIOS];
-    //[self testWeChatForIOS];
+    //[self testAppForIOS];
+    [self testWeChatForIOS];
 }
 
 - (void)testWeChatForIOS {
-    
+    // 测试环境:
+    // 输入法： 百度输入法
+    //
     for (int i = 0; i < 1; i++) {
         // com.tencent.xin
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [(WDClient *)self.clients[i] setBundleID: @"com.tencent.xin"];
-            // 启动App
-            [(WDClient *)self.clients[i] startApp];
             
+            WDClient *client = (WDClient *)self.clients[i];
+            [client setBundleID: @"com.tencent.xin"];
+            // 启动微信 App
+            [client startApp];
+            
+            // 获取所有cell
+            NSArray *elements = [client findElementsByClassName:@"XCUIElementTypeCell"];
+            for (WDElement *element in elements) {
+                // 包含7千的cell
+                if ([element.label containsString:@"7千"]) {
+                    
+                    // 进入回话
+                    [element click];
+                    
+                    for (;1;) {
+                        // 开始写消息
+                        NSArray *textViews = [client findElementsByClassName:@"XCUIElementTypeTextView"];
+                        WDElement *textView = [textViews firstObject];
+                        [textView typeText:@"你好!!!"];
+                        
+                        
+                        // 点击确认按钮
+                        WDElement *elementForSure = [[client findElementsByParticalLinkText:@"确认"] firstObject];
+                        [elementForSure click];
+                        
+                        // 点击发送
+                        WDElement *elementForSend = [[client findElementsByParticalLinkText:@"发送"] firstObject];
+                        [elementForSend click];
+                    }
+                    
+                }
+            }
         });
         
     }
-
-    
 }
 
 - (void)testAppForIOS {
