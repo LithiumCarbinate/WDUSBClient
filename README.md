@@ -7,6 +7,9 @@
 - 支持多机并发测试。
 - 非侵入式框架, 无需在项目中嵌入
 
+##Update
+- 新添加微信自动发消息范例
+
 ##Now, the framework only works on usb connection, so simulator doesn't support(只支持真机设备)
 
 #将Client文件夹下的东西都拖到你的工程中。引入主头文件
