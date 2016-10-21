@@ -10,6 +10,9 @@
 ##Update
 - 新添加微信自动发消息范例
 
+## 交流QQ群
+`QQ群: 114577285`
+
 ##Now, the framework only works on usb connection, so simulator doesn't support(只支持真机设备)
 
 #将Client文件夹下的东西都拖到你的工程中。引入主头文件
@@ -153,12 +156,6 @@ xcodebuild -project /Users/admini/WebDriverAgent/WebDriverAgent.xcodeproj \
 # 相关连接(更多文档查看具体链接)
 - API(接口档案): https://github.com/sixleaves/WDUSBClient/wiki
 - WD地址(建议用我的, 我会和facebook那边的框架保持同步, 并会添加新功能, 修复bug):https://github.com/sixleaves/WebDriverAgent
-
-# 交流QQ群
-`QQ群: 114577285`
-
-
-
 
 ##更多的用处等待你的探索!!!
 
