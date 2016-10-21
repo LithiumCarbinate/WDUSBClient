@@ -1,5 +1,5 @@
 # WDUSBClient(only support iOS9+, iOS10+)
-
+Now, the framework only works on usb connection, so simulator doesn't support(只支持真机设备)
 - 该框架主要是用来实现iOS真机的UI自动化.
 - 也可用来实现例如按键精灵的一些小程序.
 
@@ -17,7 +17,10 @@
 ## 交流QQ群
 `QQ群: 114577285`
 
-##Now, the framework only works on usb connection, so simulator doesn't support(只支持真机设备)
+# 相关连接(更多文档查看具体链接)
+- API(接口档案): https://github.com/sixleaves/WDUSBClient/wiki
+- 关键类属性介绍: https://github.com/sixleaves/WDUSBClient/wiki/Classes
+- WD地址(建议用我的, 我会和facebook那边的框架保持同步, 并会添加新功能, 修复bug):https://github.com/sixleaves/WebDriverAgent
 
 #将Client文件夹下的东西都拖到你的工程中。引入主头文件
 `#import "WDClient.h"`
@@ -32,12 +35,6 @@ FBHTTPOverUSBClient *client = [[WDClient alloc] initWithDeviceUDID: udid];
 `[client setBundleID: @"com.nd.www.TestAppForIOS"]`
 ###next step, call startApp method(下一步, 调用startApp方法)
 `[client startApp]`
-
-# 相关连接(更多文档查看具体链接)
-- API(接口档案): https://github.com/sixleaves/WDUSBClient/wiki
-- 关键类属性介绍: https://github.com/sixleaves/WDUSBClient/wiki/Classes
-- WD地址(建议用我的, 我会和facebook那边的框架保持同步, 并会添加新功能, 修复bug):https://github.com/sixleaves/WebDriverAgent
-
 
 # 安装参考
 ## 前提
