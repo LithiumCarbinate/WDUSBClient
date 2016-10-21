@@ -33,8 +33,11 @@
     
     FBHTTPOverUSBClient *client = [[WDClient alloc] initWithDeviceUDID:@"a49bcbd6a9d3b24b8f70b8adde348925a5bfac6e"];
     [self.clients addObject:client];
-    //[self testAppForIOS];
-    [self testWeChatForIOS];
+    // 测试本地App
+    [self testAppForIOS];
+    
+    // 测试微信自动发消息, 需要按照需要执行更改
+    //[self testWeChatForIOS];
 }
 
 - (void)testWeChatForIOS {
