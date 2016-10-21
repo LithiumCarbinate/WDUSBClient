@@ -68,7 +68,18 @@ extern NSString * const WDSendHttpMsgWithGET;
 // 返回可见的cells
 - (NSMutableArray *)getVisibleCells;
 
-// 时时设置App旋转方向
+/*
+ 时时设置App旋转方向
+ 提供以下方向设置
+ WDOrientationPORTRAIT;
+ WDOrientationLANDSCAPE;
+ WDOrientationUIA_DEVICE_ORIENTATION_LANDSCAPERIGHT;
+ WDOrientationUIA_DEVICE_ORIENTATION_PORTRAIT_UPSIDEDOWN;
+*/
 @property (nonatomic, copy) NSString *orientation;
+
+
+- (NSDictionary *)getSourceTree;
+
 
 @end

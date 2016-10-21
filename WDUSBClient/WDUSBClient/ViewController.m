@@ -33,9 +33,31 @@
     
     FBHTTPOverUSBClient *client = [[WDClient alloc] initWithDeviceUDID:@"a49bcbd6a9d3b24b8f70b8adde348925a5bfac6e"];
     [self.clients addObject:client];
+    [self testAppForIOS];
+    //[self testWeChatForIOS];
+}
+
+- (void)testWeChatForIOS {
     
     for (int i = 0; i < 1; i++) {
+        // com.tencent.xin
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [(WDClient *)self.clients[i] setBundleID: @"com.tencent.xin"];
+            // 启动App
+            [(WDClient *)self.clients[i] startApp];
+            
+        });
+        
+    }
 
+    
+}
+
+- (void)testAppForIOS {
+    
+    
+    for (int i = 0; i < 1; i++) {
+        // com.tencent.xin
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [(WDClient *)self.clients[i] setBundleID: @"com.nd.www.TestAppForIOS"];
             // 启动App
@@ -68,7 +90,10 @@
             [pwd typeText:@"123456789"];
             
         });
+        
     }
+    
+
 }
 
 

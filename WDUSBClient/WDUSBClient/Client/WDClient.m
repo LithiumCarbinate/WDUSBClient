@@ -252,6 +252,25 @@ NSString * const WDSendHttpMsgWithGET = @"GET";
     return (CGSize){size.width, size.height};
 }
 
+- (NSDictionary *)getSourceTree {
+    __block NSMutableDictionary *tree = [NSMutableDictionary dictionary];
+    NSString *endPoint = [NSString stringWithFormat:@"/source"];
+    dispatch_semaphore_t signal = dispatch_semaphore_create(0);
+    [self dispatchMethod:@"GET" endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
+        
+        NSDictionary *httpResJson  = @{};
+        if (![WDUtils isResponseSuccess:response]) {
+            NSLog(@"获取节点显示属性失败");
+        }
+        httpResJson = [response objectForKey:WDHttpResponseKey];
+        WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
+//        tree =httpResponse.size;
+        dispatch_semaphore_signal(signal);
+    }];
+    dispatch_semaphore_wait(signal, DISPATCH_TIME_FOREVER);
+    return tree;
+}
+
 
 
 
