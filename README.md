@@ -54,7 +54,7 @@ https://github.com/sixleaves/WebDriverAgent
 
 我们需要为以下这几个TATGETS地方配置证书。如下图
 
- ![Snip20161021_2](https://testerhome.com/photo/2016/3f20234bf1fcc50453c39640580dad2e.png)
+ ![Snip20161021_2](https://raw.githubusercontent.com/sixleaves/WDUSBClient/master/screenshots/Snip20161021_2.png)
 
 以WebDriverAgentLib证书配置为例子.
 
