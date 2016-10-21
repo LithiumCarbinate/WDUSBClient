@@ -77,7 +77,7 @@ https://github.com/sixleaves/WebDriverAgent
 
 - 输入sig, 如图将Code Signing Identity全都修改为iOS Developer。Development Team修改为你对应的帐号。
 
-   ![Snip20161021_5](https://testerhome.com/photo/2016/f4d4eb114c704a602d496dca569ba6ce.png)
+   ![Snip20161021_5](https://github.com/sixleaves/WDUSBClient/blob/master/screenshots/Snip20161021_5.png)
 
 其它几个签名配置，差不多给以按照上面两种配置。大家依葫芦画瓢即可。
 
