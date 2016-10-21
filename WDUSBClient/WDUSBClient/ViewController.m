@@ -57,7 +57,7 @@
             NSArray *elements = [client findElementsByClassName:@"XCUIElementTypeCell"];
             for (WDElement *element in elements) {
                 // 包含7千的cell
-                if ([element.label containsString:@"7千"]) {
+                if ([element.label containsString:@"自动发消息"]) {
                     
                     // 进入回话
                     [element click];
@@ -67,7 +67,6 @@
                         NSArray *textViews = [client findElementsByClassName:@"XCUIElementTypeTextView"];
                         WDElement *textView = [textViews firstObject];
                         [textView typeText:@"你好!!!"];
-                        
                         
                         // 点击确认按钮
                         WDElement *elementForSure = [[client findElementsByParticalLinkText:@"确认"] firstObject];
@@ -81,7 +80,6 @@
                 }
             }
         });
-        
     }
 }
 
