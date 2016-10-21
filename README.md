@@ -65,6 +65,8 @@ https://github.com/sixleaves/WebDriverAgent
 
 ###### step 1 打开工程, 配置证书
 
+- 在配置之前, 先在苹果开发者账户后台配置好两个不同的AppID, 用于下面的证书签名配置
+
 我们需要为以下这几个TATGETS地方配置证书。如下图
 
  ![Snip20161021_2](https://raw.githubusercontent.com/sixleaves/WDUSBClient/master/screenshots/Snip20161021_2.png)
