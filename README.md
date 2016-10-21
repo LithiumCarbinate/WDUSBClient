@@ -61,11 +61,12 @@ https://github.com/sixleaves/WebDriverAgent
 
 ## 配置
 
-配置WebDriverAgent(请到我的github上下载)
+在配置之前, 先在苹果开发者账户后台配置好两个不同的AppID, 用于下面的证书签名配置.
+配置WebDriverAgent(请到我的github上下载. 或者直接用工程里面那个更好)
 
 ###### step 1 打开工程, 配置证书
 
-- 在配置之前, 先在苹果开发者账户后台配置好两个不同的AppID, 用于下面的证书签名配置
+
 
 我们需要为以下这几个TATGETS地方配置证书。如下图
 
