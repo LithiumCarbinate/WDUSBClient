@@ -112,12 +112,12 @@ xcodebuild -project /Users/admini/WebDriverAgent/WebDriverAgent.xcodeproj \
 
 ###### Step1. 选择TestAppForIOS 2那个选项, 并选择对应真机
 
- ![Snip20161021_7](https://testerhome.com/photo/2016/e5c393ee7b365af0fb8ffc535a439335.png)
+ ![Snip20161021_7](https://github.com/sixleaves/WDUSBClient/blob/master/screenshots/Snip20161021_7.png)
 
 
 
 ###### step2. 选择对应的签名证书
-![Snip20161021_9](https://testerhome.com/photo/2016/069973c8753e9c5dfd86bda5b449ba12.png)
+![Snip20161021_9](https://github.com/sixleaves/WDUSBClient/blob/master/screenshots/Snip20161021_9.png)
 
 
 
