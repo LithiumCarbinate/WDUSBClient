@@ -5,6 +5,8 @@
 - 基于facebook的WebDriverAgent驱动进行开发.
 - 基于OC语言, 可供广大iOS开发者方便的实现自动化UI, 提供App稳定性.
 - 非侵入式框架, 无需在项目中嵌入
+# 安装文章参考
+https://testerhome.com/topics/6172
 
 ##Now, the framework only works on usb connection, so simulator doesn't support(只支持真机设备)
 
@@ -31,5 +33,4 @@ FBHTTPOverUSBClient *client = [[WDClient alloc] initWithDeviceUDID: udid];
 
 ##更多的用处等待你的探索!!!
 
-# 安装文章参考
-https://testerhome.com/topics/6172
+
