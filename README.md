@@ -31,3 +31,5 @@ FBHTTPOverUSBClient *client = [[WDClient alloc] initWithDeviceUDID: udid];
 
 ##更多的用处等待你的探索!!!
 
+# 安装文章参考
+https://testerhome.com/topics/6172
