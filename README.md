@@ -1,7 +1,7 @@
 # WDUSBClient(only support iOS9+, iOS10+)
 ##Features
 - 更加快速的通信效率, 直接使用socket通信, 而非http.
-- 无需担心设备没有连接上wifi等影响.链路层走的是USB数据线.
+- 无需担心设备没有连接上wifi等影响.物理层走的是USB数据线.
 - 基于facebook的WebDriverAgent驱动进行开发.
 - 基于OC语言, 可供广大iOS开发者方便的实现自动化UI, 提供App稳定性.
 - 支持多机并发测试。
