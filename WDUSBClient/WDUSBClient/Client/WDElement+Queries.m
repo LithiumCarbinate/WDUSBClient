@@ -139,7 +139,7 @@
     return name;
 }
 
-// curl -X POST $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/element/5/click
+
 - (BOOL)click {
     __block BOOL isClick = false;
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/click", self.client.sessionID, self.elementID];
@@ -152,11 +152,6 @@
     return isClick;
 }
 
-/*
- curl -X POST $JSON_HEADER \
- -d "{\"value\":[\"h\",\"t\",\"t\",\"p\",\":\",\"/\",\"/\",\"g\",\"i\",\"t\",\"h\",\"u\",\"b\",\".\",\"c\",\"o\",\"m\",\"\\n\"]}" \
- $DEVICE_URL/session/$SESSION_ID/element/5/value
- */
 - (BOOL)typeText:(NSString *)text {
     NSArray *chars = [text componentsSeparatedByString: @""];
     __block BOOL isType = false;
@@ -172,7 +167,7 @@
     return isType;
 }
 
-//curl -X POST $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/element/5/clear
+
 - (BOOL)clearText {
     __block BOOL isClear = false;
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/clear", self.client.sessionID, self.elementID];
@@ -197,7 +192,7 @@
     return isScroll;
 }
 
-//  [[FBRoute POST:@"/uiaTarget/:uuid/dragfromtoforduration"] respondWithTarget:self action:@selector(handleDrag:)],
+
 - (BOOL)dragFrom:(CGPoint)from to:(CGPoint)to forDuration:(CGFloat)duration {
     __block BOOL isDrag = false;
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/uiaTarget/%@/dragfromtoforduration", self.client.sessionID, self.elementID];
