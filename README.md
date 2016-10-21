@@ -29,6 +29,9 @@ FBHTTPOverUSBClient *client = [[WDClient alloc] initWithDeviceUDID: udid];
 ###next step, call startApp method(下一步, 调用startApp方法)
 `[client startApp]`
 
+# 相关连接(更多文档查看具体链接)
+- API(接口档案): https://github.com/sixleaves/WDUSBClient/wiki
+- WD地址(建议用我的, 我会和facebook那边的框架保持同步, 并会添加新功能, 修复bug):https://github.com/sixleaves/WebDriverAgent
 
 # 安装参考
 ## 前提
@@ -153,9 +156,6 @@ xcodebuild -project /Users/admini/WebDriverAgent/WebDriverAgent.xcodeproj \
 - monkey测试.
 - 自动化的编译程序.(屏蔽WD驱动程序的编译安装)
 
-# 相关连接(更多文档查看具体链接)
-- API(接口档案): https://github.com/sixleaves/WDUSBClient/wiki
-- WD地址(建议用我的, 我会和facebook那边的框架保持同步, 并会添加新功能, 修复bug):https://github.com/sixleaves/WebDriverAgent
 
 ##更多的用处等待你的探索!!!
 
