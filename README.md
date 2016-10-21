@@ -125,7 +125,7 @@ xcodebuild -project /Users/admini/WebDriverAgent/WebDriverAgent.xcodeproj \
 
 ###### step1. 先选中WDUSBClient这个scheme
 
- ![Snip20161021_10](https://testerhome.com/photo/2016/c8b82f74507967cf2f5ec43c676d671b.png)
+ ![Snip20161021_10](https://github.com/sixleaves/WDUSBClient/blob/master/screenshots/Snip20161021_10.png)
 
 
 
