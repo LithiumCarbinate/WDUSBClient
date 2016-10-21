@@ -94,9 +94,10 @@ https://github.com/sixleaves/WebDriverAgent
 
 #### 安装WebDriverAgent到真机上
 
-- 现在WebDriverAgent目录下执行下面这条命令构建依赖
-- 有问题的可以直接加群, 群上有完整的压缩包
+- 先在WebDriverAgent目录下执行下面这条命令构建依赖
 `./Scripts/bootstrap.sh`
+- 有问题的可以直接加群, 群上有完整的压缩包
+
 
 - 需要你先获取手机的udid。
 - WebDriverAgent的项目根目录。
