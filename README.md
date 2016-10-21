@@ -27,7 +27,7 @@ FBHTTPOverUSBClient *client = [[WDClient alloc] initWithDeviceUDID: udid];
 # 安装参考
 ## 前提
 
-介绍一下WDUSBClient, 也是基于WD开发, 目前支持iOS9, iOS10, 支持真机国行, 港版, 美版设备.  下面介绍一下具体的安装流程。希望有相应的问题, 给我提交issue, 尽量完善这个框架.
+目前支持iOS9, iOS10, 支持真机国行, 港版, 美版设备.  下面介绍一下具体的安装流程。希望有相应的问题, 给我提交issue, 尽量完善这个框架.
 
 首先要注意两点
 
