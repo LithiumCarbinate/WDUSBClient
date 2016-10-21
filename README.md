@@ -18,8 +18,8 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 `QQ群: 114577285`
 
 # 相关连接(必看)
-- API(接口档案): https://github.com/sixleaves/WDUSBClient/wiki
-- Classed关键类属性介绍: https://github.com/sixleaves/WDUSBClient/wiki/Classes
+- API(接口文档): https://github.com/sixleaves/WDUSBClient/wiki
+- Classed(关键类属性介绍): https://github.com/sixleaves/WDUSBClient/wiki/Classes
 - WD地址(建议用我的, 我会和facebook那边的框架保持同步, 并会添加新功能, 修复bug):https://github.com/sixleaves/WebDriverAgent
 
 #将Client文件夹下的东西都拖到你的工程中。引入主头文件
