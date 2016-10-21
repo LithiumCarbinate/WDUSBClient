@@ -63,7 +63,7 @@ https://github.com/sixleaves/WebDriverAgent
 
 先选中WebDriverAgentLib. 然后选General选项卡。再选择Signing下面的Team, 选择你在苹果注册的帐号名称.如下图。
 
- ![Snip20161021_3](https://testerhome.com/photo/2016/43606f004a5479e612d37c69b3065b9b.png)
+ ![Snip20161021_3](https://github.com/sixleaves/WDUSBClient/blob/master/screenshots/Snip20161021_3.png)
 
 
 
