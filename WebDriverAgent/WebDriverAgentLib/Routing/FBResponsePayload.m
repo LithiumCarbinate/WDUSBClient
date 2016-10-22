@@ -13,7 +13,7 @@
 #import "FBResponseFilePayload.h"
 #import "FBResponseJSONPayload.h"
 #import "FBSession.h"
-
+#import "XCUIElement+Property.h"
 #import "XCUIElement+FBWebDriverAttributes.h"
 
 inline static NSDictionary *FBDictionaryResponseWithElement(XCUIElement *element, NSString *elementUUID, BOOL compact);
@@ -85,9 +85,11 @@ id<FBResponsePayload> FBResponseFileWithPath(NSString *path)
 
 inline static NSDictionary *FBDictionaryResponseWithElement(XCUIElement *element, NSString *elementUUID, BOOL compact)
 {
+  if (element == nil || elementUUID == nil) return @{};
   NSMutableDictionary *dictionary = [NSMutableDictionary new];
   dictionary[@"ELEMENT"] = elementUUID;
   if (!compact) {
+    dictionary[@"parent"] = FBDictionaryResponseWithElement(element.parentElement, element.parentElement.wd_uuid, compact);
     dictionary[@"type"] = element.wdType;
     dictionary[@"label"] = element.wdLabel ?: [NSNull null];
   }

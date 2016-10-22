@@ -10,6 +10,7 @@
 #import "FBHTTPOverUSBClient.h"
 #import "WDElement.h"
 #import "WDHttpResponse.h"
+#import "NSArray+AddClient.h"
 #import "WDElement+Queries.h"
 #import "WDClassType.h"
 extern NSString * const WDOrientationPORTRAIT;
@@ -78,7 +79,7 @@ extern NSString * const WDSendHttpMsgWithGET;
 */
 @property (nonatomic, copy) NSString *orientation;
 
-
+// 获取正颗的树结构
 - (NSDictionary *)getSourceTree;
 
 

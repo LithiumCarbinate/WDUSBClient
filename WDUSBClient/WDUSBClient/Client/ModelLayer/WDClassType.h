@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+// class Type
 extern NSString * const kUIActivityIndicator;
 extern NSString * const kUIAlertView;
 extern NSString * const kUIAny;
@@ -89,3 +90,5 @@ extern NSString * const kUIToolbarButton;
 extern NSString * const kUIValueIndicator;
 extern NSString * const kUIWebView;
 extern NSString * const kUIWindow;
+
+

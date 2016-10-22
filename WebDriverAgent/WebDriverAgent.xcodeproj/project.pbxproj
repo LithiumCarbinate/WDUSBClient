@@ -249,6 +249,8 @@
 		EEE3764A1D59FAE900ED88DD /* XCUIElement+FBWebDriverAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE376481D59FAE900ED88DD /* XCUIElement+FBWebDriverAttributes.m */; };
 		EEE9B4721CD02B88009D2030 /* FBRunLoopSpinner.h in Headers */ = {isa = PBXBuildFile; fileRef = EEE9B4701CD02B88009D2030 /* FBRunLoopSpinner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEE9B4731CD02B88009D2030 /* FBRunLoopSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE9B4711CD02B88009D2030 /* FBRunLoopSpinner.m */; };
+		FD8C16041DBBC63000798AF2 /* XCUIElement+Property.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8C16021DBBC63000798AF2 /* XCUIElement+Property.h */; };
+		FD8C16051DBBC63000798AF2 /* XCUIElement+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C16031DBBC63000798AF2 /* XCUIElement+Property.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -570,6 +572,8 @@
 		EEE9B4701CD02B88009D2030 /* FBRunLoopSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRunLoopSpinner.h; sourceTree = "<group>"; };
 		EEE9B4711CD02B88009D2030 /* FBRunLoopSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBRunLoopSpinner.m; sourceTree = "<group>"; };
 		EEF9882A1C486603005CA669 /* WebDriverAgentRunner.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebDriverAgentRunner.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD8C16021DBBC63000798AF2 /* XCUIElement+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCUIElement+Property.h"; sourceTree = "<group>"; };
+		FD8C16031DBBC63000798AF2 /* XCUIElement+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCUIElement+Property.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -758,6 +762,8 @@
 				EEE376401D59F81400ED88DD /* XCUIElement+FBUtilities.m */,
 				EEE376471D59FAE900ED88DD /* XCUIElement+FBWebDriverAttributes.h */,
 				EEE376481D59FAE900ED88DD /* XCUIElement+FBWebDriverAttributes.m */,
+				FD8C16021DBBC63000798AF2 /* XCUIElement+Property.h */,
+				FD8C16031DBBC63000798AF2 /* XCUIElement+Property.m */,
 			);
 			name = Categories;
 			path = WebDriverAgentLib/Categories;
@@ -1126,6 +1132,7 @@
 				EE158AB01CBD456F00A3E3F0 /* XCUIElement+FBIsVisible.h in Headers */,
 				EE8382AE1D9300D3000BED49 /* XCElementSnapshot-Hitpoint.h in Headers */,
 				EE158AF11CBD456F00A3E3F0 /* FBXPathCreator.h in Headers */,
+				FD8C16041DBBC63000798AF2 /* XCUIElement+Property.h in Headers */,
 				EE158AB41CBD456F00A3E3F0 /* XCUIElement+FBTap.h in Headers */,
 				EE158ADC1CBD456F00A3E3F0 /* FBResponsePayload.h in Headers */,
 				EE158ACC1CBD456F00A3E3F0 /* FBUnknownCommands.h in Headers */,
@@ -1523,6 +1530,7 @@
 				EEE376461D59F81400ED88DD /* XCUIElement+FBUtilities.m in Sources */,
 				EE9B76A91CF7A43900275851 /* FBLogger.m in Sources */,
 				EE158ABB1CBD456F00A3E3F0 /* FBCustomCommands.m in Sources */,
+				FD8C16051DBBC63000798AF2 /* XCUIElement+Property.m in Sources */,
 				AD6C26991CF2481700F8B5FF /* XCUIDevice+FBHelpers.m in Sources */,
 				EE6B64FE1D0F86EF00E85F5D /* XCTestPrivateSymbols.m in Sources */,
 				AD76723E1D6B7CC000610457 /* XCUIElement+FBTyping.m in Sources */,

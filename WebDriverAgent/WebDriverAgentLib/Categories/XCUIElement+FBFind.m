@@ -14,7 +14,8 @@
 #import "XCElementSnapshot.h"
 #import "XCElementSnapshot+FBHelpers.h"
 #import "XCUIElement+FBWebDriverAttributes.h"
-
+#import "XCUIElement+Property.h"
+#import "FBLogger.h"
 @implementation XCUIElement (FBFind)
 
 
@@ -27,8 +28,20 @@
   if (self.elementType == type || type == XCUIElementTypeAny) {
     [result addObject:self];
   }
-  [result addObjectsFromArray:[[self descendantsMatchingType:type] allElementsBoundByIndex]];
+    
+  NSArray *elements = [[self descendantsMatchingType:type] allElementsBoundByIndex];
+    
+  [self addParentWithElements: elements];
+  [result addObjectsFromArray:elements];
   return result.copy;
+}
+   
+- (void)addParentWithElements:(NSArray<XCUIElement *> *)elements
+{
+    
+    for (XCUIElement *element in elements) {
+        if (element != self) element.parentElement = self;
+    }
 }
 
 

@@ -10,17 +10,17 @@
 
 
 
-NSString * const kUIActivityIndicator = @"XCUIElementTypeActivityIndicator";
-NSString * const kUIAlertView = @"XCUIElementTypeAlert";
-NSString * const kUIAny = @"XCUIElementTypeAny";
-NSString * const kUIApplication = @"XCUIElementTypeApplication";
-NSString * const kUIBrowse = @"XCUIElementTypeBrowser";
-NSString * const kUIButton = @"XCUIElementTypeButton";
-NSString * const kUITableViewCell = @"XCUIElementTypeCell";
-NSString * const kUICheckBox = @"XCUIElementTypeCheckBox";
-NSString * const kUICollectionView = @"XCUIElementTypeCollectionView";
-NSString * const kUIColorWell = @"XCUIElementTypeColorWell";
-NSString * const kUIComboBox = @"XCUIElementTypeComboBox";
+ NSString * const kUIActivityIndicator = @"XCUIElementTypeActivityIndicator";
+ NSString * const kUIAlertView = @"XCUIElementTypeAlert";
+ NSString * const kUIAny = @"XCUIElementTypeAny";
+ NSString * const kUIApplication = @"XCUIElementTypeApplication";
+ NSString * const kUIBrowse = @"XCUIElementTypeBrowser";
+ NSString * const kUIButton = @"XCUIElementTypeButton";
+ NSString * const kUITableViewCell = @"XCUIElementTypeCell";
+ NSString * const kUICheckBox = @"XCUIElementTypeCheckBox";
+ NSString * const kUICollectionView = @"XCUIElementTypeCollectionView";
+ NSString * const kUIColorWell = @"XCUIElementTypeColorWell";
+ NSString * const kUIComboBox = @"XCUIElementTypeComboBox";
  NSString * const kUIDatePicker = @"XCUIElementTypeDatePicker";
  NSString * const kUIDecrementArrow = @"XCUIElementTypeDecrementArrow";
  NSString * const kUIDialog = @"XCUIElementTypeDialog";

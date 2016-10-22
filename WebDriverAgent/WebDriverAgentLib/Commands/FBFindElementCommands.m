@@ -19,7 +19,8 @@
 #import "FBApplication.h"
 #import "XCUIElement+FBFind.h"
 #import "XCUIElement+FBIsVisible.h"
-
+#import "XCUIElement+Property.h"
+#import "FBLogger.h"
 static id<FBResponsePayload> FBNoSuchElementErrorResponseForRequest(FBRouteRequest *request)
 {
   NSDictionary *errorDetails = @{
@@ -90,8 +91,9 @@ static id<FBResponsePayload> FBNoSuchElementErrorResponseForRequest(FBRouteReque
 {
   FBElementCache *elementCache = request.session.elementCache;
   XCUIElement *element = [elementCache elementForUUID:request.parameters[@"uuid"]];
-  NSArray *foundElements = [self.class elementsUsing:request.arguments[@"using"] withValue:request.arguments[@"value"] under:element];
 
+  NSArray *foundElements = [self.class elementsUsing:request.arguments[@"using"] withValue:request.arguments[@"value"] under:element];
+    
   if (foundElements.count == 0) {
     return FBNoSuchElementErrorResponseForRequest(request);
   }

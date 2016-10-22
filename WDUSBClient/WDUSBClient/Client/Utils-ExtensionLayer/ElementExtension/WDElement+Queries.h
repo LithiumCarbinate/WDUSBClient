@@ -47,4 +47,10 @@
 // 右滑
 - (BOOL)swipeRight;
 
+// 获取所在节点下面的所有子控件
+- (NSArray *)childrens;
+
+// 获取所在节点下所有是classType类型的子控件
+- (NSArray *)childrensWithClassType:(NSString *)classType;
+
 @end

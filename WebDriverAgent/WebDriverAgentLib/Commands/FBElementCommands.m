@@ -53,6 +53,12 @@
     [[FBRoute POST:@"/element/:uuid/value"] respondWithTarget:self action:@selector(handleSetValue:)],
     [[FBRoute POST:@"/element/:uuid/click"] respondWithTarget:self action:@selector(handleClick:)],
     [[FBRoute POST:@"/element/:uuid/clear"] respondWithTarget:self action:@selector(handleClear:)],
+    
+    // For Support Swipe
+    [[FBRoute GET:@"/element/:uuid/swipeLeft"] respondWithTarget:self action:@selector(handleSwipeLeft:)],
+    [[FBRoute GET:@"/element/:uuid/swipeRight"] respondWithTarget:self action:@selector(handleSwipeRight:)],
+//    [[FBRoute GET:@"/element/:uuid/children"] respondWithTarget:self action:@selector(handleGetChildren:)],
+    
     [[FBRoute POST:@"/uiaElement/:uuid/doubleTap"] respondWithTarget:self action:@selector(handleDoubleTap:)],
     [[FBRoute POST:@"/uiaElement/:uuid/twoFingerTap"] respondWithTarget:self action:@selector(handleTwoFingerTap:)],
     [[FBRoute POST:@"/uiaElement/:uuid/touchAndHold"] respondWithTarget:self action:@selector(handleTouchAndHold:)],
@@ -61,10 +67,6 @@
     [[FBRoute POST:@"/tap/:uuid"] respondWithTarget:self action:@selector(handleTap:)],
     [[FBRoute POST:@"/keys"] respondWithTarget:self action:@selector(handleKeys:)],
     [[FBRoute GET:@"/window/size"] respondWithTarget:self action:@selector(handleGetWindowSize:)],
-    
-    // For Support Swipe
-    [[FBRoute GET:@"/element/:uuid/swipeLeft"] respondWithTarget:self action:@selector(handleSwipeLeft:)],
-    [[FBRoute GET:@"/element/:uuid/swipeRight"] respondWithTarget:self action:@selector(handleSwipeRight:)],
     
     // TODO: This API call should be deprecated and replaced with the one above without the extra :uuid parameter
     [[FBRoute GET:@"/window/:uuid/size"] respondWithTarget:self action:@selector(handleGetWindowSize:)],

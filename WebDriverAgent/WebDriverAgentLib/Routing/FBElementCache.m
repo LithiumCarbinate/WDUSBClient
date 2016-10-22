@@ -12,10 +12,12 @@
 #import "FBAlert.h"
 #import "XCUIElement.h"
 #import "XCUIElement+FBUtilities.h"
-
+#import "XCUIElement+Property.h"
 
 @interface FBElementCache ()
+
 @property (atomic, strong) NSMutableDictionary *elementCache;
+
 @end
 
 @implementation FBElementCache
@@ -32,10 +34,16 @@
 
 - (NSString *)storeElement:(XCUIElement *)element
 {
+    
+  if (element.wd_uuid != nil && ![element.wd_uuid isEqualToString:@""]) return element.wd_uuid;
+    
   NSString *uuid = [[NSUUID UUID] UUIDString];
+  element.wd_uuid = uuid;
   self.elementCache[uuid] = element;
+
   return uuid;
 }
+
 
 - (XCUIElement *)elementForUUID:(NSString *)uuid
 {

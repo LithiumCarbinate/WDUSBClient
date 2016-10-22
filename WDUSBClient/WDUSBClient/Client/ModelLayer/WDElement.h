@@ -10,10 +10,10 @@
 @class WDClient;
 @interface WDElement : NSObject
 
+@property (nonatomic, strong) WDElement *parent;
 @property (nonatomic, copy) NSString *elementID;
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, copy) NSString *label;
-
 @property (nonatomic, weak) WDClient *client;
 
 @end

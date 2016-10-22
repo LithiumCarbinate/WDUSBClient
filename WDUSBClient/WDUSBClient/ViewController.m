@@ -38,6 +38,9 @@
     
     // 测试微信自动发消息, 需要按照需要执行更改
     //[self testWeChatForIOS];
+    
+    
+    
 }
 
 - (void)testWeChatForIOS {
@@ -100,6 +103,8 @@
             // 获取scrollView
             WDElement *scrollView = [[(WDClient *)self.clients[i] findElementsByClassName:kUIScrollView] firstObject];
             
+            NSArray *childs = scrollView.childrens;
+            
             // 向左滑动8次
             for (int i = 0; i < 8; i++) {
                 [scrollView swipeLeft];
@@ -111,6 +116,19 @@
                 [element click];
             }
             
+            // 获取控件文本为@"请输入用户名"的控件的父, OtherView,
+            NSArray *others = [(WDClient *)self.clients[i] findElementsByClassName: kUIOther];
+            for (WDElement *element in others) {
+                for (WDElement *subElement in element.childrens) {
+                    NSLog(@"type = %@, label = %@", subElement.type, subElement.label);
+                    if ([subElement.text containsString: @"请输入用户名"]) {
+                        NSLog(@"find");
+                        WDElement *parent = subElement.parent;
+                        NSLog(@"parent = %@, otherVIew = %@", parent.elementID, element.elementID);
+                    }
+                }
+            }
+    
             // 输入帐号密码
             NSArray *textFields =  [(WDClient *)self.clients[i] findElementsByClassName: kUITextField];
             WDElement *userName = [textFields firstObject];

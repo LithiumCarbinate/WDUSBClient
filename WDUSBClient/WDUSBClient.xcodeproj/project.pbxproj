@@ -35,6 +35,7 @@
 		94F29DE11DB8C68D00EA6076 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F29DDF1DB8C68D00EA6076 /* LaunchScreen.storyboard */; };
 		94F29DE41DB8DED900EA6076 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F29DE31DB8DED900EA6076 /* LoginVC.m */; };
 		FD8C15FE1DBB0E1600798AF2 /* WDClassType.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */; };
+		FD8C16011DBBBA0100798AF2 /* NSArray+AddClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C16001DBBBA0100798AF2 /* NSArray+AddClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,8 @@
 		94F29DE31DB8DED900EA6076 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		FD8C15FC1DBB0E1600798AF2 /* WDClassType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDClassType.h; sourceTree = "<group>"; };
 		FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDClassType.m; sourceTree = "<group>"; };
+		FD8C15FF1DBBBA0100798AF2 /* NSArray+AddClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AddClient.h"; sourceTree = "<group>"; };
+		FD8C16001DBBBA0100798AF2 /* NSArray+AddClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AddClient.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +334,8 @@
 			children = (
 				942A59661DBA2EF40020025C /* WDElement+Queries.h */,
 				942A59671DBA2EF40020025C /* WDElement+Queries.m */,
+				FD8C15FF1DBBBA0100798AF2 /* NSArray+AddClient.h */,
+				FD8C16001DBBBA0100798AF2 /* NSArray+AddClient.m */,
 			);
 			path = ElementExtension;
 			sourceTree = "<group>";
@@ -521,6 +526,7 @@
 				942A597B1DBA2EF40020025C /* YYClassInfo.m in Sources */,
 				942959561DB71F4C000A26DB /* main.m in Sources */,
 				942959531DB71F4C000A26DB /* AppDelegate.m in Sources */,
+				FD8C16011DBBBA0100798AF2 /* NSArray+AddClient.m in Sources */,
 				942A59781DBA2EF40020025C /* WDElement+Queries.m in Sources */,
 				942A59731DBA2EF40020025C /* WDElement.m in Sources */,
 				942A597A1DBA2EF40020025C /* NSObject+YYModel.m in Sources */,

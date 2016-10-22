@@ -234,7 +234,43 @@
     return isSendMessageSuccess;
 }
 
+static NSString * const kWDUsing=@"using";
+static NSString * const kWDValue=@"value";
+static NSString * const kWDPOST=@"POST";
+static NSString * const kWDGET=@"GET";
+- (NSArray *)childrensWithSendMethod:(NSString *)sendMethod usingFindMethod:(NSString *)using value:(NSString *)value{
+    __block BOOL isGetChildrens = false;
+    NSMutableArray *elements = [NSMutableArray array];
+    NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/elements", self.client.sessionID, self.elementID];
+    dispatch_semaphore_t signal = dispatch_semaphore_create(0);
+    [self.client dispatchMethod:sendMethod endpoint:endPoint parameters:
+  @{ kWDUsing :  using,
+     kWDValue :  value
+     } completion:^(NSDictionary *response, NSError *requestError) {
+         NSDictionary *httpResJson  = @{};
+         if ([WDUtils isResponseSuccess:response]) {
+             
+             httpResJson = [response objectForKey:WDHttpResponseKey];
+             
+         }
+         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
+         
+         [elements addObjectsFromArray: httpResponse.elements];
+         [elements addClient: self.client];
+        dispatch_semaphore_signal(signal);
+    }];
+    dispatch_semaphore_wait(signal, DISPATCH_TIME_FOREVER);
+    return elements;
+}
 
+// update 2016-10-22
+- (NSArray *)childrensWithClassType:(NSString *)classType {
+    return [self childrensWithSendMethod:kWDPOST usingFindMethod:@"class name" value:classType];
+}
+
+- (NSArray *)childrens {
+    return [self childrensWithClassType:kUIAny];
+}
 
 
 

@@ -163,9 +163,10 @@ NSString * const WDSendHttpMsgWithGET = @"GET";
 }
 
 - (void)addClientToElements:(NSArray<WDElement *> *)elements {
-    for (WDElement *element in elements ) {
-        element.client = self;
-    }
+//    for (WDElement *element in elements ) {
+//        element.client = self;
+//    }
+    [elements addClient: self];
 }
 
 - (NSMutableArray *)findElementsByLinkText:(NSString *)linkText {
