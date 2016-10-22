@@ -185,4 +185,8 @@ xcodebuild -project /Users/admini/WebDriverAgent/WebDriverAgent.xcodeproj \
 
 ##更多的用处等待你的探索!!!
 
+开源不容易, 如果觉得还不错的. 支持作者的开发, 可以支付宝赞助噢.
+
+![zz](https://github.com/sixleaves/WDUSBClient/blob/master/screenshots/zz.jpeg)
+
 
