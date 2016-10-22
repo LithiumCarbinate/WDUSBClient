@@ -20,12 +20,13 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 ## 交流QQ群
 
 不懂得可以群里提问, 细节已经写得很清楚了, 
+`QQ群: 114577285`
 
 真有需要远程的, 请先打支付宝
 
  ![alipay](https://github.com/sixleaves/WDUSBClient/blob/master/screenshots/100.jpeg)
 
-`QQ群: 114577285`
+
 
 # 相关连接(必看)
 - API(接口文档): https://github.com/sixleaves/WDUSBClient/wiki
