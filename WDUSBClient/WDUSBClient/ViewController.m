@@ -55,9 +55,9 @@
             [client startApp];
             
             // 获取所有cell
-            NSArray *elements = [client findElementsByClassName:@"XCUIElementTypeCell"];
+            NSArray *elements = [client findElementsByClassName:kUITableViewCell];
             for (WDElement *element in elements) {
-                // 包含7千的cell
+                // 包含自动发消息的cell
                 if ([element.label containsString:@"自动发消息"]) {
                     
                     // 进入回话
@@ -65,7 +65,7 @@
                     
                     for (;1;) {
                         // 开始写消息
-                        NSArray *textViews = [client findElementsByClassName:@"XCUIElementTypeTable"];
+                        NSArray *textViews = [client findElementsByClassName:kUITextView];
                         WDElement *textView = [textViews firstObject];
                         [textView typeText:@"你好!!!"];
                         
@@ -98,7 +98,7 @@
             CGSize size = [(WDClient *)self.clients[i] windowSize];
             
             // 获取scrollView
-            WDElement *scrollView = [[(WDClient *)self.clients[i] findElementsByClassName:@"XCUIElementTypeScrollView"] firstObject];
+            WDElement *scrollView = [[(WDClient *)self.clients[i] findElementsByClassName:kUIScrollView] firstObject];
             
             // 向左滑动8次
             for (int i = 0; i < 8; i++) {
@@ -106,13 +106,13 @@
             }
             
             // 找到按钮点击
-            NSArray *buttons = [(WDClient *)self.clients[i] findElementsByClassName:@"XCUIElementTypeButton"];
+            NSArray *buttons = [(WDClient *)self.clients[i] findElementsByClassName: kUIButton];
             for (WDElement *element in buttons) {
                 [element click];
             }
             
             // 输入帐号密码
-            NSArray *textFields =  [(WDClient *)self.clients[i] findElementsByClassName:@"XCUIElementTypeTextField"];
+            NSArray *textFields =  [(WDClient *)self.clients[i] findElementsByClassName: kUITextField];
             WDElement *userName = [textFields firstObject];
             WDElement *pwd = [textFields lastObject];
             [userName clearText];

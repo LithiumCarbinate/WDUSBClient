@@ -34,6 +34,7 @@
 		94F29DDB1DB8BD9800EA6076 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F29DDA1DB8BD9800EA6076 /* GuideVC.m */; };
 		94F29DE11DB8C68D00EA6076 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F29DDF1DB8C68D00EA6076 /* LaunchScreen.storyboard */; };
 		94F29DE41DB8DED900EA6076 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F29DE31DB8DED900EA6076 /* LoginVC.m */; };
+		FD8C15FE1DBB0E1600798AF2 /* WDClassType.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		94F29DE01DB8C68D00EA6076 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94F29DE21DB8DED900EA6076 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		94F29DE31DB8DED900EA6076 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		FD8C15FC1DBB0E1600798AF2 /* WDClassType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDClassType.h; sourceTree = "<group>"; };
+		FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDClassType.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +300,8 @@
 				942A595E1DBA2EF40020025C /* WDRect.m */,
 				942A595F1DBA2EF40020025C /* WDSize.h */,
 				942A59601DBA2EF40020025C /* WDSize.m */,
+				FD8C15FC1DBB0E1600798AF2 /* WDClassType.h */,
+				FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */,
 			);
 			path = ModelLayer;
 			sourceTree = "<group>";
@@ -521,6 +526,7 @@
 				942A597A1DBA2EF40020025C /* NSObject+YYModel.m in Sources */,
 				942A59791DBA2EF40020025C /* WDUtils.m in Sources */,
 				942A59771DBA2EF40020025C /* WDClient.m in Sources */,
+				FD8C15FE1DBB0E1600798AF2 /* WDClassType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
