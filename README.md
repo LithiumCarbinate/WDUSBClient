@@ -49,8 +49,8 @@ FBHTTPOverUSBClient *client = [[WDClient alloc] initWithDeviceUDID: udid];
 
 首先要注意两点
 
-- 到我的github上clone下WDUSBClient这是基于WD的客户端.
-- 到我的github上下载WebDriverAgent, 为什么不去Facebook官网下载呢?因为我提的一些代码还没有合并到他们那边.你下载facebook那边的驱动就可能会导致不能安装.(我会时时的和FB保持同步)
+- 到我的github上clone下WDUSBClient.
+- 在WDUSBClient里有一个WebDriverAgent, 使用这个就行.为什么不去Facebook官网下载呢?因为我提的一些代码还没有合并到他们那边.你下载facebook那边的驱动就可能会导致不能安装.(我会时时的和FB保持同步)
 
 ## 准备
 
