@@ -53,10 +53,8 @@ FBHTTPOverUSBClient *client = [[WDClient alloc] initWithDeviceUDID: udid];
 
 https://github.com/sixleaves/WDUSBClient
 
-##### 下载WebDriverAgent
-
-https://github.com/sixleaves/WebDriverAgent
-
+有安装git的在终端中输入, 即可完成下载.
+`git clone https://github.com/sixleaves/WDUSBClient.git`
 
 
 ## 配置
