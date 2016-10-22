@@ -12,8 +12,10 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 - 非侵入式框架, 无需在项目中嵌入.
 
 ##Update
-- 新添加微信自动发消息范例
-- 直接将WDA驱动集成进来, 无需另外下载(WDA的编译请看下面介绍)
+- 控件类型都以kUI开头, 如获取UITableView, 则使用kUITableView.-2016-10-22
+- 新添加微信自动发消息范例-2016-10-21
+- 直接将WDA驱动集成进来, 无需另外下载(WDA的编译请看下面介绍)-2016-10-21
+
 
 ## 交流QQ群
 `QQ群: 114577285`
@@ -53,10 +55,8 @@ FBHTTPOverUSBClient *client = [[WDClient alloc] initWithDeviceUDID: udid];
 
 https://github.com/sixleaves/WDUSBClient
 
-##### 下载WebDriverAgent
-
-https://github.com/sixleaves/WebDriverAgent
-
+有安装git的在终端中输入, 即可完成下载.
+`git clone https://github.com/sixleaves/WDUSBClient.git`
 
 
 ## 配置
@@ -165,9 +165,15 @@ xcodebuild -project /Users/admini/WebDriverAgent/WebDriverAgent.xcodeproj \
 # 后续
 
 先提供一个可以玩的版本给大家.很想把这东西做到完美。现在工程内还有很多需要重构的代码。后续会继续提供以下功能, 更多相关功能欢迎提供建议, 我们会综合考虑尽量加进去。
+
+后面要做的功能
+- 增加配置文件模式, 无需再关系WDClient源代码, 可通过monkey进行通用的稳定性测试.
 - monkey测试.
 - 自动化的编译程序.(屏蔽WD驱动程序的编译安装)
-
+- 脱离WDA.
+- 集成录制工具
+- 适配iOS 7, 8
+- 集成性能分析工具
 
 ##更多的用处等待你的探索!!!
 
