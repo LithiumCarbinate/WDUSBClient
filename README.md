@@ -12,6 +12,8 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 - 非侵入式框架, 无需在项目中嵌入.
 
 ##Update
+- 添加了查询当前元素的父元素功能.可以通过`element.parent;`获取
+- 添加了查询当前元素子元素功能.可以通过`element.children;`获取
 - 控件类型都以kUI开头, 如获取UITableView, 则使用kUITableView.-2016-10-22
 - 新添加微信自动发消息范例-2016-10-21
 - 直接将WDA驱动集成进来, 无需另外下载(WDA的编译请看下面介绍)-2016-10-21
