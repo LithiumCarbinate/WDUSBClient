@@ -62,6 +62,7 @@
 		FD31EDB41DBE90CD00A503B0 /* NSObject+YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A596B1DBA2EF40020025C /* NSObject+YYModel.h */; };
 		FD31EDB51DBE90CD00A503B0 /* YYClassInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A596D1DBA2EF40020025C /* YYClassInfo.h */; };
 		FD31EDB61DBE90CD00A503B0 /* YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A596F1DBA2EF40020025C /* YYModel.h */; };
+		FD31EDBE1DBE92F100A503B0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD31EDBD1DBE92F100A503B0 /* Info.plist */; };
 		FD8C15FE1DBB0E1600798AF2 /* WDClassType.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */; };
 		FD8C16011DBBBA0100798AF2 /* NSArray+AddClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C16001DBBBA0100798AF2 /* NSArray+AddClient.m */; };
 		FDADA29D1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDADA29C1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a */; };
@@ -163,11 +164,8 @@
 		FD31ED2B1DBE89C500A503B0 /* PTPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPrivate.h; sourceTree = "<group>"; };
 		FD31ED2C1DBE89C500A503B0 /* PTProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTProtocol.h; sourceTree = "<group>"; };
 		FD31ED2D1DBE89C500A503B0 /* PTUSBHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTUSBHub.h; sourceTree = "<group>"; };
-		FD31ED3B1DBE8B7F00A503B0 /* WDUSBClientLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDUSBClientLib.h; sourceTree = "<group>"; };
-		FD31ED3D1DBE8B7F00A503B0 /* WDUSBClientLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDUSBClientLib.m; sourceTree = "<group>"; };
 		FD31ED8D1DBE908500A503B0 /* WDUSBClientLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WDUSBClientLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD31ED8F1DBE908500A503B0 /* WDUSBClientLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDUSBClientLib.h; sourceTree = "<group>"; };
-		FD31ED901DBE908500A503B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD31EDBD1DBE92F100A503B0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD8C15FC1DBB0E1600798AF2 /* WDClassType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDClassType.h; sourceTree = "<group>"; };
 		FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDClassType.m; sourceTree = "<group>"; };
 		FD8C15FF1DBBBA0100798AF2 /* NSArray+AddClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AddClient.h"; sourceTree = "<group>"; };
@@ -228,7 +226,6 @@
 				9429599E1DB76260000A26DB /* TestAppForIOS */,
 				942959B81DB76260000A26DB /* TestAppForIOSUITests */,
 				FD31ED3A1DBE8B7F00A503B0 /* WDUSBClientLib */,
-				FD31ED8E1DBE908500A503B0 /* WDUSBClientLib */,
 				9429594F1DB71F4C000A26DB /* Products */,
 				942959841DB73F88000A26DB /* Frameworks */,
 			);
@@ -429,17 +426,7 @@
 		FD31ED3A1DBE8B7F00A503B0 /* WDUSBClientLib */ = {
 			isa = PBXGroup;
 			children = (
-				FD31ED3B1DBE8B7F00A503B0 /* WDUSBClientLib.h */,
-				FD31ED3D1DBE8B7F00A503B0 /* WDUSBClientLib.m */,
-			);
-			path = WDUSBClientLib;
-			sourceTree = "<group>";
-		};
-		FD31ED8E1DBE908500A503B0 /* WDUSBClientLib */ = {
-			isa = PBXGroup;
-			children = (
-				FD31ED8F1DBE908500A503B0 /* WDUSBClientLib.h */,
-				FD31ED901DBE908500A503B0 /* Info.plist */,
+				FD31EDBD1DBE92F100A503B0 /* Info.plist */,
 			);
 			path = WDUSBClientLib;
 			sourceTree = "<group>";
@@ -662,6 +649,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD31EDBE1DBE92F100A503B0 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
