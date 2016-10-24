@@ -12,6 +12,7 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 - 非侵入式框架, 无需在项目中嵌入.
 
 ##Update
+- 修复了一个链接问题, 可能导致在低于OSX10.12的版本上不稳定-2016-10-25
 - 添加了`findElementByParticalLinkText:(NSString *)partialLinkText withClassType:(NSString *)classType`接口, 用于模糊匹配指定类型控件所包含的文字.-2016-10-24
 - 添加了UIKitCatelog这个程序里的四个子Demo用于演示-2016-10-24
 - 添加了查询当前元素的父元素功能.可以通过`element.parent;`获取-2016-10-23
