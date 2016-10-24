@@ -25,6 +25,10 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 
 ## 交流QQ群
 
+- 库导入问题.
+- 编译问题.
+- 配置问题.
+
 不懂得可以群里提问, 细节已经写得很清楚了, 
 `QQ群: 114577285`
 
