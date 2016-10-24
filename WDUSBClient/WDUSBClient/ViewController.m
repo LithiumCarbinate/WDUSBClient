@@ -54,7 +54,6 @@
             [client setBundleID: @"com.example.apple-samplecode.UIKitCatalog"];
             // 启动App
             [client startApp];
-            
             [self testActivityIndicatorsWithClient: client];
             [self testAlertController: client];
             [self testDatePicker: client];
