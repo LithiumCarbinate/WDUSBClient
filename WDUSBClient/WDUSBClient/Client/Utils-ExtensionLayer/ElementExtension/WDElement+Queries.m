@@ -11,6 +11,8 @@
 #import "WDUtils.h"
 #import "YYModel.h"
 #import "WDRect.h"
+#import "WDHttpResponse.h"
+#import "NSArray+AddClient.h"
 @implementation WDElement (Queries)
 - (CGRect)rect {
     __block CGRect rect = (CGRect){0, 0, 0, 0};

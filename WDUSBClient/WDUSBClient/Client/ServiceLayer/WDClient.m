@@ -12,6 +12,7 @@
 #import "WDHttpResponse.h"
 #import "WDUtils.h"
 #import "WDSize.h"
+#import "NSArray+AddClient.h"
 NSString * const WDOrientationPORTRAIT = @"PORTRAIT";
 NSString * const WDOrientationLANDSCAPE = @"LANDSCAPE";
 NSString * const WDOrientationUIA_DEVICE_ORIENTATION_LANDSCAPERIGHT = @"UIA_DEVICE_ORIENTATION_LANDSCAPERIGHT";

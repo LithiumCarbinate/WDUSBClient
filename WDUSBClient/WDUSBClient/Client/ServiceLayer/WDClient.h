@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "FBHTTPOverUSBClient.h"
 #import "WDElement.h"
-#import "WDHttpResponse.h"
-#import "NSArray+AddClient.h"
 #import "WDElement+Queries.h"
 #import "WDClassType.h"
 extern NSString * const WDOrientationPORTRAIT;
@@ -29,6 +27,9 @@ extern NSString * const WDSendHttpMsgWithPOST;
 extern NSString * const WDSendHttpMsgWithGET;
 
 @interface WDClient : FBHTTPOverUSBClient
+
+
+- (instancetype)initWithDeviceUDID:(NSString *)deviceUDID;
 
 @property (nonatomic, copy) NSString *sessionID;
 
