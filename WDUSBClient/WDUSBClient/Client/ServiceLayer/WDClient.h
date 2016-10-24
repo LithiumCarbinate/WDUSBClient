@@ -69,6 +69,12 @@ extern NSString * const WDSendHttpMsgWithGET;
 // 返回可见的cells
 - (NSMutableArray *)getVisibleCells;
 
+// 查找包含partialLinkText文字的控件, 并返回第一个匹配的控件
+- (WDElement *)findElementByParticalLinkText:(NSString *)partialLinkText
+                               withClassType:(NSString *)classType;
+
+- (BOOL)dissmissAlert;
+
 /*
  时时设置App旋转方向
  提供以下方向设置
@@ -81,6 +87,8 @@ extern NSString * const WDSendHttpMsgWithGET;
 
 // 获取正颗的树结构
 - (NSDictionary *)getSourceTree;
+
+
 
 
 @end

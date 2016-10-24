@@ -27,6 +27,9 @@ NSString * const WDUUIDKey = @"uuid";
 NSString * const WDSendHttpMsgWithPOST = @"POST";
 NSString * const WDSendHttpMsgWithGET = @"GET";
 
+NSString * const WDQueryElementWithClassName = @"class name";
+NSString * const WDQuertElementWithPartialLinkText = @"partial link text";
+
 @interface WDClient()
 
 
@@ -271,6 +274,59 @@ NSString * const WDSendHttpMsgWithGET = @"GET";
     }];
     dispatch_semaphore_wait(signal, DISPATCH_TIME_FOREVER);
     return tree;
+}
+
+- (NSMutableArray *)_findElementsByParticalLinkText:(NSString *)partialLinkText
+                                    aboutClassType:(NSString *)classType {
+   
+   BOOL isFind = false;
+   NSArray * elements = [self _findElementsByText:partialLinkText usingMethod: WDQuertElementWithPartialLinkText];
+   NSMutableArray *array = [NSMutableArray array];
+   for (WDElement *element in elements) {
+        if ([element.type isEqualToString:classType]) {
+            [array addObject:element];
+            isFind = true;
+            break;
+        }
+   }
+   
+  if (isFind) return array;
+    
+   elements = [self findElementsByClassName: classType];
+   for (WDElement *element in elements) {
+       if ([element.label containsString:partialLinkText]
+           || [element.text containsString: partialLinkText]) {
+
+           [array addObject:element];
+           isFind = true;
+           break;
+       }else {
+           
+           NSArray *childrenElements = element.childrens;
+           for (WDElement *childElement in childrenElements) {
+               
+               if ([childElement.label containsString:partialLinkText]
+                   || [childElement.text containsString: partialLinkText]) {
+                   
+                   [array addObject: element];
+                   isFind = true;
+                   break;
+               }
+           }
+           
+           if (isFind) break;
+       
+       }
+   }
+   
+   return array;
+}
+
+- (WDElement *)findElementByParticalLinkText:(NSString *)partialLinkText
+                                    withClassType:(NSString *)classType {
+    
+  NSArray *elements = [self _findElementsByParticalLinkText:partialLinkText aboutClassType:classType];
+  return elements.firstObject;
 }
 
 

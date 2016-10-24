@@ -33,13 +33,90 @@
     
     FBHTTPOverUSBClient *client = [[WDClient alloc] initWithDeviceUDID:@"a49bcbd6a9d3b24b8f70b8adde348925a5bfac6e"];
     [self.clients addObject:client];
-    // 测试本地App
-    [self testAppForIOS];
+    // Demo 1 测试本地App
+    //[self testAppForIOS];
     
-    // 测试微信自动发消息, 需要按照需要执行更改
+    // Demo 2 测试微信自动发消息, 需要按照需要执行更改
     //[self testWeChatForIOS];
     
+    // Demo 3 UIKitcatalog
+    [self testCatalog];
+}
+
+//
+- (void)testCatalog {
     
+    for (int i = 0; i < 1; i++) {
+        // com.tencent.xin
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            WDClient *client = (WDClient *)self.clients[i];
+            [client setBundleID: @"com.example.apple-samplecode.UIKitCatalog"];
+            // 启动App
+            [client startApp];
+            
+            [self testActivityIndicatorsWithClient: client];
+            [self testAlertController: client];
+            [self testDatePicker: client];
+            [self testSlider: client];
+        });
+  }
+}
+
+- (void)testSlider:(WDClient *)client {
+    
+    WDElement *element = [client findElementsByParticalLinkText:@"Sliders"].firstObject;
+    [element click];
+    
+    WDElement *slider = [client findElementsByClassName: kUISlider][1];
+    [slider dragFrom:CGPointMake(slider.location.x + slider.size.width / 2.0, slider.location.y + slider.size.height / 2.0) to:CGPointMake(slider.location.x + slider.size.width - 10, slider.location.y + slider.size.height / 2.0) forDuration:0.2];
+    
+    element = [client findElementByParticalLinkText:@"UIKitCatalog" withClassType:kUIButton];
+    [element click];
+}
+
+- (void)testActivityIndicatorsWithClient:(WDClient *)client {
+    // 获取UIKitCatalog这个label所在的button
+    WDElement *element = [client findElementByParticalLinkText:@"UIKitCatalog" withClassType:kUIButton];
+    [element click];
+    
+    // 获取包含Activity文字的第一个cell
+    WDElement *avtivityCell = [client findElementByParticalLinkText:@"Activity" withClassType:kUITableViewCell];
+    [avtivityCell click];
+    
+    element = [client findElementByParticalLinkText:@"UIKitCatalog" withClassType:kUIButton];
+    [element click];
+}
+
+- (void)testAlertController:(WDClient *)client {
+    
+    // 获取包含Alert文字的第一个cell
+    WDElement *alertCell = [client findElementsByParticalLinkText:@"Alert"].firstObject;
+    [alertCell click];
+    
+    // 获取包含Simple的Cell
+    WDElement *simpleCell = [[client findElementsByParticalLinkText:@"Simple"] firstObject];
+    [simpleCell click];
+    
+    // 接受弹窗
+    [[[client findElementsByParticalLinkText:@"OK"] firstObject] click];
+    
+    // 退出
+    WDElement *element = [client findElementByParticalLinkText:@"UIKitCatalog" withClassType:kUIButton];
+    [element click];
+}
+
+- (void)testDatePicker:(WDClient *)client {
+    
+    WDElement *element =[client findElementsByParticalLinkText:@"Date Picker"].firstObject;
+    [element click];
+    
+    WDElement *datePicker = [[client findElementsByClassName: kUIDatePicker] firstObject];
+    [datePicker scrollToDirection: @"up"];
+    
+    // 退出
+    element = [client findElementByParticalLinkText:@"UIKitCatalog" withClassType:kUIButton];
+    [element click];
     
 }
 
