@@ -47,7 +47,7 @@
 - (void)testCatalog {
     
     for (int i = 0; i < 1; i++) {
-        // com.tencent.xin
+        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
             WDClient *client = (WDClient *)self.clients[i];
