@@ -30,6 +30,11 @@
 		94F29DDB1DB8BD9800EA6076 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F29DDA1DB8BD9800EA6076 /* GuideVC.m */; };
 		94F29DE11DB8C68D00EA6076 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F29DDF1DB8C68D00EA6076 /* LaunchScreen.storyboard */; };
 		94F29DE41DB8DED900EA6076 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F29DE31DB8DED900EA6076 /* LoginVC.m */; };
+		FD31ED2E1DBE89C500A503B0 /* Peertalk.h in Headers */ = {isa = PBXBuildFile; fileRef = FD31ED291DBE89C500A503B0 /* Peertalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD31ED2F1DBE89C500A503B0 /* PTChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = FD31ED2A1DBE89C500A503B0 /* PTChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD31ED301DBE89C500A503B0 /* PTPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = FD31ED2B1DBE89C500A503B0 /* PTPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD31ED311DBE89C500A503B0 /* PTProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = FD31ED2C1DBE89C500A503B0 /* PTProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD31ED321DBE89C500A503B0 /* PTUSBHub.h in Headers */ = {isa = PBXBuildFile; fileRef = FD31ED2D1DBE89C500A503B0 /* PTUSBHub.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD4076C21DBDFEC100170FD3 /* WDElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A59591DBA2EF40020025C /* WDElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD4076C31DBDFEC100170FD3 /* WDElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A595A1DBA2EF40020025C /* WDElement.m */; };
 		FD4076C41DBDFEC100170FD3 /* WDHttpResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A595B1DBA2EF40020025C /* WDHttpResponse.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -56,7 +61,6 @@
 		FD8C15FE1DBB0E1600798AF2 /* WDClassType.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */; };
 		FD8C16011DBBBA0100798AF2 /* NSArray+AddClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C16001DBBBA0100798AF2 /* NSArray+AddClient.m */; };
 		FDADA29D1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDADA29C1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a */; };
-		FDADA29E1DBE7C1100D78242 /* libpeertalk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDADA28D1DBE7AE100D78242 /* libpeertalk.a */; };
 		FDADA2A11DBE7F0400D78242 /* libWebDriverAgentUSBClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDADA29C1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a */; };
 		FDADA2C21DBE809300D78242 /* FBHTTPOverUSBClient.h in Headers */ = {isa = PBXBuildFile; fileRef = FDADA26D1DBE6FEF00D78242 /* FBHTTPOverUSBClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FDADA2C91DBE840000D78242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9429595A1DB71F4C000A26DB /* Assets.xcassets */; };
@@ -144,6 +148,11 @@
 		94F29DE01DB8C68D00EA6076 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94F29DE21DB8DED900EA6076 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		94F29DE31DB8DED900EA6076 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		FD31ED291DBE89C500A503B0 /* Peertalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Peertalk.h; sourceTree = "<group>"; };
+		FD31ED2A1DBE89C500A503B0 /* PTChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTChannel.h; sourceTree = "<group>"; };
+		FD31ED2B1DBE89C500A503B0 /* PTPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPrivate.h; sourceTree = "<group>"; };
+		FD31ED2C1DBE89C500A503B0 /* PTProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTProtocol.h; sourceTree = "<group>"; };
+		FD31ED2D1DBE89C500A503B0 /* PTUSBHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTUSBHub.h; sourceTree = "<group>"; };
 		FD4076B21DBDFEA300170FD3 /* WDUSBClientLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WDUSBClientLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD4076B51DBDFEA300170FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD8C15FC1DBB0E1600798AF2 /* WDClassType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDClassType.h; sourceTree = "<group>"; };
@@ -151,7 +160,6 @@
 		FD8C15FF1DBBBA0100798AF2 /* NSArray+AddClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AddClient.h"; sourceTree = "<group>"; };
 		FD8C16001DBBBA0100798AF2 /* NSArray+AddClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AddClient.m"; sourceTree = "<group>"; };
 		FDADA26D1DBE6FEF00D78242 /* FBHTTPOverUSBClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBHTTPOverUSBClient.h; sourceTree = "<group>"; };
-		FDADA28D1DBE7AE100D78242 /* libpeertalk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpeertalk.a; sourceTree = "<group>"; };
 		FDADA29C1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWebDriverAgentUSBClient.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,7 +171,6 @@
 				9429598A1DB73FAA000A26DB /* QuartzCore.framework in Frameworks */,
 				942959861DB73F88000A26DB /* Cocoa.framework in Frameworks */,
 				FDADA29D1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a in Frameworks */,
-				FDADA29E1DBE7C1100D78242 /* libpeertalk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +342,11 @@
 		942A59551DBA2EF40020025C /* Peertalk */ = {
 			isa = PBXGroup;
 			children = (
-				FDADA28D1DBE7AE100D78242 /* libpeertalk.a */,
+				FD31ED291DBE89C500A503B0 /* Peertalk.h */,
+				FD31ED2A1DBE89C500A503B0 /* PTChannel.h */,
+				FD31ED2B1DBE89C500A503B0 /* PTPrivate.h */,
+				FD31ED2C1DBE89C500A503B0 /* PTProtocol.h */,
+				FD31ED2D1DBE89C500A503B0 /* PTUSBHub.h */,
 			);
 			path = Peertalk;
 			sourceTree = "<group>";
@@ -418,6 +429,11 @@
 				FDADA2C21DBE809300D78242 /* FBHTTPOverUSBClient.h in Headers */,
 				FD4076CC1DBDFEC100170FD3 /* WDClient.h in Headers */,
 				FD4076C21DBDFEC100170FD3 /* WDElement.h in Headers */,
+				FD31ED301DBE89C500A503B0 /* PTPrivate.h in Headers */,
+				FD31ED321DBE89C500A503B0 /* PTUSBHub.h in Headers */,
+				FD31ED2E1DBE89C500A503B0 /* Peertalk.h in Headers */,
+				FD31ED311DBE89C500A503B0 /* PTProtocol.h in Headers */,
+				FD31ED2F1DBE89C500A503B0 /* PTChannel.h in Headers */,
 				FD4076CE1DBDFEC100170FD3 /* WDElement+Queries.h in Headers */,
 				FD4076CA1DBDFEC100170FD3 /* WDClassType.h in Headers */,
 				FD4076C41DBDFEC100170FD3 /* WDHttpResponse.h in Headers */,
