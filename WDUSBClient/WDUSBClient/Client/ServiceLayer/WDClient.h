@@ -42,6 +42,9 @@ extern NSString * const WDSendHttpMsgWithGET;
 // 开启Monkey测试, 默认5分钟
 - (void)startMonkey;
 
+// 开启monkey测试, 测试分钟数为minute
+- (void)startMonkeyWithMinute:(NSInteger)minute;
+
 // 截图, 还不知道怎么获取图片
 - (void)screenshot;
 

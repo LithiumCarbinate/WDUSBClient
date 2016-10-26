@@ -106,7 +106,7 @@ NSString * const WDWindowWidthKey = @"WDWindowWidth";
 NSString * const WDWindowHeightKey = @"WDWindowHeight";
 NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 - (void)startMonkey {
-    [self startMonkeyWithMinute: 1];
+    [self startMonkeyWithMinute: 5];
 }
 
 - (void)startMonkeyWithMinute:(NSInteger)minute {
