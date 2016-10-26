@@ -31,6 +31,7 @@
 #import "XCUIElement.h"
 #import "XCUIElementQuery.h"
 
+
 @interface FBElementCommands ()
 @end
 
@@ -75,6 +76,7 @@
 
 
 #pragma mark - Commands
+
 
 + (id<FBResponsePayload>)handleSwipeLeft:(FBRouteRequest *)request
 {

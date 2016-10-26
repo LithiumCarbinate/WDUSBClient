@@ -63,7 +63,7 @@ static id<FBResponsePayload> FBNoSuchElementErrorResponseForRequest(FBRouteReque
 + (id<FBResponsePayload>)handleFindElements:(FBRouteRequest *)request
 {
   FBSession *session = request.session;
-  NSArray *elements = [self.class elementsUsing:request.arguments[@"using"] withValue:request.arguments[@"value"] under:session.application];
+    NSArray *elements = [self.class elementsUsing:request.arguments[@"using"] withValue:request.arguments[@"value"] under:session.application];
   return FBResponseWithCachedElements(elements, request.session.elementCache, NO);
 }
 

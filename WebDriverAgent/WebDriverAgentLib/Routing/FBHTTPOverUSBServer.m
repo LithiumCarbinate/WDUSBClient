@@ -92,7 +92,7 @@ static const uint32_t FBUSBFrameType = 100;
     }
   }
   [request setBody:body];
-
+  // 构建route
   RouteResponse *response = [self.routingServer routeMethod:method withPath:path parameters:(parameters ? : @{}) request:request connection:nil];
 
   NSData *JSONResponseData = [response.response readDataOfLength:(NSUInteger)response.response.contentLength];

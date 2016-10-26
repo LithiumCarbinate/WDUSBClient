@@ -12,6 +12,7 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 - 非侵入式框架, 无需在项目中嵌入.
 
 ##Update
+- 添加了一个简易版本Monkey, 后续会进行优化.-2016-10-25
 - 添加了WDUSBClientLib可直接将该库导入自己的程序中使用-2016-10-25
 - 修复了一个链接问题, 可能导致在低于OSX10.12的版本上不稳定-2016-10-25
 - 添加了`findElementByParticalLinkText:(NSString *)partialLinkText withClassType:(NSString *)classType`接口, 用于模糊匹配指定类型控件所包含的文字.-2016-10-24

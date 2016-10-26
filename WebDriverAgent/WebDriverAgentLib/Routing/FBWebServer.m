@@ -82,7 +82,7 @@ static NSString *const FBServerURLEndMarker = @"<-ServerURLHere";
   [self.server setRouteQueue:dispatch_get_main_queue()];
   [self.server setDefaultHeader:@"Server" value:@"WebDriverAgent/1.0"];
   [self.server setConnectionClass:[FBHTTPConnection self]];
-
+//runtime apply, 使用runtime获取所有的类, 只要是遵守CommandHandlerClasses协议的就注册路由
   [self registerRouteHandlers:[self.class collectCommandHandlerClasses]];
   [self registerServerKeyRouteHandlers];
 

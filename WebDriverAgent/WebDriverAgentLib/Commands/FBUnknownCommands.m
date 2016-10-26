@@ -10,7 +10,7 @@
 #import "FBUnknownCommands.h"
 
 #import "FBRouteRequest.h"
-
+#import "FBLogger.h"
 @implementation FBUnknownCommands
 
 #pragma mark - <FBCommandHandler>
@@ -33,6 +33,7 @@
 
 + (id<FBResponsePayload>)unhandledHandler:(FBRouteRequest *)request
 {
+    //[FBLogger logFmt:@"arg = %@, request.p = %@",request.arguments, request.parameters];
   return
   FBResponseWithStatus(
     FBCommandStatusUnsupported,
