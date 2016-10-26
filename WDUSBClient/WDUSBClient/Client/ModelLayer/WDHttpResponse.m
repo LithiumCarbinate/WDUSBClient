@@ -26,7 +26,8 @@
              @"accessible" : @"value",
              @"enabled" : @"value",
              @"name" : @"value",
-             @"size" : @"value"};
+             @"size" : @"value",
+             @"base64Image" : @"value"};
 }
 
 

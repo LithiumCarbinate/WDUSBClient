@@ -19,6 +19,8 @@
 @property (nonatomic, copy) NSString *status;
 
 // for easy access element
+@property (nonatomic, copy) NSString *base64Image;
+
 @property (nonatomic, strong) WDRect *rect;
 
 @property (nonatomic, copy) NSString *text;

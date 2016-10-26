@@ -33,6 +33,7 @@
     
     FBHTTPOverUSBClient *client = [[WDClient alloc] initWithDeviceUDID:@"a49bcbd6a9d3b24b8f70b8adde348925a5bfac6e"];
     [self.clients addObject:client];
+    
     // Demo 1 测试本地App
     [self testAppForIOS];
     
@@ -43,7 +44,7 @@
     //[self testCatalog];
     
     // Demo 5 微信 monkey测试
-    [self testMonkeyInWX];
+    // [self testMonkeyInWX];
 }
 
 - (void)testMonkeyInWX {
@@ -199,12 +200,18 @@
             // 启动App
             [(WDClient *)self.clients[i] startApp];
             
+
             // 获取屏幕大小
             CGSize size = [(WDClient *)self.clients[i] windowSize];
             
-            
             // 获取scrollView
             WDElement *scrollView = [[(WDClient *)self.clients[i] findElementsByClassName:kUIScrollView] firstObject];
+            
+            // 设置截图存储的地方, 不设置的话默认存储在桌面
+//            [(WDClient *)self.clients[i] setPathForStoreImages:@"/Users/sixleaves"];
+            
+            // 截图
+            [(WDClient *)self.clients[i] screenshot];
             
             NSArray *childs = scrollView.childrens;
             

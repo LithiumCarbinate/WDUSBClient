@@ -13,6 +13,7 @@
 #import "WDUtils.h"
 #import "WDSize.h"
 #import "NSArray+AddClient.h"
+#import <AppKit/AppKit.h>
 NSString * const WDOrientationPORTRAIT = @"PORTRAIT";
 NSString * const WDOrientationLANDSCAPE = @"LANDSCAPE";
 NSString * const WDOrientationUIA_DEVICE_ORIENTATION_LANDSCAPERIGHT = @"UIA_DEVICE_ORIENTATION_LANDSCAPERIGHT";
@@ -123,10 +124,39 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 }
 
 - (void)screenshot {
-    [self dispatchMethod:@"POST" endpoint:@"/screenshot" parameters:@{}  completion:^(NSDictionary *response, NSError *requestError) {
+    
+    __block NSImage *image = nil;
+    dispatch_semaphore_t signal = dispatch_semaphore_create(0);
+    [self dispatchMethod:@"GET" endpoint:@"/screenshot" parameters:@{}  completion:^(NSDictionary *response, NSError *requestError) {
         
-        //NSLog(@"picture = %@", response);
-                                                                           }];
+        NSDictionary *httpResJson  = @{};
+        if (![WDUtils isResponseSuccess:response]) {
+            NSLog(@"获取节点文本失败");
+        }
+        httpResJson = [response objectForKey:WDHttpResponseKey];
+        WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
+        NSString *base64Image = httpResponse.base64Image;
+        NSData *imageData = [[NSData alloc] initWithBase64EncodedString:base64Image options:1];
+        image = [[NSImage alloc] initWithData: imageData];
+        
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSString *desktopDir = [NSString stringWithFormat:@"%@/Desktop", NSHomeDirectory()];
+        NSString *fileName = [NSString stringWithFormat:@"WD%u.png",arc4random_uniform(-1)];
+        NSString *fullPath = [[desktopDir stringByAppendingString:@"/"] stringByAppendingString:fileName];
+        if (_pathForStoreImages) {
+            fullPath = [[_pathForStoreImages stringByAppendingString:@"/"]
+                        stringByAppendingString: fileName];
+        }
+        BOOL createSuccess = [fileManager createFileAtPath:fullPath contents:nil attributes:nil];
+        BOOL writeSuccess = [imageData writeToFile:fullPath atomically:YES];
+        
+        if (writeSuccess && createSuccess) {
+            NSLog(@"%@", [@"截图成功, 位于" stringByAppendingString:fullPath] );
+        }
+        
+        dispatch_semaphore_signal(signal);
+    }];
+    dispatch_semaphore_wait(signal, DISPATCH_TIME_FOREVER);
 }
 
 - (void)pressHome {

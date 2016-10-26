@@ -31,6 +31,8 @@ extern NSString * const WDSendHttpMsgWithGET;
 
 - (instancetype)initWithDeviceUDID:(NSString *)deviceUDID;
 
+@property (nonatomic, copy) NSString *pathForStoreImages;
+
 @property (nonatomic, copy) NSString *sessionID;
 
 // 设置要启动的包名
@@ -45,7 +47,7 @@ extern NSString * const WDSendHttpMsgWithGET;
 // 开启monkey测试, 测试分钟数为minute
 - (void)startMonkeyWithMinute:(NSInteger)minute;
 
-// 截图, 还不知道怎么获取图片
+// 截图
 - (void)screenshot;
 
 // 按home键
