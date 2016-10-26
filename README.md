@@ -12,6 +12,7 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 - 非侵入式框架, 无需在项目中嵌入.
 
 ##Update
+- 添加了截图功能.-2016-10-26
 - 添加了一个简易版本Monkey, 后续会进行优化.-2016-10-26
 - 添加了WDUSBClientLib可直接将该库导入自己的程序中使用-2016-10-25
 - 修复了一个链接问题, 可能导致在低于OSX10.12的版本上不稳定-2016-10-25
@@ -22,6 +23,11 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 - 控件类型都以kUI开头, 如获取UITableView, 则使用kUITableView.-2016-10-22
 - 新添加微信自动发消息范例-2016-10-21
 - 直接将WDA驱动集成进来, 无需另外下载(WDA的编译请看下面介绍)-2016-10-21
+
+##Next Step(下一步会做的)
+- 添加命令行功能.
+- 添加自动登入功能.
+- 添加自动编译脚本.
 
 
 ## 交流QQ群
