@@ -47,6 +47,12 @@
 // 右滑
 - (BOOL)swipeRight;
 
+// 上滑
+- (BOOL)swipeUp;
+
+// 下滑
+- (BOOL)swipeDown;
+
 // 获取所在节点下面的所有子控件
 - (NSArray *)childrens;
 

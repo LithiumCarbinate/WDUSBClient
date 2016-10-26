@@ -212,28 +212,40 @@
     return isDrag;
 }
 
-- (BOOL)swipeLeft {
+NSString * const WDSwipeDirectionKey = @"direction";
+NSString * const WDSwipeDirectionLeft = @"left";
+NSString * const WDSwipeDirectionRight = @"right";
+NSString * const WDSwipeDirectionUp = @"up";
+NSString * const WDSwipeDirectionDown=@"down";
+
+- (BOOL)_swipeWithDirection:(NSString *)direction {
+
     __block BOOL isSendMessageSuccess = false;
-    NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/swipeLeft", self.client.sessionID, self.elementID];
+    NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/swipe", self.client.sessionID, self.elementID];
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
-    [self.client dispatchMethod:@"GET" endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
+    [self.client dispatchMethod:@"GET" endpoint:endPoint parameters:@{WDSwipeDirectionKey : direction} completion:^(NSDictionary *response, NSError *requestError) {
         if ([WDUtils isResponseSuccess: response]) isSendMessageSuccess = true;
         dispatch_semaphore_signal(signal);
     }];
     dispatch_semaphore_wait(signal, DISPATCH_TIME_FOREVER);
     return isSendMessageSuccess;
+
+}
+
+- (BOOL)swipeUp {
+   return [self _swipeWithDirection: WDSwipeDirectionUp];
+}
+
+- (BOOL)swipeDown {
+   return [self _swipeWithDirection: WDSwipeDirectionDown];
+}
+
+- (BOOL)swipeLeft {
+    return [self _swipeWithDirection: WDSwipeDirectionLeft];
 }
 
 - (BOOL)swipeRight {
-    __block BOOL isSendMessageSuccess = false;
-    NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/swipeRight", self.client.sessionID, self.elementID];
-    dispatch_semaphore_t signal = dispatch_semaphore_create(0);
-    [self.client dispatchMethod:@"GET" endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
-        if ([WDUtils isResponseSuccess: response]) isSendMessageSuccess = true;
-        dispatch_semaphore_signal(signal);
-    }];
-    dispatch_semaphore_wait(signal, DISPATCH_TIME_FOREVER);
-    return isSendMessageSuccess;
+    return [self _swipeWithDirection: WDSwipeDirectionRight];
 }
 
 static NSString * const kWDUsing=@"using";

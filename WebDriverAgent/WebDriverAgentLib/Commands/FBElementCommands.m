@@ -30,8 +30,8 @@
 #import "FBElementTypeTransformer.h"
 #import "XCUIElement.h"
 #import "XCUIElementQuery.h"
-
-
+#import "FBLogger.h"
+NSString * const WDSwipeDirectionKey = @"direction";
 @interface FBElementCommands ()
 @end
 
@@ -56,8 +56,7 @@
     [[FBRoute POST:@"/element/:uuid/clear"] respondWithTarget:self action:@selector(handleClear:)],
     
     // For Support Swipe
-    [[FBRoute GET:@"/element/:uuid/swipeLeft"] respondWithTarget:self action:@selector(handleSwipeLeft:)],
-    [[FBRoute GET:@"/element/:uuid/swipeRight"] respondWithTarget:self action:@selector(handleSwipeRight:)],
+    [[FBRoute GET:@"/element/:uuid/swipe"] respondWithTarget:self action:@selector(handleSwipe:)],
 //    [[FBRoute GET:@"/element/:uuid/children"] respondWithTarget:self action:@selector(handleGetChildren:)],
     
     [[FBRoute POST:@"/uiaElement/:uuid/doubleTap"] respondWithTarget:self action:@selector(handleDoubleTap:)],
@@ -78,19 +77,19 @@
 #pragma mark - Commands
 
 
-+ (id<FBResponsePayload>)handleSwipeLeft:(FBRouteRequest *)request
++ (id<FBResponsePayload>)handleSwipe:(FBRouteRequest *)request
 {
     FBElementCache *elementCache = request.session.elementCache;
     XCUIElement *element = [elementCache elementForUUID:request.parameters[@"uuid"]];
-    [element swipeLeft];
-    return FBResponseWithOK();
-}
-
-+ (id<FBResponsePayload>)handleSwipeRight:(FBRouteRequest *)request
-{
-    FBElementCache *elementCache = request.session.elementCache;
-    XCUIElement *element = [elementCache elementForUUID:request.parameters[@"uuid"]];
-    [element swipeRight];
+    NSString *direction = [[request.parameters objectForKey: WDSwipeDirectionKey] lowercaseString];
+    
+    if (direction == nil) [element swipeRight];
+    if ([direction isEqualToString:@"left"]) [element swipeLeft];
+    if ([direction isEqualToString:@"right"]) [element swipeRight];
+    if ([direction isEqualToString:@"up"]) [element swipeUp];
+    if ([direction isEqualToString:@"down"]) [element swipeDown];
+    
+    
     return FBResponseWithOK();
 }
 
