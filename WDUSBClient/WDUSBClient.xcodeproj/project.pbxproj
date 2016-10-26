@@ -30,8 +30,6 @@
 		94F29DDB1DB8BD9800EA6076 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F29DDA1DB8BD9800EA6076 /* GuideVC.m */; };
 		94F29DE11DB8C68D00EA6076 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F29DDF1DB8C68D00EA6076 /* LaunchScreen.storyboard */; };
 		94F29DE41DB8DED900EA6076 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F29DE31DB8DED900EA6076 /* LoginVC.m */; };
-		FD31ED941DBE908500A503B0 /* WDUSBClientLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD31ED8D1DBE908500A503B0 /* WDUSBClientLib.framework */; };
-		FD31ED951DBE908500A503B0 /* WDUSBClientLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD31ED8D1DBE908500A503B0 /* WDUSBClientLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FD31ED991DBE90A000A503B0 /* WDElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A595A1DBA2EF40020025C /* WDElement.m */; };
 		FD31ED9A1DBE90A000A503B0 /* WDHttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A595C1DBA2EF40020025C /* WDHttpResponse.m */; };
 		FD31ED9B1DBE90A000A503B0 /* WDRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A595E1DBA2EF40020025C /* WDRect.m */; };
@@ -101,7 +99,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FD31ED951DBE908500A503B0 /* WDUSBClientLib.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,7 +179,6 @@
 				9429598A1DB73FAA000A26DB /* QuartzCore.framework in Frameworks */,
 				942959861DB73F88000A26DB /* Cocoa.framework in Frameworks */,
 				FDADA29D1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a in Frameworks */,
-				FD31ED941DBE908500A503B0 /* WDUSBClientLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1103,6 +1099,7 @@
 				FD31ED981DBE908500A503B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

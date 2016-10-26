@@ -41,6 +41,9 @@ NSString * const WDQuertElementWithPartialLinkText = @"partial link text";
 
 @property (nonatomic, strong) dispatch_semaphore_t sema;
 
+
+@property (nonatomic, strong) NSArray *methods;
+
 @end
 
 @implementation WDClient
@@ -96,13 +99,28 @@ NSString * const WDQuertElementWithPartialLinkText = @"partial link text";
                                                                                       }];
     
    dispatch_semaphore_wait(_sema, DISPATCH_TIME_FOREVER);
-
 }
 
+
+NSString * const WDWindowWidthKey = @"WDWindowWidth";
+NSString * const WDWindowHeightKey = @"WDWindowHeight";
+NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 - (void)startMonkey {
-    
+    [self startMonkeyWithMinute: 1];
 }
 
+- (void)startMonkeyWithMinute:(NSInteger)minute {
+    
+    CGSize size = self.windowSize;
+    [self dispatchMethod:@"POST" endpoint:[NSString stringWithFormat:@"/session/%@/monkey", _sessionID] parameters:@{ WDWindowWidthKey : @(size.width),
+        WDWindowHeightKey : @(size.height),
+        WDMonkeyRunningTimeKey: @(minute)
+        } completion:^(NSDictionary *response, NSError *requestError) {
+                               
+                                                }];
+    
+
+}
 
 - (void)screenshot {
     [self dispatchMethod:@"POST" endpoint:@"/screenshot" parameters:@{}  completion:^(NSDictionary *response, NSError *requestError) {
@@ -113,7 +131,7 @@ NSString * const WDQuertElementWithPartialLinkText = @"partial link text";
 
 - (void)pressHome {
     [self dispatchMethod:@"POST" endpoint:@"/homescreen" parameters:@{}  completion:^(NSDictionary *response, NSError *requestError) {
-                                                                                  
+                           NSLog(@"%@", response);                                                               
         
                                                                               }];
 }

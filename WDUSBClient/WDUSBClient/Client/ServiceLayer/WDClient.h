@@ -39,8 +39,7 @@ extern NSString * const WDSendHttpMsgWithGET;
 // 启动App
 - (void)startApp;
 
-#warning monkey测试。还未实现，可借助提供的API自行实现。或者等新版本更新会有提供
-// 开启Monkey测试。待完成
+// 开启Monkey测试, 默认5分钟
 - (void)startMonkey;
 
 // 截图, 还不知道怎么获取图片

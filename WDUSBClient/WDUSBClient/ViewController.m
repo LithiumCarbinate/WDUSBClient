@@ -41,9 +41,35 @@
     
     // Demo 3 UIKitcatalog
     //[self testCatalog];
+    
+    // Demo 5 微信 monkey测试
+    [self testMonkeyInWX];
 }
 
-//
+- (void)testMonkeyInWX {
+    
+    // 测试环境:
+    // 输入法： 百度输入法
+    //
+    
+    for (int i = 0; i < 1; i++) {
+        // com.tencent.xin
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            WDClient *client = (WDClient *)self.clients[i];
+            [client setBundleID: @"com.tencent.xin"];
+            // 启动微信 App
+            [client startApp];
+            
+            // 开启monkey 测试
+            [client startMonkey];
+                   });
+    }
+
+    
+}
+
+
 - (void)testCatalog {
     
     for (int i = 0; i < 1; i++) {
@@ -175,6 +201,7 @@
             
             // 获取屏幕大小
             CGSize size = [(WDClient *)self.clients[i] windowSize];
+            
             
             // 获取scrollView
             WDElement *scrollView = [[(WDClient *)self.clients[i] findElementsByClassName:kUIScrollView] firstObject];
