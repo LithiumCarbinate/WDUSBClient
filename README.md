@@ -12,6 +12,9 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 - 非侵入式框架, 无需在项目中嵌入.
 
 ##Update
+- 修复了getVisiableCell接口错误-2016-10-28
+- 重构了部分方法-2016-10-28
+- 添加了用于和其他测试框架进行通信的WDTaskReciver类-2016-10-28
 - 添加了上下滑动功能.-2016-10-26
 - 添加了截图功能.-2016-10-26
 - 添加了一个简易版本Monkey, 后续会进行优化.-2016-10-26

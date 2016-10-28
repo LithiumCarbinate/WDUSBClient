@@ -36,6 +36,7 @@ id<FBResponsePayload> FBResponseWithCachedElement(XCUIElement *element, FBElemen
 
 id<FBResponsePayload> FBResponseWithCachedElements(NSArray<XCUIElement *> *elements, FBElementCache *elementCache, BOOL compact)
 {
+    
   NSMutableArray *elementsResponse = [NSMutableArray array];
   for (XCUIElement *element in elements) {
     NSString *elementUUID = [elementCache storeElement:element];

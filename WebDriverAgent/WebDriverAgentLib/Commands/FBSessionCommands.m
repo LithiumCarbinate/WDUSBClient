@@ -15,6 +15,7 @@
 #import "FBApplication.h"
 #import "XCUIDevice.h"
 #import "XCUIDevice+FBHealthCheck.h"
+#import "FBLogger.h"
 
 @implementation FBSessionCommands
 
@@ -51,6 +52,8 @@
   app.launchEnvironment = (NSDictionary <NSString *, NSString *> *)requirements[@"environment"] ?: @{};
   [app launch];
   [FBSession sessionWithApplication:app];
+  [FBLogger log:@"已启动App"];
+  [FBLogger log:@"正在返回response"];
   return FBResponseWithObject(FBSessionCommands.sessionInformation);
 }
 

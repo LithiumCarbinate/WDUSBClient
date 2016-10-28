@@ -7,7 +7,26 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "NSMutableArray+Operation.h"
+
+
+NSMutableArray * _cStrsToNSStrings(int argc, const char * argv[]);
 
 int main(int argc, const char * argv[]) {
+    
     return NSApplicationMain(argc, argv);
 }
+
+
+NSMutableArray * _cStrsToNSStrings(int argc, const char * argv[]) {
+    
+    NSMutableArray *array = [NSMutableArray array];
+    for (int i = 0; i < argc; i++) {
+        
+        const char *cStr = argv[i];
+        NSString *nsStr = [NSString stringWithUTF8String: cStr];
+        [array addObject: nsStr];
+    }
+    return array;
+}
+

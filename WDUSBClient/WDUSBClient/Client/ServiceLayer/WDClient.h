@@ -23,9 +23,6 @@ extern NSString * const WDStatusKey;
 extern NSString * const WDStatusCodeKey;
 extern NSString * const WDUUIDKey;
 
-extern NSString * const WDSendHttpMsgWithPOST;
-extern NSString * const WDSendHttpMsgWithGET;
-
 @interface WDClient : FBHTTPOverUSBClient
 
 
@@ -92,8 +89,6 @@ extern NSString * const WDSendHttpMsgWithGET;
 
 // 获取正颗的树结构
 - (NSDictionary *)getSourceTree;
-
-
 
 
 @end

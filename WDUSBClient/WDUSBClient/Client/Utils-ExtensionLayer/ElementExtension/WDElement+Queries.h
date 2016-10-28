@@ -8,6 +8,19 @@
 
 #import "WDElement.h"
 
+extern NSString * const kWDUsing;
+extern NSString * const kWDValue;
+extern NSString * const kWDPOST;
+extern NSString * const kWDGET;
+
+extern NSString * const WDSwipeDirectionKey;
+extern NSString * const WDSwipeDirectionLeft;
+extern NSString * const WDSwipeDirectionRight;
+extern NSString * const WDSwipeDirectionUp;
+extern NSString * const WDSwipeDirectionDown;
+
+extern NSString * const WDErrorMessageWDANotStart;
+
 @interface WDElement (Queries)
 
 @property (nonatomic, assign) CGRect rect;
@@ -58,5 +71,8 @@
 
 // 获取所在节点下所有是classType类型的子控件
 - (NSArray *)childrensWithClassType:(NSString *)classType;
+
+// 获取TableView下的所有Cell
+- (NSMutableArray *)getVisibleCells;
 
 @end

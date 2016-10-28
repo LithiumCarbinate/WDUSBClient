@@ -13,12 +13,27 @@
 #import "WDRect.h"
 #import "WDHttpResponse.h"
 #import "NSArray+AddClient.h"
+
+NSString * const kWDUsing=@"using";
+NSString * const kWDValue=@"value";
+NSString * const kWDPOST=@"POST";
+NSString * const kWDGET=@"GET";
+
+
+NSString * const WDSwipeDirectionKey = @"direction";
+NSString * const WDSwipeDirectionLeft = @"left";
+NSString * const WDSwipeDirectionRight = @"right";
+NSString * const WDSwipeDirectionUp = @"up";
+NSString * const WDSwipeDirectionDown=@"down";
+
+NSString * const WDErrorMessageWDANotStart = @"WDA Not Start!!!";
+
 @implementation WDElement (Queries)
 - (CGRect)rect {
     __block CGRect rect = (CGRect){0, 0, 0, 0};
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/rect", self.client.sessionID, self.elementID];
-    [self.client dispatchMethod:@"GET" endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
+    [self.client dispatchMethod:kWDGET endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
         //NSLog(@"Rect = %@", response);
         NSDictionary *httpResJson  = @{};
         if ([WDUtils isResponseSuccess:response]) {
@@ -51,10 +66,10 @@
     __block NSString *text =@"";
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/text", self.client.sessionID, self.elementID];
-    [self.client dispatchMethod:@"GET" endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
+    [self.client dispatchMethod:kWDGET endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
         NSDictionary *httpResJson  = @{};
         if (![WDUtils isResponseSuccess:response]) {
-            NSLog(@"获取节点文本失败");
+            NSLog(WDErrorMessageWDANotStart);
         }
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
@@ -71,10 +86,10 @@
     __block BOOL display = false;
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/displayed", self.client.sessionID, self.elementID];
-    [self.client dispatchMethod:@"GET" endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
+    [self.client dispatchMethod:kWDGET endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
         NSDictionary *httpResJson  = @{};
         if (![WDUtils isResponseSuccess:response]) {
-            NSLog(@"获取节点显示属性失败");
+            NSLog(WDErrorMessageWDANotStart);
         }
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
@@ -90,10 +105,10 @@
     __block BOOL accessible = false;
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/accessible", self.client.sessionID, self.elementID];
-    [self.client dispatchMethod:@"GET" endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
+    [self.client dispatchMethod:kWDGET endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
         NSDictionary *httpResJson  = @{};
         if (![WDUtils isResponseSuccess:response]) {
-            NSLog(@"获取节点显示属性失败");
+            NSLog(WDErrorMessageWDANotStart);
         }
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
@@ -109,10 +124,10 @@
     __block BOOL enabled = false;
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/enabled", self.client.sessionID, self.elementID];
-    [self.client dispatchMethod:@"GET" endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
+    [self.client dispatchMethod:kWDGET endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
         NSDictionary *httpResJson  = @{};
         if (![WDUtils isResponseSuccess:response]) {
-            NSLog(@"获取节点显示属性失败");
+            NSLog(WDErrorMessageWDANotStart);
         }
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
@@ -127,10 +142,10 @@
     __block NSString *name = @"";
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/attribute/name", self.client.sessionID, self.elementID];
-    [self.client dispatchMethod:@"GET" endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
+    [self.client dispatchMethod:kWDGET endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
         NSDictionary *httpResJson  = @{};
         if (![WDUtils isResponseSuccess:response]) {
-            NSLog(@"获取节点显示属性失败");
+            NSLog(WDErrorMessageWDANotStart);
         }
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
@@ -146,7 +161,7 @@
     __block BOOL isClick = false;
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/click", self.client.sessionID, self.elementID];
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
-    [self.client dispatchMethod:@"POST" endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
+    [self.client dispatchMethod:kWDPOST endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
         if ([WDUtils isResponseSuccess: response]) isClick = true;
         dispatch_semaphore_signal(signal);
     }];
@@ -159,7 +174,7 @@
     __block BOOL isType = false;
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/value", self.client.sessionID, self.elementID];
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
-    [self.client dispatchMethod:@"POST" endpoint:endPoint parameters:@{
+    [self.client dispatchMethod:kWDPOST endpoint:endPoint parameters:@{
                                                                        @"value" : chars
                                                                        } completion:^(NSDictionary *response, NSError *requestError) {
         if ([WDUtils isResponseSuccess: response]) isType = true;
@@ -174,7 +189,7 @@
     __block BOOL isClear = false;
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/clear", self.client.sessionID, self.elementID];
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
-    [self.client dispatchMethod:@"POST" endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
+    [self.client dispatchMethod:kWDPOST endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
                                                                            if ([WDUtils isResponseSuccess: response]) isClear = true;
                                                                            dispatch_semaphore_signal(signal);
                                                                        }];
@@ -186,7 +201,7 @@
     __block BOOL isScroll = false;
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/uiaElement/%@/scroll", self.client.sessionID, self.elementID];
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
-    [self.client dispatchMethod:@"POST" endpoint:endPoint parameters:@{@"direction" : direction} completion:^(NSDictionary *response, NSError *requestError) {
+    [self.client dispatchMethod:kWDPOST endpoint:endPoint parameters:@{@"direction" : direction} completion:^(NSDictionary *response, NSError *requestError) {
         if ([WDUtils isResponseSuccess: response]) isScroll = true;
         dispatch_semaphore_signal(signal);
     }];
@@ -199,7 +214,7 @@
     __block BOOL isDrag = false;
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/uiaTarget/%@/dragfromtoforduration", self.client.sessionID, self.elementID];
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
-    [self.client dispatchMethod:@"POST" endpoint:endPoint parameters:@{
+    [self.client dispatchMethod:kWDPOST endpoint:endPoint parameters:@{
                                                                        @"fromX" : @(from.x),
                                                                        @"fromY" : @(from.y),
                                                                        @"toX"   : @(to.x),
@@ -212,18 +227,13 @@
     return isDrag;
 }
 
-NSString * const WDSwipeDirectionKey = @"direction";
-NSString * const WDSwipeDirectionLeft = @"left";
-NSString * const WDSwipeDirectionRight = @"right";
-NSString * const WDSwipeDirectionUp = @"up";
-NSString * const WDSwipeDirectionDown=@"down";
 
 - (BOOL)_swipeWithDirection:(NSString *)direction {
 
     __block BOOL isSendMessageSuccess = false;
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/swipe", self.client.sessionID, self.elementID];
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
-    [self.client dispatchMethod:@"GET" endpoint:endPoint parameters:@{WDSwipeDirectionKey : direction} completion:^(NSDictionary *response, NSError *requestError) {
+    [self.client dispatchMethod:kWDPOST endpoint:endPoint parameters:@{WDSwipeDirectionKey : direction} completion:^(NSDictionary *response, NSError *requestError) {
         if ([WDUtils isResponseSuccess: response]) isSendMessageSuccess = true;
         dispatch_semaphore_signal(signal);
     }];
@@ -248,12 +258,8 @@ NSString * const WDSwipeDirectionDown=@"down";
     return [self _swipeWithDirection: WDSwipeDirectionRight];
 }
 
-static NSString * const kWDUsing=@"using";
-static NSString * const kWDValue=@"value";
-static NSString * const kWDPOST=@"POST";
-static NSString * const kWDGET=@"GET";
+
 - (NSArray *)childrensWithSendMethod:(NSString *)sendMethod usingFindMethod:(NSString *)using value:(NSString *)value{
-    __block BOOL isGetChildrens = false;
     NSMutableArray *elements = [NSMutableArray array];
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/elements", self.client.sessionID, self.elementID];
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
@@ -284,6 +290,30 @@ static NSString * const kWDGET=@"GET";
 
 - (NSArray *)childrens {
     return [self childrensWithClassType:kUIAny];
+}
+
+
+- (NSMutableArray *)getVisibleCells {
+    
+    NSString *endPoint = [NSString stringWithFormat:@"/session/%@/uiaElement/%@/getVisibleCells", self.client.sessionID, self.elementID];
+    dispatch_semaphore_t signal = dispatch_semaphore_create(0);
+    NSMutableArray *array = [NSMutableArray array];
+    [self.client dispatchMethod:kWDGET endpoint:endPoint parameters:@{}
+              completion:^(NSDictionary *response, NSError *requestError) {
+
+                  NSDictionary *httpResJson  = @{};
+                  if ([WDUtils isResponseSuccess:response]) {
+                      
+                      httpResJson = [response objectForKey:WDHttpResponseKey];
+                      
+                  }
+                  WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
+                  [array addObjectsFromArray: httpResponse.elements];
+                  [array addClient: self.client];
+                  dispatch_semaphore_signal(signal);
+              }];
+    dispatch_semaphore_wait(signal, DISPATCH_TIME_FOREVER);
+    return array;
 }
 
 

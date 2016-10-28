@@ -30,6 +30,7 @@
 		94F29DDB1DB8BD9800EA6076 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F29DDA1DB8BD9800EA6076 /* GuideVC.m */; };
 		94F29DE11DB8C68D00EA6076 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F29DDF1DB8C68D00EA6076 /* LaunchScreen.storyboard */; };
 		94F29DE41DB8DED900EA6076 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F29DE31DB8DED900EA6076 /* LoginVC.m */; };
+		FD16EC641DC35490004E4FDD /* WDTaskReciver.m in Sources */ = {isa = PBXBuildFile; fileRef = FD16EC631DC35490004E4FDD /* WDTaskReciver.m */; };
 		FD31ED991DBE90A000A503B0 /* WDElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A595A1DBA2EF40020025C /* WDElement.m */; };
 		FD31ED9A1DBE90A000A503B0 /* WDHttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A595C1DBA2EF40020025C /* WDHttpResponse.m */; };
 		FD31ED9B1DBE90A000A503B0 /* WDRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A595E1DBA2EF40020025C /* WDRect.m */; };
@@ -61,6 +62,8 @@
 		FD31EDB51DBE90CD00A503B0 /* YYClassInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A596D1DBA2EF40020025C /* YYClassInfo.h */; };
 		FD31EDB61DBE90CD00A503B0 /* YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A596F1DBA2EF40020025C /* YYModel.h */; };
 		FD31EDBE1DBE92F100A503B0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD31EDBD1DBE92F100A503B0 /* Info.plist */; };
+		FD7AA6B51DC1FF5300ECEC29 /* NSMutableArray+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AA6B41DC1FF5300ECEC29 /* NSMutableArray+Operation.m */; };
+		FD7AA6B81DC200D700ECEC29 /* WDParams.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AA6B71DC200D700ECEC29 /* WDParams.m */; };
 		FD8C15FE1DBB0E1600798AF2 /* WDClassType.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */; };
 		FD8C16011DBBBA0100798AF2 /* NSArray+AddClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C16001DBBBA0100798AF2 /* NSArray+AddClient.m */; };
 		FDADA29D1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDADA29C1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a */; };
@@ -156,6 +159,8 @@
 		94F29DE01DB8C68D00EA6076 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94F29DE21DB8DED900EA6076 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		94F29DE31DB8DED900EA6076 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		FD16EC621DC35490004E4FDD /* WDTaskReciver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDTaskReciver.h; sourceTree = "<group>"; };
+		FD16EC631DC35490004E4FDD /* WDTaskReciver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDTaskReciver.m; sourceTree = "<group>"; };
 		FD31ED291DBE89C500A503B0 /* Peertalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Peertalk.h; sourceTree = "<group>"; };
 		FD31ED2A1DBE89C500A503B0 /* PTChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTChannel.h; sourceTree = "<group>"; };
 		FD31ED2B1DBE89C500A503B0 /* PTPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPrivate.h; sourceTree = "<group>"; };
@@ -163,6 +168,10 @@
 		FD31ED2D1DBE89C500A503B0 /* PTUSBHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTUSBHub.h; sourceTree = "<group>"; };
 		FD31ED8D1DBE908500A503B0 /* WDUSBClientLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WDUSBClientLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD31EDBD1DBE92F100A503B0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD7AA6B31DC1FF5300ECEC29 /* NSMutableArray+Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Operation.h"; sourceTree = "<group>"; };
+		FD7AA6B41DC1FF5300ECEC29 /* NSMutableArray+Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Operation.m"; sourceTree = "<group>"; };
+		FD7AA6B61DC200D700ECEC29 /* WDParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDParams.h; sourceTree = "<group>"; };
+		FD7AA6B71DC200D700ECEC29 /* WDParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDParams.m; sourceTree = "<group>"; };
 		FD8C15FC1DBB0E1600798AF2 /* WDClassType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDClassType.h; sourceTree = "<group>"; };
 		FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDClassType.m; sourceTree = "<group>"; };
 		FD8C15FF1DBBBA0100798AF2 /* NSArray+AddClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AddClient.h"; sourceTree = "<group>"; };
@@ -372,6 +381,8 @@
 				942A59601DBA2EF40020025C /* WDSize.m */,
 				FD8C15FC1DBB0E1600798AF2 /* WDClassType.h */,
 				FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */,
+				FD7AA6B61DC200D700ECEC29 /* WDParams.h */,
+				FD7AA6B71DC200D700ECEC29 /* WDParams.m */,
 			);
 			path = ModelLayer;
 			sourceTree = "<group>";
@@ -379,6 +390,8 @@
 		942A59611DBA2EF40020025C /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				FD16EC621DC35490004E4FDD /* WDTaskReciver.h */,
+				FD16EC631DC35490004E4FDD /* WDTaskReciver.m */,
 				942A59621DBA2EF40020025C /* WDClient.h */,
 				942A59631DBA2EF40020025C /* WDClient.m */,
 			);
@@ -388,6 +401,7 @@
 		942A59641DBA2EF40020025C /* Utils-ExtensionLayer */ = {
 			isa = PBXGroup;
 			children = (
+				FD7AA6B21DC1FF5300ECEC29 /* NSMutableArrayExtension */,
 				942A59651DBA2EF40020025C /* ElementExtension */,
 				942A59681DBA2EF40020025C /* WDUtils.h */,
 				942A59691DBA2EF40020025C /* WDUtils.m */,
@@ -425,6 +439,15 @@
 				FD31EDBD1DBE92F100A503B0 /* Info.plist */,
 			);
 			path = WDUSBClientLib;
+			sourceTree = "<group>";
+		};
+		FD7AA6B21DC1FF5300ECEC29 /* NSMutableArrayExtension */ = {
+			isa = PBXGroup;
+			children = (
+				FD7AA6B31DC1FF5300ECEC29 /* NSMutableArray+Operation.h */,
+				FD7AA6B41DC1FF5300ECEC29 /* NSMutableArray+Operation.m */,
+			);
+			path = NSMutableArrayExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -660,10 +683,13 @@
 				942A59751DBA2EF40020025C /* WDRect.m in Sources */,
 				942959591DB71F4C000A26DB /* ViewController.m in Sources */,
 				942A59741DBA2EF40020025C /* WDHttpResponse.m in Sources */,
+				FD7AA6B81DC200D700ECEC29 /* WDParams.m in Sources */,
+				FD7AA6B51DC1FF5300ECEC29 /* NSMutableArray+Operation.m in Sources */,
 				942A597B1DBA2EF40020025C /* YYClassInfo.m in Sources */,
 				942959561DB71F4C000A26DB /* main.m in Sources */,
 				942959531DB71F4C000A26DB /* AppDelegate.m in Sources */,
 				FD8C16011DBBBA0100798AF2 /* NSArray+AddClient.m in Sources */,
+				FD16EC641DC35490004E4FDD /* WDTaskReciver.m in Sources */,
 				942A59781DBA2EF40020025C /* WDElement+Queries.m in Sources */,
 				942A59731DBA2EF40020025C /* WDElement.m in Sources */,
 				942A597A1DBA2EF40020025C /* NSObject+YYModel.m in Sources */,
@@ -857,6 +883,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/WDUSBClient",
 					"$(PROJECT_DIR)/WDUSBClient/Client/CommunicationLayer/Peertalk",
+					"$(PROJECT_DIR)/WebDriverAgent/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/WebDriverAgent/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/WebDriverAgent/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/WDUSBClient/Client/CommunicationLayer/CocoaAsyncSocket",
 				);
 				INFOPLIST_FILE = WDUSBClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -883,6 +913,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/WDUSBClient",
 					"$(PROJECT_DIR)/WDUSBClient/Client/CommunicationLayer/Peertalk",
+					"$(PROJECT_DIR)/WebDriverAgent/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/WebDriverAgent/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/WebDriverAgent/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/WDUSBClient/Client/CommunicationLayer/CocoaAsyncSocket",
 				);
 				INFOPLIST_FILE = WDUSBClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -1007,6 +1041,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/WDUSBClient/Client/CommunicationLayer/libWDAUSBClient",
 				);
+				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixleaves.WDUSBClientLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1035,6 +1070,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/WDUSBClient/Client/CommunicationLayer/libWDAUSBClient",
 				);
+				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixleaves.WDUSBClientLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";

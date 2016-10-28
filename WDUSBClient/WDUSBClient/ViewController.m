@@ -35,7 +35,7 @@
     [self.clients addObject:client];
     
     // Demo 1 测试本地App
-    [self testAppForIOS];
+    //[self testAppForIOS];
     
     // Demo 2 测试微信自动发消息, 需要按照需要执行更改
     //[self testWeChatForIOS];
@@ -44,7 +44,7 @@
     //[self testCatalog];
     
     // Demo 5 微信 monkey测试
-    // [self testMonkeyInWX];
+     [self testMonkeyInWX];
 }
 
 - (void)testMonkeyInWX {
@@ -62,12 +62,16 @@
             // 启动微信 App
             [client startApp];
             
+            // 找tableView
+            WDElement *tableElement = [[client findElementsByClassName: kUITableView] firstObject];
+            
+            // 找当前可见的cell
+            NSArray *cells = [tableElement getVisibleCells];
+            
             // 开启monkey 测试
             [client startMonkey];
                    });
     }
-
-    
 }
 
 

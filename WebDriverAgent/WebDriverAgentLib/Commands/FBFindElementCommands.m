@@ -71,9 +71,16 @@ static id<FBResponsePayload> FBNoSuchElementErrorResponseForRequest(FBRouteReque
 {
   FBElementCache *elementCache = request.session.elementCache;
   XCUIElement *collection = [elementCache elementForUUID:request.parameters[@"uuid"]];
+
   NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == YES", FBStringify(XCUIElement, fb_isVisible)];
   NSArray *elements = [collection.cells matchingPredicate:predicate].allElementsBoundByIndex;
-  return FBResponseWithCachedElements(elements, request.session.elementCache, YES);
+  
+#pragma mark - fix by sixleaves
+    [elementCache storeElement:collection];
+    for (XCUIElement *element in elements) {
+        element.parentElement = collection;
+    }
+  return FBResponseWithCachedElements(elements, request.session.elementCache, NO);
 }
 
 + (id<FBResponsePayload>)handleFindSubElement:(FBRouteRequest *)request

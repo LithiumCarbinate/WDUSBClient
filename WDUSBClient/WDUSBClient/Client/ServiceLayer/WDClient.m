@@ -26,11 +26,13 @@ NSString * const WDStatusKey = @"status";
 NSString * const WDStatusCodeKey = @"statusCode";
 NSString * const WDUUIDKey = @"uuid";
 
-NSString * const WDSendHttpMsgWithPOST = @"POST";
-NSString * const WDSendHttpMsgWithGET = @"GET";
 
 NSString * const WDQueryElementWithClassName = @"class name";
 NSString * const WDQuertElementWithPartialLinkText = @"partial link text";
+
+NSString * const WDWindowWidthKey = @"WDWindowWidth";
+NSString * const WDWindowHeightKey = @"WDWindowHeight";
+NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 
 @interface WDClient()
 
@@ -70,7 +72,7 @@ NSString * const WDQuertElementWithPartialLinkText = @"partial link text";
 - (void)startApp {
     
     _sema = dispatch_semaphore_create(0);
-    [self dispatchMethod:@"POST" endpoint:@"/session" parameters:@{@"desiredCapabilities" : @{
+    [self dispatchMethod:kWDPOST endpoint:@"/session" parameters:@{@"desiredCapabilities" : @{
                                                                                       @"bundleId":self.bundleID
                                                                                       }}  completion:^(NSDictionary *response, NSError *requestError) {
                                                                                           if ([response objectForKey: WDStatusCodeKey]) {
@@ -81,7 +83,7 @@ NSString * const WDQuertElementWithPartialLinkText = @"partial link text";
                                                                                               }else {
 
                                                                                                   NSDictionary *httpRes = response[WDHttpResponseKey];
-                                                                                                  
+                                                                                                  NSLog(@"启动成功");
                                                                                                   if ([httpRes objectForKey:WDSessionIDKey]) {
                                                                                                       _sessionID = httpRes[WDSessionIDKey];
                                                                                                   }
@@ -95,7 +97,7 @@ NSString * const WDQuertElementWithPartialLinkText = @"partial link text";
                                                                                           }
                                                                                           
                                                                                           
-                                                                                          //NSLog(@"res = %@",response);
+                                                                                          
                                                                                           dispatch_semaphore_signal(_sema);
                                                                                       }];
     
@@ -103,9 +105,7 @@ NSString * const WDQuertElementWithPartialLinkText = @"partial link text";
 }
 
 
-NSString * const WDWindowWidthKey = @"WDWindowWidth";
-NSString * const WDWindowHeightKey = @"WDWindowHeight";
-NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
+
 - (void)startMonkey {
     [self startMonkeyWithMinute: 5];
 }
@@ -113,11 +113,11 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 - (void)startMonkeyWithMinute:(NSInteger)minute {
     
     CGSize size = self.windowSize;
-    [self dispatchMethod:@"POST" endpoint:[NSString stringWithFormat:@"/session/%@/monkey", _sessionID] parameters:@{ WDWindowWidthKey : @(size.width),
+    [self dispatchMethod:kWDPOST endpoint:[NSString stringWithFormat:@"/session/%@/monkey", _sessionID] parameters:@{ WDWindowWidthKey : @(size.width),
         WDWindowHeightKey : @(size.height),
         WDMonkeyRunningTimeKey: @(minute)
         } completion:^(NSDictionary *response, NSError *requestError) {
-                               
+            
                                                 }];
     
 
@@ -127,11 +127,11 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
     
     __block NSImage *image = nil;
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
-    [self dispatchMethod:@"GET" endpoint:@"/screenshot" parameters:@{}  completion:^(NSDictionary *response, NSError *requestError) {
+    [self dispatchMethod:kWDGET endpoint:@"/screenshot" parameters:@{}  completion:^(NSDictionary *response, NSError *requestError) {
         
         NSDictionary *httpResJson  = @{};
         if (![WDUtils isResponseSuccess:response]) {
-            NSLog(@"获取节点文本失败");
+            NSLog(@"%@", WDErrorMessageWDANotStart);
         }
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
@@ -160,14 +160,14 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 }
 
 - (void)pressHome {
-    [self dispatchMethod:@"POST" endpoint:@"/homescreen" parameters:@{}  completion:^(NSDictionary *response, NSError *requestError) {
+    [self dispatchMethod:kWDPOST endpoint:@"/homescreen" parameters:@{}  completion:^(NSDictionary *response, NSError *requestError) {
                            NSLog(@"%@", response);                                                               
-        
+    
                                                                               }];
 }
 
 - (void)deactiveAppWithDuration:(NSInteger)duration {
-    [self dispatchMethod:@"POST" endpoint:@"" parameters:@{@"duration":@(duration)}  completion:^(NSDictionary *response, NSError *requestError) {
+    [self dispatchMethod:kWDPOST endpoint:@"" parameters:@{@"duration":@(duration)}  completion:^(NSDictionary *response, NSError *requestError) {
         
     
     }];
@@ -176,7 +176,7 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 - (void)setOrientation:(NSString *)orientation {
     _orientation = orientation;
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/orientation", _sessionID];
-    [self dispatchMethod:@"POST" endpoint:endPoint parameters:@{@"orientation": orientation }  completion:^(NSDictionary *response, NSError *requestError) {
+    [self dispatchMethod:kWDPOST endpoint:endPoint parameters:@{@"orientation": orientation }  completion:^(NSDictionary *response, NSError *requestError) {
         
         
     }];
@@ -188,7 +188,7 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
     NSString *format = [usingMethod isEqualToString: @"class name"]? @"%@" : @"label=%@";
     NSMutableArray *array = [NSMutableArray array];
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
-    [self dispatchMethod:WDSendHttpMsgWithPOST endpoint:[NSString stringWithFormat:@"/session/%@/elements", _sessionID] parameters:@{
+    [self dispatchMethod:kWDPOST endpoint:[NSString stringWithFormat:@"/session/%@/elements", _sessionID] parameters:@{
                                                                                                                                      @"using" : usingMethod,
                                                                                                                                     @"value" : [NSString stringWithFormat:  format, text]
                                                                                                                                      } completion:^(NSDictionary *response, NSError *requestError) {
@@ -240,34 +240,12 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
     return [self _findElementsByText:xpath usingMethod:@"xpath"];
 }
 
-- (NSMutableArray *)getVisibleCells {
-    NSString *endPoint = [NSString stringWithFormat:@"/session/%@/uiaElement/:id/getVisibleCells", _sessionID];
-    dispatch_semaphore_t signal = dispatch_semaphore_create(0);
-    NSMutableArray *array = [NSMutableArray array];
-    [self dispatchMethod:@"GET" endpoint:endPoint parameters:@{}
-              completion:^(NSDictionary *response, NSError *requestError) {
-                 
-                  //NSLog(@"cells = %@", response);
-                  NSDictionary *httpResJson  = @{};
-                  if ([WDUtils isResponseSuccess:response]) {
-                      
-                      httpResJson = [response objectForKey:WDHttpResponseKey];
-                      
-                  }
-                  WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
-                  [array addObjectsFromArray: httpResponse.elements];
-                  [self addClientToElements: array];
-                  dispatch_semaphore_signal(signal);
-    }];
-    dispatch_semaphore_wait(signal, DISPATCH_TIME_FOREVER);
-    return array;
-}
 
 - (BOOL)_dealWithAlertWithActioin:(NSString *)action andSendMethod:(NSString *)method{
     __block BOOL showAlert = false;
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/%@", _sessionID, action];
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
-    [self dispatchMethod:@"POST" endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
+    [self dispatchMethod:kWDPOST endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
         if ([WDUtils isResponseSuccess: response]) showAlert = true;
         dispatch_semaphore_signal(signal);
     }];
@@ -276,26 +254,26 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 }
 
 - (BOOL)showAlert {
-    return [self _dealWithAlertWithActioin:@"alert_text" andSendMethod:@"GET"];
+    return [self _dealWithAlertWithActioin:@"alert_text" andSendMethod:kWDGET];
 }
 
 - (BOOL)acceptAlert {
-    return [self _dealWithAlertWithActioin:@"accept_alert" andSendMethod:@"POST"];
+    return [self _dealWithAlertWithActioin:@"accept_alert" andSendMethod:kWDPOST];
 }
 
 - (BOOL)dissmissAlert {
-    return [self _dealWithAlertWithActioin:@"dismiss_alert" andSendMethod:@"POST"];
+    return [self _dealWithAlertWithActioin:@"dismiss_alert" andSendMethod:kWDPOST];
 }
 
 - (CGSize)windowSize {
     __block WDSize *size = [WDSize new];
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/window/size", _sessionID];
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
-    [self dispatchMethod:@"GET" endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
+    [self dispatchMethod:kWDGET endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
         
         NSDictionary *httpResJson  = @{};
         if (![WDUtils isResponseSuccess:response]) {
-            NSLog(@"获取节点显示属性失败");
+            NSLog(@"%@", WDErrorMessageWDANotStart);
         }
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
@@ -310,11 +288,11 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
     __block NSMutableDictionary *tree = [NSMutableDictionary dictionary];
     NSString *endPoint = [NSString stringWithFormat:@"/source"];
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
-    [self dispatchMethod:@"GET" endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
+    [self dispatchMethod:kWDGET endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
         
         NSDictionary *httpResJson  = @{};
         if (![WDUtils isResponseSuccess:response]) {
-            NSLog(@"获取节点显示属性失败");
+            NSLog(@"%@", WDErrorMessageWDANotStart);
         }
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
