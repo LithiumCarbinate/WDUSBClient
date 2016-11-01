@@ -56,12 +56,12 @@
 //    temp.account = @"sixleaves";
 //    temp.password = @"123456";
     
-    // 创建命令行接收器, 用于接收命令行参数.命令行使用格式为 open WDUSBClient.app --args "e397abbc1b534e9d375d35fb9d49b6bce107d5cc" "com.tencent.xin" "/Users/sixleaves/Desktop/screenshots" "suweipeng" "123456"
+    // 创建命令行接收器, 用于接收命令行参数.命令行使用格式为 open -n WDUSBClient.app --args "e397abbc1b534e9d375d35fb9d49b6bce107d5cc" "com.tencent.xin" "/Users/sixleaves/Desktop/screenshots" "suweipeng" "123456"
     // --args后面分别是 uuid bundleID imagesStorePath account paasword
 
     WDCommandReciver *commandReciver = [WDCommandReciver sharedInstance];
     WDTask *task = [commandReciver getReciveTask];
-    
+
     // 创建任务分发器
     WDTaskDispatch *dispatcher = [WDTaskDispatch new];
 
