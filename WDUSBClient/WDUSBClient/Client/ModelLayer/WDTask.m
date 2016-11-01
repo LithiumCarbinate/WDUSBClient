@@ -64,7 +64,6 @@
 
             
         NSArray *lines = [self _runCommandWithScriptPath: processInfoScriptPath];
-        [lines writeToFile:[driverScriptsDir stringByAppendingFormat:@"/%@", @"result.txt"] atomically:YES];
         for (NSString *line in lines) {
             if (![line isEqualToString: @""] && line != nil && [line containsString: _uuid]) {
                 NSArray  *compents = [line componentsSeparatedByString:@" "];
