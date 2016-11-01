@@ -31,15 +31,9 @@ int main(int argc, const char * argv[]) {
     WDTask *task = [WDTask new];
     task.uuid = uuid, task.bundleID = bundleID, task.imagesStorePath = imageStorePath;
     task.account = account, task.password = password;
-    
-//    NSDictionary *dict = [task yy_modelToJSONObject];
-//
-//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//    [userDefaults setObject: dict forKey: @"WDTaskKey"];
-//    [userDefaults synchronize];
 
-      WDCommandReciver  *reciver = [WDCommandReciver new];
-      [reciver setReciveTask: task];
+    WDCommandReciver  *reciver = [WDCommandReciver new];
+    [reciver setReciveTask: task];
 
     return NSApplicationMain(argc, argv);
 }
