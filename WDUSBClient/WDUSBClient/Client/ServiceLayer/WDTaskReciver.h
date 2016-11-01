@@ -14,6 +14,7 @@
  
  transport layer protocol is TCP protocol;
 
+ 走socket的任务接收器.如果要使用这种方式, 需要自己进行二次开发
  */
 
 @interface WDTaskReciver : NSObject

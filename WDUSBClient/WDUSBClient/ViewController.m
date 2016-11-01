@@ -8,17 +8,33 @@
 
 #import "ViewController.h"
 #import "FBHTTPOverUSBClient.h"
+#import "WDTask.h"
 #import "WDClient.h"
-
+#import "WDTaskReciver.h"
+#import "WDTaskDispatch.h"
+#import "WDCommandReciver.h"
 #define MAX_CLIENT_NUM 10
 
 @interface ViewController ()
 
 @property (nonatomic, strong)  NSMutableArray<FBHTTPOverUSBClient *>* clients;
 
+@property (nonatomic, strong)  WDTaskReciver *taskReciver;
+
 @end
 
 @implementation ViewController
+
+
+- (WDTaskReciver *)taskReciver {
+    
+    if (_taskReciver == nil) {
+        
+        _taskReciver = [[WDTaskReciver alloc] init];
+    }
+    
+    return _taskReciver;
+}
 
 - (NSArray<FBHTTPOverUSBClient *> *)clients {
     
@@ -29,22 +45,41 @@
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
-    FBHTTPOverUSBClient *client = [[WDClient alloc] initWithDeviceUDID:@"a49bcbd6a9d3b24b8f70b8adde348925a5bfac6e"];
-    [self.clients addObject:client];
+
+//    WDTask *temp = [WDTask new];
+//    temp.uuid = @"28b7411b86649563afbc1d30091339a0a26232cc";
+//    temp.bundleID = @"com.apple.mobilesafari";
+//    temp.imagesStorePath = @"/Users/sixleaves/Desktop/screenshots";
+//    temp.account = @"sixleaves";
+//    temp.password = @"123456";
     
-    // Demo 1 测试本地App
-    //[self testAppForIOS];
+    // 创建命令行接收器, 用于接收命令行参数.命令行使用格式为 open WDUSBClient.app --args "e397abbc1b534e9d375d35fb9d49b6bce107d5cc" "com.tencent.xin" "/Users/sixleaves/Desktop/screenshots" "suweipeng" "123456"
+    // --args后面分别是 uuid bundleID imagesStorePath account paasword
+
+    WDCommandReciver *commandReciver = [WDCommandReciver sharedInstance];
+    WDTask *task = [commandReciver getReciveTask];
     
-    // Demo 2 测试微信自动发消息, 需要按照需要执行更改
-    //[self testWeChatForIOS];
+    // 创建任务分发器
+    WDTaskDispatch *dispatcher = [WDTaskDispatch new];
+
+    // 开始分发任务. 需提供当前工程源码所在位置。需要执行修改。
+    [dispatcher dispatchTaskToIphone:task withPath:@"/Users/sixleaves/Dropbox/AutomaticTest/WDClient/WDUSBClient"];
+
     
-    // Demo 3 UIKitcatalog
-    //[self testCatalog];
-    
-    // Demo 5 微信 monkey测试
-     [self testMonkeyInWX];
+   // Demo 1 测试本地App
+   //[self testAppForIOS];
+        
+   // Demo 2 测试微信自动发消息, 需要按照需要执行更改
+   //[self testWeChatForIOS];
+        
+   // Demo 3 UIKitcatalog
+   //[self testCatalog];
+        
+   // Demo 5 微信 monkey测试
+   // [self testMonkeyInWX];
 }
 
 - (void)testMonkeyInWX {
@@ -53,7 +88,7 @@
     // 输入法： 百度输入法
     //
     
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < self.taskReciver.currentTasksSize; i++) {
         // com.tencent.xin
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
@@ -77,7 +112,7 @@
 
 - (void)testCatalog {
     
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < self.taskReciver.currentTasksSize; i++) {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
@@ -155,7 +190,7 @@
     // 输入法： 百度输入法
     //
     
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < self.taskReciver.currentTasksSize; i++) {
         // com.tencent.xin
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
@@ -197,7 +232,7 @@
 - (void)testAppForIOS {
     
     
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < self.taskReciver.currentTasksSize; i++) {
         // com.tencent.xin
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [(WDClient *)self.clients[i] setBundleID: @"com.nd.www.TestAppForIOS"];
@@ -258,13 +293,4 @@
     
 
 }
-
-
-- (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
-
-    // Update the view, if already loaded.
-}
-
-
 @end

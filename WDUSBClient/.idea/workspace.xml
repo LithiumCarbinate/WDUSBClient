@@ -15,70 +15,108 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="macos_x86_64" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_28b7411b86649563afbc1d30091339a0a26232cc" />
   <component name="FavoritesManager">
     <favorites_list name="WDUSBClient" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="main.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WDClient/main.m">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="WDTaskDispatch.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDTaskDispatch.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding>
-                <marker date="1477560302000" expanded="false" signature="136:234" ph="..." />
-                <marker date="1477560302000" expanded="true" signature="373:407" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.m" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WDUSBClient/main.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+            <state relative-caret-position="450">
+              <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WDClient.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDClient.m">
+      <file leaf-file-name="WDTaskReciver.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDTaskReciver.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="119" column="54" selection-start-line="119" selection-start-column="54" selection-end-line="119" selection-end-column="54" />
-              <folding>
-                <marker date="1477556385000" expanded="false" signature="135:290" ph="..." />
-                <marker date="1477556385000" expanded="true" signature="1128:1340" ph="..." />
-                <marker date="1477556385000" expanded="true" signature="1370:18275" ph="..." />
-                <marker date="1477556385000" expanded="true" signature="1431:1523" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="1549:1666" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="1685:4783" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="1799:2029" ph="@{...}" />
-                <marker date="1477556385000" expanded="true" signature="1826:2028" ph="@{...}" />
-                <marker date="1477556385000" expanded="true" signature="2042:4741" ph="^(NSDictionary *response, NSError *requestError){...}" />
-                <marker date="1477556385000" expanded="true" signature="11995:12017" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="12080:12202" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="12268:12345" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="12427:12550" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="12619:12697" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="12757:12826" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="12864:13925" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="13184:13843" ph="^(NSDictionary *response, NSError *requestError){...}" />
-                <marker date="1477556385000" expanded="true" signature="14012:14537" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="14283:14451" ph="^(NSDictionary *response, NSError *requestError){...}" />
-                <marker date="1477556385000" expanded="true" signature="14557:14640" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="14662:14748" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="14772:14859" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="14882:15701" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="15158:15591" ph="^(NSDictionary *response, NSError *requestError){...}" />
-                <marker date="1477556385000" expanded="true" signature="15735:16532" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="16016:16451" ph="^(NSDictionary *response, NSError *requestError){...}" />
-                <marker date="1477556385000" expanded="true" signature="16687:17977" ph="{...}" />
-                <marker date="1477556385000" expanded="true" signature="18124:18266" ph="{...}" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WDTaskReciver.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDTaskReciver.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WDTaskDispatch.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDTaskDispatch.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WDClient.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDClient.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewController.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WDUSBClient/ViewController.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewController.m" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WDUSBClient/ViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="63" column="4" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WDTask.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ModelLayer/WDTask.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-105">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WDTask.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ModelLayer/WDTask.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WDCommandReciver.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDCommandReciver.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="609">
+              <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -90,7 +128,14 @@
       <list>
         <option value="$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDClient.m" />
         <option value="$PROJECT_DIR$/WDClient/main.m" />
+        <option value="$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDCommandReciver.h" />
         <option value="$PROJECT_DIR$/WDUSBClient/main.m" />
+        <option value="$PROJECT_DIR$/WDUSBClient/Client/ModelLayer/WDTask.m" />
+        <option value="$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDCommandReciver.m" />
+        <option value="$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDTaskDispatch.m" />
+        <option value="$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDTaskDispatch.h" />
+        <option value="$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDTaskReciver.m" />
+        <option value="$PROJECT_DIR$/WDUSBClient/ViewController.m" />
       </list>
     </option>
   </component>
@@ -100,9 +145,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="width" value="1920" />
+    <option name="height" value="1200" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -191,17 +237,63 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WDUSBClient" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WDUSBClient" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Client" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServiceLayer" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WDUSBClient" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WDUSBClient" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Client" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ModelLayer" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="FullScreen" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../WebDriverAgent/WebDriverAgent.xcodeproj" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="FullScreen" value="true" />
   </component>
-  <component name="RunManager" selected="Application.WDClient">
+  <component name="RunManager" selected="Application.TestAppForIOS">
     <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WDUSBClient" TARGET_NAME="WDUSBClient" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="WDUSBClient" RUN_TARGET_NAME="WDUSBClient" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
@@ -221,6 +313,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -231,13 +329,6 @@
       <method />
     </configuration>
     <configuration default="false" name="TestAppForIOS" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WDUSBClient" TARGET_NAME="TestAppForIOS" CONFIG_NAME="Debug" SCHEME_NAME="TestAppForIOS" RUN_TARGET_PROJECT_NAME="WDUSBClient" RUN_TARGET_NAME="TestAppForIOS" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
-      <envs />
-      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
-        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
-      </EXTENSION>
-      <method />
-    </configuration>
-    <configuration default="false" name="WDClient" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WDUSBClient" TARGET_NAME="WDClient" CONFIG_NAME="Debug" SCHEME_NAME="WDClient" RUN_TARGET_PROJECT_NAME="WDUSBClient" RUN_TARGET_NAME="WDClient" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
@@ -258,11 +349,10 @@
       </EXTENSION>
       <method />
     </configuration>
-    <list size="4">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.TestAppForIOS" />
-      <item index="1" class="java.lang.String" itemvalue="Application.WDClient" />
-      <item index="2" class="java.lang.String" itemvalue="Application.WDUSBClient" />
-      <item index="3" class="java.lang.String" itemvalue="Application.WDUSBClientLib" />
+      <item index="1" class="java.lang.String" itemvalue="Application.WDUSBClient" />
+      <item index="2" class="java.lang.String" itemvalue="Application.WDUSBClientLib" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -279,27 +369,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24305555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24270834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2914137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -316,58 +406,135 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDClient.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="119" column="54" selection-start-line="119" selection-start-column="54" selection-end-line="119" selection-end-column="54" />
-          <folding>
-            <marker date="1477556385000" expanded="false" signature="135:290" ph="..." />
-            <marker date="1477556385000" expanded="true" signature="1128:1340" ph="..." />
-            <marker date="1477556385000" expanded="true" signature="1370:18275" ph="..." />
-            <marker date="1477556385000" expanded="true" signature="1431:1523" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="1549:1666" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="1685:4783" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="1799:2029" ph="@{...}" />
-            <marker date="1477556385000" expanded="true" signature="1826:2028" ph="@{...}" />
-            <marker date="1477556385000" expanded="true" signature="2042:4741" ph="^(NSDictionary *response, NSError *requestError){...}" />
-            <marker date="1477556385000" expanded="true" signature="11995:12017" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="12080:12202" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="12268:12345" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="12427:12550" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="12619:12697" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="12757:12826" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="12864:13925" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="13184:13843" ph="^(NSDictionary *response, NSError *requestError){...}" />
-            <marker date="1477556385000" expanded="true" signature="14012:14537" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="14283:14451" ph="^(NSDictionary *response, NSError *requestError){...}" />
-            <marker date="1477556385000" expanded="true" signature="14557:14640" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="14662:14748" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="14772:14859" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="14882:15701" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="15158:15591" ph="^(NSDictionary *response, NSError *requestError){...}" />
-            <marker date="1477556385000" expanded="true" signature="15735:16532" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="16016:16451" ph="^(NSDictionary *response, NSError *requestError){...}" />
-            <marker date="1477556385000" expanded="true" signature="16687:17977" ph="{...}" />
-            <marker date="1477556385000" expanded="true" signature="18124:18266" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WDClient/main.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1477560302000" expanded="false" signature="136:234" ph="..." />
-            <marker date="1477560302000" expanded="true" signature="373:407" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WDUSBClient/main.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#126#149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDClient.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="119" column="54" selection-start-line="119" selection-start-column="54" selection-end-line="119" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WDClient/main.m" />
+    <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDCommandReciver.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WDUSBClient/main.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="18" column="59" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
+          <folding>
+            <element signature="e#126#149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDClient.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="135" column="12" selection-start-line="135" selection-start-column="12" selection-end-line="135" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ModelLayer/WDTask.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ModelLayer/WDTask.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDCommandReciver.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDTaskDispatch.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDTaskReciver.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDTaskReciver.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDTaskDispatch.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WDUSBClient/Client/ServiceLayer/WDClient.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WDUSBClient/ViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WDUSBClient/ViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="63" column="4" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
           <folding />
         </state>
       </provider>

@@ -10,7 +10,8 @@
 #import <sys/socket.h>
 #import <netinet/in.h>
 #import <arpa/inet.h>
-
+#import "WDTask.h"
+#import "NSMutableArray+Operation.h"
 @interface WDTaskReciver ()
 
 @property (nonatomic, assign) int serverSocket;
@@ -36,6 +37,16 @@
 
 - (void)removeAllTask {
     [self.tasks removeAllObjects];
+}
+
+
+- (instancetype)init {
+    
+    if (self = [super init]) {
+
+    }
+    return self;
+
 }
 
 - (void)_startReciveDataFromHost:(NSString *)host onPort:(__uint16_t)port {
@@ -78,8 +89,27 @@
                 perror("accept error");
                 exit(-1);
             }
-            NSString *params = [self _getBodyWithSocket: client_socket];
-            [self.tasks addObject: params];
+            
+            NSString *bodyString = [self _getBodyWithSocket: client_socket];
+            
+            NSArray *temps = [bodyString componentsSeparatedByString:@" "];
+            NSMutableArray *params = [NSMutableArray arrayWithArray: temps];
+            NSString *uuid = [params wd_removeFirstObject];
+            NSString *bundleID = [params wd_removeFirstObject];
+            NSString *imageStorePath = [params wd_removeFirstObject];
+            NSString *account = nil;
+            NSString *password = nil;
+            
+            if (![params isEmpty]) {
+                account = [params wd_removeFirstObject];
+                password = [params wd_removeFirstObject];
+            }
+            
+            WDTask *task = [WDTask new];
+            task.uuid = uuid, task.bundleID = bundleID, task.imagesStorePath = imageStorePath;
+            task.account = account, task.password = password;
+            
+            [self.tasks addObject: task];
         }
     });
 }

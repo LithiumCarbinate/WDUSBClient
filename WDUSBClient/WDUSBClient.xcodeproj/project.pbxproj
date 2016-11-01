@@ -62,13 +62,15 @@
 		FD31EDB51DBE90CD00A503B0 /* YYClassInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A596D1DBA2EF40020025C /* YYClassInfo.h */; };
 		FD31EDB61DBE90CD00A503B0 /* YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A596F1DBA2EF40020025C /* YYModel.h */; };
 		FD31EDBE1DBE92F100A503B0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD31EDBD1DBE92F100A503B0 /* Info.plist */; };
+		FD6CEBD81DC723DE0075C258 /* WDCommandReciver.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6CEBD71DC723DE0075C258 /* WDCommandReciver.m */; };
 		FD7AA6B51DC1FF5300ECEC29 /* NSMutableArray+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AA6B41DC1FF5300ECEC29 /* NSMutableArray+Operation.m */; };
-		FD7AA6B81DC200D700ECEC29 /* WDParams.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AA6B71DC200D700ECEC29 /* WDParams.m */; };
 		FD8C15FE1DBB0E1600798AF2 /* WDClassType.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */; };
 		FD8C16011DBBBA0100798AF2 /* NSArray+AddClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C16001DBBBA0100798AF2 /* NSArray+AddClient.m */; };
+		FDA2FCA41DC3B9EE00C4440B /* WDTask.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA2FCA31DC3B9EE00C4440B /* WDTask.m */; };
 		FDADA29D1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDADA29C1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a */; };
 		FDADA2C91DBE840000D78242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9429595A1DB71F4C000A26DB /* Assets.xcassets */; };
 		FDADA2CA1DBE840000D78242 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9429595C1DB71F4C000A26DB /* Main.storyboard */; };
+		FDFE1AF81DC659D20043896A /* WDTaskDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFE1AF71DC659D20043896A /* WDTaskDispatch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,16 +170,20 @@
 		FD31ED2D1DBE89C500A503B0 /* PTUSBHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTUSBHub.h; sourceTree = "<group>"; };
 		FD31ED8D1DBE908500A503B0 /* WDUSBClientLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WDUSBClientLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD31EDBD1DBE92F100A503B0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD6CEBD61DC723DE0075C258 /* WDCommandReciver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCommandReciver.h; sourceTree = "<group>"; };
+		FD6CEBD71DC723DE0075C258 /* WDCommandReciver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCommandReciver.m; sourceTree = "<group>"; };
 		FD7AA6B31DC1FF5300ECEC29 /* NSMutableArray+Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Operation.h"; sourceTree = "<group>"; };
 		FD7AA6B41DC1FF5300ECEC29 /* NSMutableArray+Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Operation.m"; sourceTree = "<group>"; };
-		FD7AA6B61DC200D700ECEC29 /* WDParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDParams.h; sourceTree = "<group>"; };
-		FD7AA6B71DC200D700ECEC29 /* WDParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDParams.m; sourceTree = "<group>"; };
 		FD8C15FC1DBB0E1600798AF2 /* WDClassType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDClassType.h; sourceTree = "<group>"; };
 		FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDClassType.m; sourceTree = "<group>"; };
 		FD8C15FF1DBBBA0100798AF2 /* NSArray+AddClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AddClient.h"; sourceTree = "<group>"; };
 		FD8C16001DBBBA0100798AF2 /* NSArray+AddClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AddClient.m"; sourceTree = "<group>"; };
+		FDA2FCA21DC3B9EE00C4440B /* WDTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDTask.h; sourceTree = "<group>"; };
+		FDA2FCA31DC3B9EE00C4440B /* WDTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDTask.m; sourceTree = "<group>"; };
 		FDADA26D1DBE6FEF00D78242 /* FBHTTPOverUSBClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBHTTPOverUSBClient.h; sourceTree = "<group>"; };
 		FDADA29C1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWebDriverAgentUSBClient.a; sourceTree = "<group>"; };
+		FDFE1AF61DC659D20043896A /* WDTaskDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDTaskDispatch.h; sourceTree = "<group>"; };
+		FDFE1AF71DC659D20043896A /* WDTaskDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDTaskDispatch.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,8 +387,8 @@
 				942A59601DBA2EF40020025C /* WDSize.m */,
 				FD8C15FC1DBB0E1600798AF2 /* WDClassType.h */,
 				FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */,
-				FD7AA6B61DC200D700ECEC29 /* WDParams.h */,
-				FD7AA6B71DC200D700ECEC29 /* WDParams.m */,
+				FDA2FCA21DC3B9EE00C4440B /* WDTask.h */,
+				FDA2FCA31DC3B9EE00C4440B /* WDTask.m */,
 			);
 			path = ModelLayer;
 			sourceTree = "<group>";
@@ -394,6 +400,10 @@
 				FD16EC631DC35490004E4FDD /* WDTaskReciver.m */,
 				942A59621DBA2EF40020025C /* WDClient.h */,
 				942A59631DBA2EF40020025C /* WDClient.m */,
+				FDFE1AF61DC659D20043896A /* WDTaskDispatch.h */,
+				FDFE1AF71DC659D20043896A /* WDTaskDispatch.m */,
+				FD6CEBD61DC723DE0075C258 /* WDCommandReciver.h */,
+				FD6CEBD71DC723DE0075C258 /* WDCommandReciver.m */,
 			);
 			path = ServiceLayer;
 			sourceTree = "<group>";
@@ -683,9 +693,11 @@
 				942A59751DBA2EF40020025C /* WDRect.m in Sources */,
 				942959591DB71F4C000A26DB /* ViewController.m in Sources */,
 				942A59741DBA2EF40020025C /* WDHttpResponse.m in Sources */,
-				FD7AA6B81DC200D700ECEC29 /* WDParams.m in Sources */,
 				FD7AA6B51DC1FF5300ECEC29 /* NSMutableArray+Operation.m in Sources */,
+				FD6CEBD81DC723DE0075C258 /* WDCommandReciver.m in Sources */,
 				942A597B1DBA2EF40020025C /* YYClassInfo.m in Sources */,
+				FDA2FCA41DC3B9EE00C4440B /* WDTask.m in Sources */,
+				FDFE1AF81DC659D20043896A /* WDTaskDispatch.m in Sources */,
 				942959561DB71F4C000A26DB /* main.m in Sources */,
 				942959531DB71F4C000A26DB /* AppDelegate.m in Sources */,
 				FD8C16011DBBBA0100798AF2 /* NSArray+AddClient.m in Sources */,

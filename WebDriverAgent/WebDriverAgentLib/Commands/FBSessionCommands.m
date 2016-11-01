@@ -53,7 +53,6 @@
   [app launch];
   [FBSession sessionWithApplication:app];
   [FBLogger log:@"已启动App"];
-  [FBLogger log:@"正在返回response"];
   return FBResponseWithObject(FBSessionCommands.sessionInformation);
 }
 

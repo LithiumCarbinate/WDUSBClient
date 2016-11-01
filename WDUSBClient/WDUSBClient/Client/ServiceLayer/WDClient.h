@@ -23,10 +23,12 @@ extern NSString * const WDStatusKey;
 extern NSString * const WDStatusCodeKey;
 extern NSString * const WDUUIDKey;
 
+@class WDTask;
 @interface WDClient : FBHTTPOverUSBClient
 
 
 - (instancetype)initWithDeviceUDID:(NSString *)deviceUDID;
+- (instancetype)initWithTask:(WDTask *)task;
 
 @property (nonatomic, copy) NSString *pathForStoreImages;
 
@@ -36,7 +38,7 @@ extern NSString * const WDUUIDKey;
 @property (nonatomic, copy) NSString *bundleID;
 
 // 启动App
-- (void)startApp;
+- (BOOL)startApp;
 
 // 开启Monkey测试, 默认5分钟
 - (void)startMonkey;
@@ -87,8 +89,10 @@ extern NSString * const WDUUIDKey;
 */
 @property (nonatomic, copy) NSString *orientation;
 
-// 获取正颗的树结构
+// 获取整颗的树结构
 - (NSDictionary *)getSourceTree;
 
+// 运行分发过来的任务, 不可直接调用. 需要运行分发过来的任务, 可创建WDTaskDispatch调用对应方法
+- (BOOL)runTask;
 
 @end

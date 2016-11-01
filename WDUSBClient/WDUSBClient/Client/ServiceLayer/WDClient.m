@@ -7,13 +7,14 @@
 //
 
 #import "WDClient.h"
-
+#import "WDTask.h"
 #import "YYModel.h"
 #import "WDHttpResponse.h"
 #import "WDUtils.h"
 #import "WDSize.h"
 #import "NSArray+AddClient.h"
 #import <AppKit/AppKit.h>
+#import <stdio.h>
 NSString * const WDOrientationPORTRAIT = @"PORTRAIT";
 NSString * const WDOrientationLANDSCAPE = @"LANDSCAPE";
 NSString * const WDOrientationUIA_DEVICE_ORIENTATION_LANDSCAPERIGHT = @"UIA_DEVICE_ORIENTATION_LANDSCAPERIGHT";
@@ -47,6 +48,9 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 
 @property (nonatomic, strong) NSArray *methods;
 
+@property (nonatomic, strong) WDTask *task;
+
+
 @end
 
 @implementation WDClient
@@ -60,6 +64,16 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
     return self;
 }
 
+- (instancetype)initWithTask:(WDTask *)task {
+    
+    _task = task;
+    if (self = [super initWithDeviceUDID: _task.uuid]) {
+        self.bundleID = _task.bundleID;
+        self.pathForStoreImages = _task.imagesStorePath;
+    }
+    return self;
+}
+
 
 - (NSString *)bundleID {
     if (_bundleID == nil) {
@@ -69,8 +83,8 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
     return _bundleID;
 }
 
-- (void)startApp {
-    
+- (BOOL)startApp {
+    __block BOOL isStartApp = false;
     _sema = dispatch_semaphore_create(0);
     [self dispatchMethod:kWDPOST endpoint:@"/session" parameters:@{@"desiredCapabilities" : @{
                                                                                       @"bundleId":self.bundleID
@@ -78,12 +92,13 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
                                                                                           if ([response objectForKey: WDStatusCodeKey]) {
                                                                                               
                                                                                               _statusCode =[[response objectForKey: WDStatusCodeKey] stringValue];
-                                                                                              if (![_statusCode isEqualToString:@"200"]) {
+                                                                                              if (![_statusCode isEqualToString:@"200"] || _statusCode == nil) {
                                                                                                   NSLog(@"启动失败");
                                                                                               }else {
 
                                                                                                   NSDictionary *httpRes = response[WDHttpResponseKey];
                                                                                                   NSLog(@"启动成功");
+                                                                                                  isStartApp = true;
                                                                                                   if ([httpRes objectForKey:WDSessionIDKey]) {
                                                                                                       _sessionID = httpRes[WDSessionIDKey];
                                                                                                   }
@@ -102,6 +117,7 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
                                                                                       }];
     
    dispatch_semaphore_wait(_sema, DISPATCH_TIME_FOREVER);
+    return isStartApp;
 }
 
 
@@ -140,13 +156,18 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
         image = [[NSImage alloc] initWithData: imageData];
         
         NSFileManager *fileManager = [NSFileManager defaultManager];
-        NSString *desktopDir = [NSString stringWithFormat:@"%@/Desktop", NSHomeDirectory()];
+        NSString *desktopDir = [NSString stringWithFormat:@"%@/Desktop/screenshots", NSHomeDirectory()];
         NSString *fileName = [NSString stringWithFormat:@"WD%u.png",arc4random_uniform(-1)];
         NSString *fullPath = [[desktopDir stringByAppendingString:@"/"] stringByAppendingString:fileName];
         if (_pathForStoreImages) {
             fullPath = [[_pathForStoreImages stringByAppendingString:@"/"]
                         stringByAppendingString: fileName];
         }
+        
+        if (![fileManager fileExistsAtPath: desktopDir]) {
+            [fileManager createDirectoryAtPath:desktopDir withIntermediateDirectories:YES attributes:@{NSFilePosixPermissions : @(511)} error:nil];
+        }
+        
         BOOL createSuccess = [fileManager createFileAtPath:fullPath contents:nil attributes:nil];
         BOOL writeSuccess = [imageData writeToFile:fullPath atomically:YES];
         
@@ -355,6 +376,17 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
   NSArray *elements = [self _findElementsByParticalLinkText:partialLinkText aboutClassType:classType];
   return elements.firstObject;
 }
+
+
+
+- (BOOL)runTask {
+
+    NSLog(@"%s", __func__);
+    return [self startApp];
+    
+
+}
+
 
 
 
