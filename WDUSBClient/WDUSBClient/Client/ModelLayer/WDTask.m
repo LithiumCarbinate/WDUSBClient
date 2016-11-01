@@ -66,7 +66,7 @@
         NSArray *lines = [self _runCommandWithScriptPath: processInfoScriptPath];
         [lines writeToFile:[driverScriptsDir stringByAppendingFormat:@"/%@", @"result.txt"] atomically:YES];
         for (NSString *line in lines) {
-            if (line != @"" && line != nil && [line containsString: _uuid]) {
+            if (![line isEqualToString: @""] && line != nil && [line containsString: _uuid]) {
                 NSArray  *compents = [line componentsSeparatedByString:@" "];
                 NSString *pid = [compents objectAtIndex: 1];
                 NSString *killCMD = [@"kill -9 " stringByAppendingString: pid];
