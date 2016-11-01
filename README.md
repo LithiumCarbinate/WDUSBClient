@@ -12,6 +12,7 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 - 非侵入式框架, 无需在项目中嵌入.
 
 ##Update
+- 添加了自动化编译功能.-2016-11-01
 - 添加命令行支持功能.命令格式`open -n WDUSBClient.app --args "uuid" "bundleID" "imagesStorePath" "account" "password"-`-2016-11-01
 - 修复了getVisiableCell接口错误-2016-10-28
 - 重构了部分方法-2016-10-28
