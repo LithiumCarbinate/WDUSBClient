@@ -30,9 +30,7 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 - 直接将WDA驱动集成进来, 无需另外下载(WDA的编译请看下面介绍)-2016-10-21
 
 ##Next Step Will Do(下一步会做的)
-- 添加命令行功能.
 - 添加自动登入功能.
-- 添加自动编译脚本.
 
 
 ## 交流QQ群
