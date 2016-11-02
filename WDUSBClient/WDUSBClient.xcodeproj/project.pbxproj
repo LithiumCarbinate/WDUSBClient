@@ -170,6 +170,7 @@
 		FD31ED2D1DBE89C500A503B0 /* PTUSBHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTUSBHub.h; sourceTree = "<group>"; };
 		FD31ED8D1DBE908500A503B0 /* WDUSBClientLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WDUSBClientLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD31EDBD1DBE92F100A503B0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD3698C21DC8777200A1CDF7 /* WDMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDMacro.h; sourceTree = "<group>"; };
 		FD6CEBD61DC723DE0075C258 /* WDCommandReciver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCommandReciver.h; sourceTree = "<group>"; };
 		FD6CEBD71DC723DE0075C258 /* WDCommandReciver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCommandReciver.m; sourceTree = "<group>"; };
 		FD7AA6B31DC1FF5300ECEC29 /* NSMutableArray+Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Operation.h"; sourceTree = "<group>"; };
@@ -416,6 +417,7 @@
 				942A59681DBA2EF40020025C /* WDUtils.h */,
 				942A59691DBA2EF40020025C /* WDUtils.m */,
 				942A596A1DBA2EF40020025C /* YYModel */,
+				FD3698C21DC8777200A1CDF7 /* WDMacro.h */,
 			);
 			path = "Utils-ExtensionLayer";
 			sourceTree = "<group>";

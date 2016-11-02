@@ -15,7 +15,7 @@
 #import "FBExceptionHandler.h"
 #import "FBResponsePayload.h"
 #import "FBSession.h"
-
+#import "FBLogger.h"
 @interface FBRoute ()
 @property (nonatomic, assign, readwrite) BOOL requiresSession;
 @property (nonatomic, copy, readwrite) NSString *verb;

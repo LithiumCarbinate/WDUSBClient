@@ -34,6 +34,7 @@
                                 atLine:(NSUInteger)lineNumber
                               expected:(BOOL)expected
 {
+  perror(@"ERORR 3:Application Crash".UTF8String);
   [FBLogger logFmt:@"Enqueue Failure: %@ %@ %lu %d", description, filePath, (unsigned long)lineNumber, expected];
   const BOOL isPossibleDeadlock = ([description rangeOfString:@"Failed to get refreshed snapshot"].location != NSNotFound);
   if (!isPossibleDeadlock) {
@@ -46,6 +47,7 @@
                            userInfo:nil]
      raise];
   }
+
 }
 
 @end

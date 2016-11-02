@@ -14,7 +14,12 @@
 #import "WDSize.h"
 #import "NSArray+AddClient.h"
 #import <AppKit/AppKit.h>
+#import "WDMacro.h"
 #import <stdio.h>
+#import <objc/runtime.h>
+#import <objc/NSObjCRuntime.h>
+#import <objc/message.h>
+#import "WDUtils.h"
 NSString * const WDOrientationPORTRAIT = @"PORTRAIT";
 NSString * const WDOrientationLANDSCAPE = @"LANDSCAPE";
 NSString * const WDOrientationUIA_DEVICE_ORIENTATION_LANDSCAPERIGHT = @"UIA_DEVICE_ORIENTATION_LANDSCAPERIGHT";
@@ -43,13 +48,13 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 
 @property (nonatomic, copy) NSString *statusCode;
 
-@property (nonatomic, strong) dispatch_semaphore_t sema;
-
-
 @property (nonatomic, strong) NSArray *methods;
 
 @property (nonatomic, strong) WDTask *task;
 
+@property (nonatomic, assign) CGSize windowSize;
+
+@property (nonatomic, strong) NSMutableDictionary *imagesKey;
 
 @end
 
@@ -85,62 +90,261 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 
 - (BOOL)startApp {
     __block BOOL isStartApp = false;
-    _sema = dispatch_semaphore_create(0);
+    __block dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    weakify(self);
     [self dispatchMethod:kWDPOST endpoint:@"/session" parameters:@{@"desiredCapabilities" : @{
                                                                                       @"bundleId":self.bundleID
                                                                                       }}  completion:^(NSDictionary *response, NSError *requestError) {
+        strongify(self);
                                                                                           if ([response objectForKey: WDStatusCodeKey]) {
                                                                                               
                                                                                               _statusCode =[[response objectForKey: WDStatusCodeKey] stringValue];
                                                                                               if (![_statusCode isEqualToString:@"200"] || _statusCode == nil) {
-                                                                                                  NSLog(@"启动失败");
+                                                                                                  NSLog(@"无法通讯, 请检查数据线");
                                                                                               }else {
 
                                                                                                   NSDictionary *httpRes = response[WDHttpResponseKey];
-                                                                                                  NSLog(@"启动成功");
                                                                                                   isStartApp = true;
                                                                                                   if ([httpRes objectForKey:WDSessionIDKey]) {
                                                                                                       _sessionID = httpRes[WDSessionIDKey];
                                                                                                   }
-                                                                                                  
-                                                                                                  
-                                                                                            
                                                                                               }
                                                                                               
-                                                                                              
-                                                                                              
+                                                                                              NSDictionary *httpRDic = [response objectForKey: WDHttpResponseKey];
+                                                                                              if (httpRDic) {
+                                                                                                  
+                                                                                                  id valueObj = [httpRDic objectForKey:@"value"];
+                                                                                                  if ([valueObj isKindOfClass:NSString.class]) {
+                                                                                                      
+                                                                                                      NSString *value =  [valueObj uppercaseString];
+                                                                                                      if ([value containsString:@"APPLICATION IS NOT RUNNING"]) {
+                                                                                                          perror(START_APP_FAILED_MESSAGE.UTF8String);
+                                                                                                          exit(-1);
+                                                                                                      }
+                                                                                                  }
+                                                                                              }
+
                                                                                           }
-                                                                                          
-                                                                                          
-                                                                                          
-                                                                                          dispatch_semaphore_signal(_sema);
+                                                                                          dispatch_semaphore_signal(sema);
                                                                                       }];
     
-   dispatch_semaphore_wait(_sema, DISPATCH_TIME_FOREVER);
-    return isStartApp;
+   dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+   return isStartApp;
 }
 
 
 
-- (void)startMonkey {
-    [self startMonkeyWithMinute: 5];
+- (BOOL)startMonkey {
+   return [self startMonkeyWithMinute: 5];
 }
 
-- (void)startMonkeyWithMinute:(NSInteger)minute {
+- (BOOL)stopMonkey {
+    __block BOOL isStop = false;
+    __block dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    weakify(self);
+    [self dispatchMethod:kWDPOST endpoint:[NSString stringWithFormat:@"/session/%@/stopMonkey", _sessionID] parameters:nil completion:^(NSDictionary *response, NSError *requestError) {
+        strongify(self);
+        if ([WDUtils isResponseSuccess:response]) {
+            isStop = true;
+        }
+        dispatch_semaphore_signal(sema);
+    }];
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    return isStop;
+}
+
+- (BOOL)startMonkeyWithMinute:(NSInteger)minute {
     
-    CGSize size = self.windowSize;
-    [self dispatchMethod:kWDPOST endpoint:[NSString stringWithFormat:@"/session/%@/monkey", _sessionID] parameters:@{ WDWindowWidthKey : @(size.width),
-        WDWindowHeightKey : @(size.height),
-        WDMonkeyRunningTimeKey: @(minute)
-        } completion:^(NSDictionary *response, NSError *requestError) {
-            
-                                                }];
+    __block BOOL isFinishMonkey = false;
+    _windowSize = [self windowSize];
     
+    NSInteger width = _windowSize.width;
+    NSInteger height = _windowSize.height;
+
+    NSArray *method = @[@"_randomTap", @"_randomSwipeLeft", @"_randomSwipeRight", @"_randomDrag", @"_randomOrientation"];
+    NSInteger methodLen = method.count;
+    NSInteger numberOfEventsPerMin = 60 * 100 / 110;
+    NSInteger defaultNumberOfEvents = minute * numberOfEventsPerMin;
+    NSInteger numberofEvents = defaultNumberOfEvents;
+
+    // swipe launch screen
+    WDElement *scrollView = [[self findElementsByClassName: kUIScrollView] firstObject];
+    int maxImagesLen = 8;
+    for (int i = 0; i < maxImagesLen; i++) {
+        [scrollView swipeLeft];
+        if (i == maxImagesLen - 1) [self screenshot];
+
+    }
+
+    // find account textfileds
+    NSArray *textFilds = [self findElementsByClassName: kUITextField];
+     WDElement * _Nullable account = nil;
+     WDElement * _Nullable password = nil;
+    if (textFilds.count > 1) {
+        account = textFilds[0];
+        password = textFilds[1];
+    }else if (textFilds.count > 0) {
+        account = textFilds[0];
+        password = [[self findElementsByClassName: kUISecureTextField] firstObject];
+    }
+
+    // typing account and password
+    if (_task == nil) NSLog(@"请提供用户名和密码");
+    else {
+        [account typeText: _task.account];
+        if (account) [self screenshotWithFileName:@"username"];
+        [password typeText: _task.password];
+        if (password) [self screenshotWithFileName:@"password"];
+    }
+    
+
+    // click login button
+    WDElement *loginButton = [[self findButtonsWithContainsLabelTexts: @[@"登录" , @"登入"]] firstObject];
+    if (loginButton) {
+        [loginButton click];
+        [self screenshotWithFileName:@"login"];
+    }
+    
+    // start monkey test
+    NSTimeInterval period = 5.0; //设置时间间隔
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), period * NSEC_PER_SEC, 0);
+    dispatch_source_set_event_handler(_timer, ^{
+        [self screenshot];
+    });
+    dispatch_resume(_timer);
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(minute * 60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        isFinishMonkey = true;
+    });
+
+    
+    for (int i = 0; i < numberofEvents; i++) {
+        [NSThread sleepForTimeInterval: 0.15];
+        NSString *callM = method[ i % methodLen];
+        SEL callMSel = NSSelectorFromString(callM);
+        
+        void (*randomMethod)(id, SEL) = ((void(*)(id, SEL))objc_msgSend);
+        randomMethod(self, callMSel);
+        
+        if (isFinishMonkey) break;
+    }
+    
+    isFinishMonkey = true;
+    return YES;
+}
+
+- (void)_randomTap {
+    
+
+    __block BOOL isSuccess = false;
+    __block dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    weakify(self);
+    [self dispatchMethod:kWDPOST
+                endpoint:[NSString stringWithFormat:@"/session/%@/randomTap", _sessionID]
+              parameters:@{@"width" : @(_windowSize.width),
+                           @"height" : @(_windowSize.height)
+                          }
+              completion:^(NSDictionary *response, NSError *requestError) {
+                  
+        strongify(self);
+        if ([WDUtils isResponseSuccess:response]) {
+            isSuccess = true;
+        }
+        dispatch_semaphore_signal(sema);
+    }];
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 
 }
 
-- (void)screenshot {
-    
+- (void)_randomSwipeLeft {
+
+    __block BOOL isSuccess = false;
+    __block dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    weakify(self);
+    [self dispatchMethod:kWDPOST endpoint:[NSString stringWithFormat:@"/session/%@/randomSwipeLeft", _sessionID]
+              parameters:@{@"width" : @(_windowSize.width),
+                           @"height" : @(_windowSize.height)
+    } completion:^(NSDictionary *response, NSError *requestError) {
+        strongify(self);
+        if ([WDUtils isResponseSuccess:response]) {
+            isSuccess = true;
+        }
+        dispatch_semaphore_signal(sema);
+    }];
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+}
+
+- (void)_randomSwipeRight {
+
+    __block BOOL isSuccess = false;
+    __block dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    weakify(self);
+    [self dispatchMethod:kWDPOST endpoint:[NSString stringWithFormat:@"/session/%@/randomSwipeRight", _sessionID]
+              parameters:@{@"width" : @(_windowSize.width),
+                      @"height" : @(_windowSize.height)
+              } completion:^(NSDictionary *response, NSError *requestError) {
+                strongify(self);
+                if ([WDUtils isResponseSuccess:response]) {
+                    isSuccess = true;
+                }
+                dispatch_semaphore_signal(sema);
+            }];
+
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    //return isSuccess;
+}
+
+- (void)_randomDrag {
+
+    __block BOOL isSuccess = false;
+    __block dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    weakify(self);
+    [self dispatchMethod:kWDPOST endpoint:[NSString stringWithFormat:@"/session/%@/randomDrag", _sessionID]
+              parameters:@{@"width" : @(_windowSize.width),
+                      @"height" : @(_windowSize.height)
+              } completion:^(NSDictionary *response, NSError *requestError) {
+                strongify(self);
+                if ([WDUtils isResponseSuccess:response]) {
+                    isSuccess = true;
+                }
+                dispatch_semaphore_signal(sema);
+            }];
+
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    //return isSuccess;
+}
+
+- (void)_randomOrientation {
+
+    __block BOOL isSuccess = false;
+    __block dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    weakify(self);
+    [self dispatchMethod:kWDPOST endpoint:[NSString stringWithFormat:@"/session/%@/randomOrientation", _sessionID]
+              parameters:@{@"width" : @(_windowSize.width),
+                           @"height" : @(_windowSize.height)
+              } completion:^(NSDictionary *response, NSError *requestError) {
+                strongify(self);
+                if ([WDUtils isResponseSuccess:response]) {
+                    isSuccess = true;
+                }
+                dispatch_semaphore_signal(sema);
+            }];
+    [NSThread sleepForTimeInterval: 0.2];
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    //return isSuccess;
+}
+
+- (NSMutableDictionary *)imagesKey {
+    if (_imagesKey == nil ) {
+        _imagesKey = [NSMutableDictionary dictionary];
+    }
+    return _imagesKey;
+}
+
+- (void)screenshotWithFileName:(NSString *)fileName {
+
     __block NSImage *image = nil;
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
     [self dispatchMethod:kWDGET endpoint:@"/screenshot" parameters:@{}  completion:^(NSDictionary *response, NSError *requestError) {
@@ -152,16 +356,30 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
         NSString *base64Image = httpResponse.base64Image;
+        if (base64Image == nil) {
+            dispatch_semaphore_signal(signal);
+            return;
+        }
         NSData *imageData = [[NSData alloc] initWithBase64EncodedString:base64Image options:1];
         image = [[NSImage alloc] initWithData: imageData];
         
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSString *desktopDir = [NSString stringWithFormat:@"%@/Desktop/screenshots", NSHomeDirectory()];
-        NSString *fileName = [NSString stringWithFormat:@"WD%u.png",arc4random_uniform(-1)];
-        NSString *fullPath = [[desktopDir stringByAppendingString:@"/"] stringByAppendingString:fileName];
+        
+        
+        NSString *shotName = nil;
+        if (fileName == nil ||  [fileName isEqualToString:@""]) { // 时间格式截图
+            NSString *dateString = [WDUtils getCurretTime];
+            if (dateString !=nil)
+                shotName = [dateString stringByAppendingString:@".png"];
+        }else {
+            shotName = [fileName stringByAppendingString:@".png"];
+        }
+        
+        NSString *fullPath = [[desktopDir stringByAppendingString:@"/"] stringByAppendingString:shotName];
         if (_pathForStoreImages) {
             fullPath = [[_pathForStoreImages stringByAppendingString:@"/"]
-                        stringByAppendingString: fileName];
+                        stringByAppendingString: shotName];
         }
         
         if (![fileManager fileExistsAtPath: desktopDir]) {
@@ -178,6 +396,11 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
         dispatch_semaphore_signal(signal);
     }];
     dispatch_semaphore_wait(signal, DISPATCH_TIME_FOREVER);
+    
+}
+
+- (void)screenshot {
+    [self screenshotWithFileName: nil];
 }
 
 - (void)pressHome {
@@ -236,9 +459,7 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 }
 
 - (void)addClientToElements:(NSArray<WDElement *> *)elements {
-//    for (WDElement *element in elements ) {
-//        element.client = self;
-//    }
+
     [elements addClient: self];
 }
 
@@ -253,8 +474,30 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 }
 
 
-- (NSMutableArray *)findElementsByClassName:(NSString *)className {
+- (NSMutableArray*)findElementsByClassName:(NSString *)className {
     return [self _findElementsByText:className usingMethod:@"class name"];
+}
+
+- (NSMutableArray<WDElement *> *)findButtonsWithContainsLabelText:(NSString *)labelText {
+    return [self findButtonsWithContainsLabelTexts:@[labelText]];
+}
+
+- (NSMutableArray<WDElement *> *)findButtonsWithContainsLabelTexts:(NSArray<NSString *> *)labelTexts {
+    NSArray *buttons = [self findElementsByClassName: kUIButton];
+    NSMutableArray *findButtons = [NSMutableArray array];
+    for (WDElement *element in buttons) {
+        
+        for (NSString *labelText in labelTexts) {
+            if ([element.label containsString: labelText]) {
+                [findButtons addObject: element];
+            }
+        }
+    }
+    return findButtons;
+}
+
+- (WDElement *)findFirstButtonWithContainsLabelText:(NSString *)labelText {
+    return [[self findButtonsWithContainsLabelText:labelText] firstObject];
 }
 
 - (NSMutableArray *)findElementsByXPath:(NSString *)xpath {
@@ -381,8 +624,16 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 
 - (BOOL)runTask {
 
-    NSLog(@"%s", __func__);
-    return [self startApp];
+    [self screenshotWithFileName:@"install"];
+    if (![self startApp]) {
+        [WDUtils logError: START_APP_FAILED_MESSAGE];
+        return false;
+    }
+    if (![self startMonkey]) {
+        [WDUtils logError: START_MONKEY_FAILED_MESSAGE];
+        return false;
+    }
+    return true;
     
 
 }

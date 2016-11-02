@@ -22,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSMutableArray *arry = [NSArray array];
+    [arry addObject:@""];
     _numOfPages = 3;
     //self.view.backgroundColor = [UIColor redColor];
     

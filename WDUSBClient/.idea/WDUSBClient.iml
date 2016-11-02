@@ -5,26 +5,26 @@
       <sourceFolder url="file://$MODULE_DIR$/TestAppForIOSUITests/TestAppForIOSUITests.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TestAppForIOSUITests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClientLib/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/TestAppForIOS/Assets.xcassets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TestAppForIOS/GuideVC.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TestAppForIOS/ViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TestAppForIOS/AppDelegate.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TestAppForIOS/LoginVC.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TestAppForIOS/GuideVC.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TestAppForIOS/LoginVC.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TestAppForIOS/Assets.xcassets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TestAppForIOS/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TestAppForIOS/main.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/TestAppForIOS/GuideVC.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TestAppForIOS/ViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TestAppForIOS/AppDelegate.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TestAppForIOS/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClientUITests/WDUSBClientUITests.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClientUITests/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Assets.xcassets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/ViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/AppDelegate.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Base.lproj/Main.storyboard" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/main.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Assets.xcassets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/ViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/AppDelegate.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/CommunicationLayer/libWDAUSBClient/FBHTTPOverUSBClient.h" isTestSource="false" />
@@ -42,31 +42,32 @@
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ServiceLayer/WDTaskReciver.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ServiceLayer/WDTaskDispatch.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ServiceLayer/WDTaskReciver.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/ElementExtension/NSArray+AddClient.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/ElementExtension/WDElement+Queries.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/ElementExtension/WDElement+Queries.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/ElementExtension/NSArray+AddClient.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/NSMutableArrayExtension/NSMutableArray+Operation.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/NSMutableArrayExtension/NSMutableArray+Operation.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/WDUtils.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/WDUtils.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/WDMacro.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/YYModel/YYClassInfo.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/YYModel/YYClassInfo.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/YYModel/NSObject+YYModel.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/YYModel/YYModel.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/YYModel/NSObject+YYModel.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/WDUtils.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDClassType.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/WDUtils.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/NSMutableArrayExtension/NSMutableArray+Operation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/NSMutableArrayExtension/NSMutableArray+Operation.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/ElementExtension/NSArray+AddClient.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/ElementExtension/WDElement+Queries.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/ElementExtension/WDElement+Queries.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/Utils-ExtensionLayer/ElementExtension/NSArray+AddClient.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDClassType.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDSize.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDTask.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDTask.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDElement.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDHttpResponse.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDRect.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDSize.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDHttpResponse.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDElement.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDRect.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDClassType.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDSize.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDTask.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WDUSBClient/Client/ModelLayer/WDRect.m" isTestSource="false" />
     </content>
     <content url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/WDUSBClient-hifkyncbumfhhvbjkvieymsteqyv/Build/Intermediates/WDUSBClient.build/Debug/WDUSBClientLib.build/DerivedSources" />
     <orderEntry type="sourceFolder" forTests="false" />

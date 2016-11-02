@@ -9,21 +9,32 @@
 #import "WDTaskDispatch.h"
 #import "WDTask.h"
 #import "WDClient.h"
+#import "WDUtils.h"
+
+
+@interface WDTaskDispatch ()
+
+@property (nonatomic, strong) WDClient *client;
+
+@end
+
 @implementation WDTaskDispatch
 
 - (void)dispatchTaskToIphone:(WDTask *)task withPath:(NSString *)currentPath{
     
       [task buildDriverToIPhoneWithPath:  currentPath];
     
-      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     
                   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
     
-                        WDClient *client = [[WDClient alloc] initWithTask: task];
-                        if ([client runTask]) {
-                            exit(-1);
+                        _client = [[WDClient alloc] initWithTask: task];
+                        if ([_client runTask]) {
+                            [WDUtils logError: MONEKEY_FINISHED_MESSAGE];
+                            [_client pressHome];
                         }else {
-                            NSLog(@"运行任务失败");
+                            
+                            exit(-1);
                         }
     
                    });

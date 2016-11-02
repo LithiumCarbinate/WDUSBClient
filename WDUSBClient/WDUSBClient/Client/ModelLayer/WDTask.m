@@ -7,6 +7,7 @@
 //
 
 #import "WDTask.h"
+#import "WDMacro.h"
 
 @interface WDTask ()
 
@@ -24,7 +25,6 @@
 - (NSString *)_commandForBuildWithoutInstallDriverWithPath:(NSString *)path {
     _path = path;
     return [@"" stringByAppendingString: [NSString stringWithFormat:@"/usr/bin/xcodebuild -project %@/WebDriverAgent/WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination \'platform=iOS,id=%@\' build-for-testing", path, _uuid]];
-    
 }
 
 - (NSString *)_commandForGetProcessesInfo {
@@ -39,7 +39,7 @@
     NSString *driverScriptsDir = [NSString stringWithFormat:@"%@/Desktop/WDAScripts", NSHomeDirectory()];
     NSString *fileName = [NSString stringWithFormat:@"%@.sh",_uuid];
     NSString *pidFileName = [NSString stringWithFormat:@"%@.txt",_uuid];
-    NSString *driverScriptPath = [[driverScriptsDir stringByAppendingString:@"/"] stringByAppendingString:fileName];
+    NSString *installDriverScriptPath = [[driverScriptsDir stringByAppendingString:@"/"] stringByAppendingString:fileName];
     NSString *pidFullPath = [[driverScriptsDir stringByAppendingString:@"/"] stringByAppendingString:pidFileName];
     
     NSString *processScripeFileName = [NSString stringWithFormat:@"%@process.sh",_uuid];
@@ -57,41 +57,65 @@
     }
     BOOL isWriteGetProcessesInfo = [[self _commandForGetProcessesInfo] writeToFile:processInfoScriptPath atomically:YES];
     if (!isWriteGetProcessesInfo) {
-
+        
     }
-    
+
+    // build once
+    NSString *configFileForBuild = [driverScriptsDir stringByAppendingFormat:@"/buildOnce.config"];
+    if ([fileManager fileExistsAtPath: configFileForBuild]) {
+
+        NSData *data = [fileManager contentsAtPath: configFileForBuild];
+        NSString *configStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        //[configStr writeToFile:[driverScriptsDir stringByAppendingFormat:@"/script0.txt"] atomically:YES];
+        
+        if (configStr!= nil && ![configStr isEqualToString:@""] && [configStr containsString:@"true"]) {
+            system([self _commandForBuildWithoutInstallDriverWithPath: currentProjectPath].UTF8String);
+            [fileManager createFileAtPath:configFileForBuild contents:nil attributes:dict];
+        }
+        
+    }else {
+        [fileManager createFileAtPath:configFileForBuild contents:nil attributes:dict];
+    }
+
+    weakify(self);
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 
+        strongify(self);
             
         NSArray *lines = [self _runCommandWithScriptPath: processInfoScriptPath];
+        [lines writeToFile:[driverScriptsDir stringByAppendingFormat:@"/com.txt" ] atomically:YES];
         for (NSString *line in lines) {
             if (![line isEqualToString: @""] && line != nil && [line containsString: _uuid]) {
                 NSArray  *compents = [line componentsSeparatedByString:@" "];
-                NSString *pid = [compents objectAtIndex: 1];
-                NSString *killCMD = [@"kill -9 " stringByAppendingString: pid];
-                system(killCMD.UTF8String);
+                
+                for (int i =0; i<2 ; i++) {
+                    NSString *pid = [compents objectAtIndex: i];
+                    NSString *killCMD = [@"kill -9 " stringByAppendingString: pid];
+                    system(killCMD.UTF8String);
+                }
+                
+
             }
         }
             
         [fileManager removeItemAtPath:pidFullPath error:nil];
 
-        
-        
-        BOOL createSuccess = [fileManager createFileAtPath:driverScriptPath contents:nil attributes:dict];
+        BOOL createSuccess = [fileManager createFileAtPath:installDriverScriptPath contents:nil attributes:dict];
         
         BOOL writeSuccess = [[self commandForInstallDriverWithPath:currentProjectPath]
-                             writeToFile:driverScriptPath atomically:YES];
+                             writeToFile:installDriverScriptPath atomically:YES];
         
         if (writeSuccess && createSuccess) {
-            
+            weakify(self);
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                
-                [self _runScriptByTerminal: driverScriptPath];
+                strongify(self);
+                [self _runScriptByTerminal: installDriverScriptPath];
                 
             });
             
         }else {
-            NSLog(@"驱动编译失败, 请检查路径是否存在: %@", driverScriptPath);
+            NSLog(@"驱动编译失败, 请检查路径是否存在: %@", installDriverScriptPath);
         }
     });
 

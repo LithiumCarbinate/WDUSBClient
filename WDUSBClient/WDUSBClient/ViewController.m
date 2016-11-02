@@ -49,13 +49,15 @@
     [super viewDidLoad];
     
 
-//    WDTask *temp = [WDTask new];
-//    temp.uuid = @"28b7411b86649563afbc1d30091339a0a26232cc";
-//    temp.bundleID = @"com.apple.mobilesafari";
-//    temp.imagesStorePath = @"/Users/sixleaves/Desktop/screenshots";
-//    temp.account = @"sixleaves";
-//    temp.password = @"123456";
-    
+//    单机demo测试
+
+    WDTask *temp = [WDTask new];
+    temp.uuid = @"e397abbc1b534e9d375d35fb9d49b6bce107d5cc";
+    temp.bundleID = @"com.nd.www.TestAppForIOS";
+    temp.imagesStorePath = @"/Users/sixleaves/Desktop/screenshots";
+    temp.account = @"sixleaves";
+    temp.password = @"123456";
+
     // 创建命令行接收器, 用于接收命令行参数.命令行使用格式为 open -n WDUSBClient.app --args "e397abbc1b534e9d375d35fb9d49b6bce107d5cc" "com.tencent.xin" "/Users/sixleaves/Desktop/screenshots" "suweipeng" "123456"
     // --args后面分别是 uuid bundleID imagesStorePath account paasword
 
@@ -65,8 +67,9 @@
     // 创建任务分发器
     WDTaskDispatch *dispatcher = [WDTaskDispatch new];
 
-    // 开始分发任务. 需提供当前工程源码所在位置。需要执行修改。
-    [dispatcher dispatchTaskToIphone:task withPath:@"/Users/sixleaves/Dropbox/AutomaticTest/WDClient/WDUSBClient"];
+
+    // 开始分发任务. 需提供当前工程源码所在位置。需要自行修改。
+    [dispatcher dispatchTaskToIphone:temp withPath:@"/Users/sixleaves/Dropbox/AutomaticTest/WDClient/WDUSBClient"];
 
     
    // Demo 1 测试本地App
@@ -290,7 +293,11 @@
         });
         
     }
-    
-
 }
+
+
+- (void)dealloc {
+    
+}
+
 @end

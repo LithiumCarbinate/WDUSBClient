@@ -41,13 +41,16 @@ extern NSString * const WDUUIDKey;
 - (BOOL)startApp;
 
 // 开启Monkey测试, 默认5分钟
-- (void)startMonkey;
+- (BOOL)startMonkey;
 
 // 开启monkey测试, 测试分钟数为minute
-- (void)startMonkeyWithMinute:(NSInteger)minute;
+- (BOOL)startMonkeyWithMinute:(NSInteger)minute;
 
-// 截图
+// 截图, 格式为WD+不会重复的随机数
 - (void)screenshot;
+
+// 截图, 如果有fileName则按照fileName存储, fileName为空或者nil, 则按照时间顺序格式进行存储
+- (void)screenshotWithFileName:(NSString *)fileName;
 
 // 按home键
 - (void)pressHome;
@@ -79,6 +82,8 @@ extern NSString * const WDUUIDKey;
 
 - (BOOL)dissmissAlert;
 
+// 按home键
+- (void)pressHome;
 /*
  时时设置App旋转方向
  提供以下方向设置
@@ -95,4 +100,8 @@ extern NSString * const WDUUIDKey;
 // 运行分发过来的任务, 不可直接调用. 需要运行分发过来的任务, 可创建WDTaskDispatch调用对应方法
 - (BOOL)runTask;
 
+// 查找Button中包含指定文字的button. labelTexts是字符串数组, 用来匹配多种文字
+- (NSMutableArray<WDElement *> *)findButtonsWithContainsLabelTexts:(NSArray<NSString *> *)labelTexts;
+- (NSMutableArray<WDElement *> *)findButtonsWithContainsLabelText:(NSString *)labelText;
+- (WDElement *)findFirstButtonWithContainsLabelText:(NSString *)labelText;
 @end

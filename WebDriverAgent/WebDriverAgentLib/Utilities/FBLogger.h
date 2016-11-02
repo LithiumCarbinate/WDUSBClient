@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Log to stdout.
  */
++ (void)logError:(NSString *)message;
 + (void)log:(NSString *)message;
 + (void)logFmt:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
 

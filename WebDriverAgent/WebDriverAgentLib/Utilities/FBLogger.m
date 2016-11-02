@@ -26,6 +26,10 @@
   va_end(args);
 }
 
++ (void)logError:(NSString *)message {
+    [message writeToFile:@"/dev/stdout" atomically:NO encoding:NSUTF8StringEncoding error:nil];
+}
+
 + (void)verboseLog:(NSString *)message
 {
   if (!FBConfiguration.verboseLoggingEnabled) {

@@ -8,8 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+
+extern NSString * const START_APP_FAILED_MESSAGE;
+extern NSString * const START_MONKEY_FAILED_MESSAGE;
+extern NSString * const MONEKEY_FINISHED_MESSAGE;
+extern NSString * const APPLICATION_CARSH_MESSAGE;
 @interface WDUtils : NSObject
 
 + (BOOL)isResponseSuccess:(NSDictionary *)response;
-
++ (NSString *)getCurretTime;
++ (void)logError:(NSString *)str;
 @end

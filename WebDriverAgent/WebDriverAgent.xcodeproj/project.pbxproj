@@ -249,6 +249,8 @@
 		EEE3764A1D59FAE900ED88DD /* XCUIElement+FBWebDriverAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE376481D59FAE900ED88DD /* XCUIElement+FBWebDriverAttributes.m */; };
 		EEE9B4721CD02B88009D2030 /* FBRunLoopSpinner.h in Headers */ = {isa = PBXBuildFile; fileRef = EEE9B4701CD02B88009D2030 /* FBRunLoopSpinner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEE9B4731CD02B88009D2030 /* FBRunLoopSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE9B4711CD02B88009D2030 /* FBRunLoopSpinner.m */; };
+		FD3698C71DC89ABB00A1CDF7 /* WDClassType.h in Headers */ = {isa = PBXBuildFile; fileRef = FD3698C51DC89ABB00A1CDF7 /* WDClassType.h */; };
+		FD3698C81DC89ABB00A1CDF7 /* WDClassType.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3698C61DC89ABB00A1CDF7 /* WDClassType.m */; };
 		FD8C16041DBBC63000798AF2 /* XCUIElement+Property.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8C16021DBBC63000798AF2 /* XCUIElement+Property.h */; };
 		FD8C16051DBBC63000798AF2 /* XCUIElement+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C16031DBBC63000798AF2 /* XCUIElement+Property.m */; };
 /* End PBXBuildFile section */
@@ -572,6 +574,8 @@
 		EEE9B4701CD02B88009D2030 /* FBRunLoopSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRunLoopSpinner.h; sourceTree = "<group>"; };
 		EEE9B4711CD02B88009D2030 /* FBRunLoopSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBRunLoopSpinner.m; sourceTree = "<group>"; };
 		EEF9882A1C486603005CA669 /* WebDriverAgentRunner.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebDriverAgentRunner.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD3698C51DC89ABB00A1CDF7 /* WDClassType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDClassType.h; sourceTree = "<group>"; };
+		FD3698C61DC89ABB00A1CDF7 /* WDClassType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDClassType.m; sourceTree = "<group>"; };
 		FD8C16021DBBC63000798AF2 /* XCUIElement+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCUIElement+Property.h"; sourceTree = "<group>"; };
 		FD8C16031DBBC63000798AF2 /* XCUIElement+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCUIElement+Property.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -845,6 +849,8 @@
 		EE9AB78E1CAEDF0C008C271F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FD3698C51DC89ABB00A1CDF7 /* WDClassType.h */,
+				FD3698C61DC89ABB00A1CDF7 /* WDClassType.m */,
 				EE9B76A11CF7A43900275851 /* FBConfiguration.h */,
 				EE9B76A21CF7A43900275851 /* FBConfiguration.m */,
 				EE7E27181D06C69F001BEC7B /* FBDebugLogDelegateDecorator.h */,
@@ -1223,6 +1229,7 @@
 				EE158AE81CBD456F00A3E3F0 /* FBElementTypeTransformer.h in Headers */,
 				EE158AD21CBD456F00A3E3F0 /* FBElementCache.h in Headers */,
 				EE158ADA1CBD456F00A3E3F0 /* FBResponseJSONPayload.h in Headers */,
+				FD3698C71DC89ABB00A1CDF7 /* WDClassType.h in Headers */,
 				EE158AD01CBD456F00A3E3F0 /* FBElement.h in Headers */,
 				EE158AD41CBD456F00A3E3F0 /* FBExceptionHandler.h in Headers */,
 				EE158AD61CBD456F00A3E3F0 /* FBHTTPOverUSBServer.h in Headers */,
@@ -1546,6 +1553,7 @@
 				EE158AD31CBD456F00A3E3F0 /* FBElementCache.m in Sources */,
 				AD6C26951CF2379700F8B5FF /* FBAlert.m in Sources */,
 				EE158ABF1CBD456F00A3E3F0 /* FBElementCommands.m in Sources */,
+				FD3698C81DC89ABB00A1CDF7 /* WDClassType.m in Sources */,
 				EE158AD51CBD456F00A3E3F0 /* FBExceptionHandler.m in Sources */,
 				EEE376421D59F81400ED88DD /* XCElementSnapshot+FBHelpers.m in Sources */,
 				EE158AE91CBD456F00A3E3F0 /* FBElementTypeTransformer.m in Sources */,
