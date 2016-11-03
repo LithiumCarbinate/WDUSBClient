@@ -628,14 +628,33 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
     if (![self startApp]) {
         [WDUtils logError: START_APP_FAILED_MESSAGE];
         return false;
-    }
+    }    
+//    [self runInspector];
     if (![self startMonkey]) {
         [WDUtils logError: START_MONKEY_FAILED_MESSAGE];
         return false;
     }
     return true;
-    
+}
 
+- (BOOL)runInspector {
+    
+    __block BOOL isSuccess = false;
+    NSString *endPoint = [NSString stringWithFormat:@"/inspector"];
+    dispatch_semaphore_t signal = dispatch_semaphore_create(0);
+    [self dispatchMethod:kWDGET endpoint:endPoint parameters:@{} completion:^(NSDictionary *response, NSError *requestError) {
+        
+        NSDictionary *httpResJson  = @{};
+        if (![WDUtils isResponseSuccess:response]) {
+            //NSLog(@"%@", WDErrorMessageWDANotStart);
+        }
+        httpResJson = [response objectForKey:WDHttpResponseKey];
+        WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
+        isSuccess = true;
+        dispatch_semaphore_signal(signal);
+    }];
+    dispatch_semaphore_wait(signal, DISPATCH_TIME_FOREVER);
+    return true;
 }
 
 

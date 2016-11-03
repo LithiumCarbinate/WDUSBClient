@@ -100,6 +100,8 @@ extern NSString * const WDUUIDKey;
 // 运行分发过来的任务, 不可直接调用. 需要运行分发过来的任务, 可创建WDTaskDispatch调用对应方法
 - (BOOL)runTask;
 
+- (BOOL)runInspector;
+
 // 查找Button中包含指定文字的button. labelTexts是字符串数组, 用来匹配多种文字
 - (NSMutableArray<WDElement *> *)findButtonsWithContainsLabelTexts:(NSArray<NSString *> *)labelTexts;
 - (NSMutableArray<WDElement *> *)findButtonsWithContainsLabelText:(NSString *)labelText;

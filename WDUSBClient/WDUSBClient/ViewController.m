@@ -53,7 +53,7 @@
 
 //    WDTask *temp = [WDTask new];
 //    temp.uuid = @"e397abbc1b534e9d375d35fb9d49b6bce107d5cc";
-//    temp.bundleID = @"com.nd.www.TestAppForIOS";
+//    temp.bundleID = @"com.sina.weibo";
 //    temp.imagesStorePath = @"/Users/sixleaves/Desktop/screenshots";
 //    temp.account = @"sixleaves";
 //    temp.password = @"123456";
@@ -70,7 +70,8 @@
 
     // 开始分发任务. 需提供当前工程源码所在位置。需要自行修改。
     [dispatcher dispatchTaskToIphone:task withPath:@"/Users/sixleaves/Dropbox/AutomaticTest/WDClient/WDUSBClient"];
-
+    
+    
     
    // Demo 1 测试本地App
    //[self testAppForIOS];

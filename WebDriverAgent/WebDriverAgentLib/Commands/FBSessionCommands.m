@@ -51,6 +51,10 @@
   app.launchArguments = (NSArray<NSString *> *)requirements[@"arguments"] ?: @[];
   app.launchEnvironment = (NSDictionary <NSString *, NSString *> *)requirements[@"environment"] ?: @{};
   [app launch];
+
+  if (app.processID == 0) {
+    return FBResponseWithErrorFormat(@"Failed to launch %@ application", bundleID);
+  }
   [FBSession sessionWithApplication:app];
   [FBLogger log:@"已启动App"];
   return FBResponseWithObject(FBSessionCommands.sessionInformation);

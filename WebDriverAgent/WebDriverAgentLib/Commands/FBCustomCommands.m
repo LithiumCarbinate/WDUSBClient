@@ -166,7 +166,7 @@ BOOL _isStopMonkey = false;
     NSInteger toY = arc4random_uniform(height);
     
     if (fromY < 20) fromY += 15;
-    if (toY > height - 10 ) toY -=15;    
+    if (toY > height - 10 ) toY -=15;
 //    if (fromX < 1) fromX += 5;
 //    if (toX < 1) toX += 5;
     

@@ -14,7 +14,7 @@
 
 @interface WDTaskDispatch ()
 
-@property (nonatomic, strong) WDClient *client;
+
 
 @end
 
