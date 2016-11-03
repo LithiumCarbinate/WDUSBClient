@@ -166,9 +166,9 @@ BOOL _isStopMonkey = false;
     NSInteger toY = arc4random_uniform(height);
     
     if (fromY < 20) fromY += 15;
-    if (toY < 20 ) toY +=15;
-    if (fromY < 1) fromY += 15;
-    if (toY < 1) toY += 15;
+    if (toY > height - 10 ) toY -=15;    
+//    if (fromX < 1) fromX += 5;
+//    if (toX < 1) toX += 5;
     
     CGVector startPoint = CGVectorMake((double)fromX, (double)fromY);
     CGVector endPoint = CGVectorMake(toX, toY);
