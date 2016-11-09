@@ -84,7 +84,7 @@
         strongify(self);
             
         NSArray *lines = [self _runCommandWithScriptPath: processInfoScriptPath];
-        [lines writeToFile:[driverScriptsDir stringByAppendingFormat:@"/com.txt" ] atomically:YES];
+//        [lines writeToFile:[driverScriptsDir stringByAppendingFormat:@"/com.txt" ] atomically:YES];
         for (NSString *line in lines) {
             if (![line isEqualToString: @""] && line != nil && [line containsString: _uuid]) {
                 NSArray  *compents = [line componentsSeparatedByString:@" "];
@@ -141,6 +141,9 @@
 }
 
 - (void)_runScriptByTerminal:(NSString *)scriptPath {
+    
+    NSLog(@"%s", __func__);
+    
     NSString *build =
     [NSString stringWithFormat: @"tell application \"Terminal\" to do script \"sh %@ &\"", scriptPath];
     NSAppleScript *buildAS = [[NSAppleScript alloc] initWithSource: build];

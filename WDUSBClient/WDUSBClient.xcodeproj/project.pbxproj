@@ -70,6 +70,7 @@
 		FDADA29D1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDADA29C1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a */; };
 		FDADA2C91DBE840000D78242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9429595A1DB71F4C000A26DB /* Assets.xcassets */; };
 		FDADA2CA1DBE840000D78242 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9429595C1DB71F4C000A26DB /* Main.storyboard */; };
+		FDE900161DD2EE0700DF067D /* NSArray+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE900151DD2EE0700DF067D /* NSArray+Operation.m */; };
 		FDFE1AF81DC659D20043896A /* WDTaskDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFE1AF71DC659D20043896A /* WDTaskDispatch.m */; };
 /* End PBXBuildFile section */
 
@@ -183,6 +184,8 @@
 		FDA2FCA31DC3B9EE00C4440B /* WDTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDTask.m; sourceTree = "<group>"; };
 		FDADA26D1DBE6FEF00D78242 /* FBHTTPOverUSBClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBHTTPOverUSBClient.h; sourceTree = "<group>"; };
 		FDADA29C1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWebDriverAgentUSBClient.a; sourceTree = "<group>"; };
+		FDE900141DD2EE0700DF067D /* NSArray+Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Operation.h"; sourceTree = "<group>"; };
+		FDE900151DD2EE0700DF067D /* NSArray+Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Operation.m"; sourceTree = "<group>"; };
 		FDFE1AF61DC659D20043896A /* WDTaskDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDTaskDispatch.h; sourceTree = "<group>"; };
 		FDFE1AF71DC659D20043896A /* WDTaskDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDTaskDispatch.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -458,6 +461,8 @@
 			children = (
 				FD7AA6B31DC1FF5300ECEC29 /* NSMutableArray+Operation.h */,
 				FD7AA6B41DC1FF5300ECEC29 /* NSMutableArray+Operation.m */,
+				FDE900141DD2EE0700DF067D /* NSArray+Operation.h */,
+				FDE900151DD2EE0700DF067D /* NSArray+Operation.m */,
 			);
 			path = NSMutableArrayExtension;
 			sourceTree = "<group>";
@@ -693,6 +698,7 @@
 			files = (
 				942A59761DBA2EF40020025C /* WDSize.m in Sources */,
 				942A59751DBA2EF40020025C /* WDRect.m in Sources */,
+				FDE900161DD2EE0700DF067D /* NSArray+Operation.m in Sources */,
 				942959591DB71F4C000A26DB /* ViewController.m in Sources */,
 				942A59741DBA2EF40020025C /* WDHttpResponse.m in Sources */,
 				FD7AA6B51DC1FF5300ECEC29 /* NSMutableArray+Operation.m in Sources */,

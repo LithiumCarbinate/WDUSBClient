@@ -40,6 +40,15 @@ extern NSString * const WDErrorMessageWDANotStart;
 
 @property (nonatomic, copy) NSString *name;
 
+// 用于UISlider设置值, 取值范围为[0, 1]
+@property (nonatomic, assign) CGFloat sliderValue;
+
+// 用于设置PickerWheel对象的值
+@property (nonatomic, copy) NSString *pickerWheelValue;
+
+
+@property (nonatomic, copy) NSArray *pickerWheels;
+
 // Action
 // 点击动作, 点击成功后返回true, 失败返回false
 - (BOOL)click;

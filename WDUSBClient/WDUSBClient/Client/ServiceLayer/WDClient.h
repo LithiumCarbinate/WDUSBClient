@@ -11,6 +11,8 @@
 #import "WDElement.h"
 #import "WDElement+Queries.h"
 #import "WDClassType.h"
+#import "NSArray+Operation.h"
+#import "NSMutableArray+Operation.h"
 extern NSString * const WDOrientationPORTRAIT;
 extern NSString * const WDOrientationLANDSCAPE;
 extern NSString * const WDOrientationUIA_DEVICE_ORIENTATION_LANDSCAPERIGHT;

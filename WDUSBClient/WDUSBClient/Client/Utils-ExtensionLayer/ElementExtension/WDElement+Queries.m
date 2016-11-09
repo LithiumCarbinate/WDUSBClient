@@ -29,6 +29,41 @@ NSString * const WDSwipeDirectionDown=@"down";
 NSString * const WDErrorMessageWDANotStart = @"WDA Not Start!!!";
 
 @implementation WDElement (Queries)
+
+- (NSArray *)pickerWheels {
+    
+    return [self.client findElementsByClassName: kUIPickerWheel];
+    
+}
+
+- (void)setSliderValue:(CGFloat)sliderValue {
+    
+    __block BOOL isSuccess = false;
+    NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/value", self.client.sessionID, self.elementID];
+    dispatch_semaphore_t signal = dispatch_semaphore_create(0);
+    [self.client dispatchMethod:kWDPOST endpoint:endPoint parameters:@{
+                                                                       @"value" : @(sliderValue).stringValue
+                                                                       } completion:^(NSDictionary *response, NSError *requestError) {
+                                                                           if ([WDUtils isResponseSuccess: response]) isSuccess = true;
+                                                                           dispatch_semaphore_signal(signal);
+                                                                       }];
+    dispatch_semaphore_wait(signal, DISPATCH_TIME_FOREVER);
+}
+
+- (void)setPickerWheelValue:(NSString *)pickerWheelValue {
+    __block BOOL isSuccess = false;
+    NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/value", self.client.sessionID, self.elementID];
+    dispatch_semaphore_t signal = dispatch_semaphore_create(0);
+    [self.client dispatchMethod:kWDPOST endpoint:endPoint parameters:@{
+                                                                       @"value" : pickerWheelValue
+                                                                       } completion:^(NSDictionary *response, NSError *requestError) {
+                                                                           if ([WDUtils isResponseSuccess: response]) isSuccess = true;
+                                                                           dispatch_semaphore_signal(signal);
+                                                                       }];
+    dispatch_semaphore_wait(signal, DISPATCH_TIME_FOREVER);
+}
+
+
 - (CGRect)rect {
     __block CGRect rect = (CGRect){0, 0, 0, 0};
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);

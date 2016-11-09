@@ -174,10 +174,27 @@ NSString * const WDSwipeDirectionKey = @"direction";
   if ([value isKindOfClass:[NSArray class]]) {
     textToType = [value componentsJoinedByString:@""];
   }
-  if (element.elementType == XCUIElementTypePickerWheel) {
-    [element adjustToPickerWheelValue:textToType];
-    return FBResponseWithOK();
-  }
+
+    [FBLogger logFmt:@"element type = %@", element.wdType];
+    if (element.elementType == XCUIElementTypePickerWheel) {
+        [FBLogger logFmt:@"start pickerWheel, value = %@", textToType];
+        [element adjustToPickerWheelValue:textToType];
+        return FBResponseWithOK();
+    }
+    if (element.elementType == XCUIElementTypeSlider) {
+        [FBLogger log:@"start Slider"];
+        CGFloat sliderValue = textToType.floatValue;
+        
+        [FBLogger logFmt:@"slider value = %f", element.normalizedSliderPosition];
+        
+        if (sliderValue < 0.0 || sliderValue > 1.0 ) {
+            return FBResponseWithErrorFormat(@"Value of slider should be in 0..1 range");
+        }
+        [element adjustToNormalizedSliderPosition:sliderValue];
+        return FBResponseWithOK();
+    }
+    
+    
   NSError *error = nil;
   if (![element fb_scrollToVisibleWithError:&error]) {
     return FBResponseWithError(error);

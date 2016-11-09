@@ -12,5 +12,6 @@
 
 - (id)wd_removeLastObject;
 - (id)wd_removeFirstObject;
+- (void)setWheelValues:(NSString *)value,...;
 - (BOOL)isEmpty;
 @end

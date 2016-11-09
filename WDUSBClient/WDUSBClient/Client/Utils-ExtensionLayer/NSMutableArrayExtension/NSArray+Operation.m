@@ -1,38 +1,15 @@
 //
-//  NSMutableArray+Operation.m
+//  NSArray+Operation.m
 //  WDUSBClient
 //
-//  Created by sixleaves on 16/10/27.
+//  Created by sixleaves on 16/11/9.
 //  Copyright © 2016年 netdragon. All rights reserved.
 //
 
-#import "NSMutableArray+Operation.h"
+#import "NSArray+Operation.h"
 #import "WDElement.h"
 #import "WDElement+Queries.h"
-@implementation NSMutableArray (Operation)
-
-- (id)wd_removeLastObject {
-
-    id lastObj = [self lastObject];
-    [self removeLastObject];
-    return lastObj;    
-}
-- (id)wd_removeFirstObject {
-    
-    id firstObj = nil;
-    if ([self count] > 0) {
-        firstObj = [self firstObject];
-        [self removeObjectAtIndex: 0];
-    }
-    return firstObj;
-}
-
-- (BOOL)isEmpty {
-    
-    if (self.count <= 0) return YES;
-    return NO;
-}
-
+@implementation NSArray (Operation)
 - (void)setWheelValues:(NSString *)value, ... {
     
     va_list ap;
