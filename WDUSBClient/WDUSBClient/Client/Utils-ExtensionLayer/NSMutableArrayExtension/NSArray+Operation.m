@@ -21,7 +21,6 @@
     WDElement *element = self.firstObject;
     element.pickerWheelValue = value;
     while ((wheelValue = va_arg(ap, NSString *))) {
-        NSLog(@"%@", wheelValue);
         if (i >= len) break;
         WDElement *element = [self objectAtIndex: i];
         element.pickerWheelValue = wheelValue;

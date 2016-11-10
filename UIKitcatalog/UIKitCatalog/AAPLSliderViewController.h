@@ -8,5 +8,5 @@
 
 @import UIKit;
 
-@interface AAPLSliderViewController : UITableViewController
+@interface AAPLSliderViewController : UIViewController
 @end

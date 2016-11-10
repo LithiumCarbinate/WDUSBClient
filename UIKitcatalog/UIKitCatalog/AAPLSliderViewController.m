@@ -34,10 +34,8 @@
 
 - (void)configureDefaultSlider {
     self.defaultSlider.minimumValue = 0;
-    self.defaultSlider.maximumValue = 100;
-    self.defaultSlider.value = 42;
-    self.defaultSlider.continuous = YES;
-    
+    self.defaultSlider.maximumValue = 1;
+    self.defaultSlider.value = 0.42;
     [self.defaultSlider addTarget:self action:@selector(sliderValueDidChange:) forControlEvents:UIControlEventValueChanged];
 }
 
@@ -59,9 +57,8 @@
     [self.customSlider setThumbImage:thumbImage forState:UIControlStateNormal];
     
     self.customSlider.minimumValue = 0;
-    self.customSlider.maximumValue = 100;
-    self.customSlider.continuous = NO;
-    self.customSlider.value = 84;
+    self.customSlider.maximumValue = 1;
+    self.customSlider.value = 0.84;
 
     [self.customSlider addTarget:self action:@selector(sliderValueDidChange:) forControlEvents:UIControlEventValueChanged];
 }

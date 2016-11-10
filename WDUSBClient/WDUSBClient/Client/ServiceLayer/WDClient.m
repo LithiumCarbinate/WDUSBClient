@@ -20,6 +20,8 @@
 #import <objc/NSObjCRuntime.h>
 #import <objc/message.h>
 #import "WDUtils.h"
+#import "WDElement+Queries.h"
+
 NSString * const WDOrientationPORTRAIT = @"PORTRAIT";
 NSString * const WDOrientationLANDSCAPE = @"LANDSCAPE";
 NSString * const WDOrientationUIA_DEVICE_ORIENTATION_LANDSCAPERIGHT = @"UIA_DEVICE_ORIENTATION_LANDSCAPERIGHT";
@@ -629,13 +631,14 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
         [WDUtils logError: START_APP_FAILED_MESSAGE];
         return false;
     }    
-//    [self runInspector];
+
     if (![self startMonkey]) {
         [WDUtils logError: START_MONKEY_FAILED_MESSAGE];
         return false;
     }
     return true;
 }
+
 
 - (BOOL)runInspector {
     

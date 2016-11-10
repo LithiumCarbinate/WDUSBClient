@@ -17,7 +17,7 @@
 
 @interface ViewController ()
 
-@property (nonatomic, strong)  NSMutableArray<FBHTTPOverUSBClient *>* clients;
+@property (nonatomic, strong)  NSMutableArray<WDClient *>* clients;
 
 @property (nonatomic, strong)  WDTaskReciver *taskReciver;
 
@@ -38,7 +38,7 @@
     return _taskReciver;
 }
 
-- (NSArray<FBHTTPOverUSBClient *> *)clients {
+- (NSArray<WDClient *> *)clients {
     
     if (_clients == nil) {
         _clients = [NSMutableArray arrayWithCapacity: MAX_CLIENT_NUM];
@@ -54,15 +54,15 @@
 //   Demo 0. 单机demo测试
 
 //    WDTask *temp = [WDTask new];
-//    temp.uuid = @"e397abbc1b534e9d375d35fb9d49b6bce107d5cc";
-//    temp.bundleID = @"com.sina.weibo";
+//    temp.uuid = @"28b7411b86649563afbc1d30091339a0a26232cc";
+//    temp.bundleID = @"sixleaves.test";
 //    temp.imagesStorePath = @"/Users/sixleaves/Desktop/screenshots";
 //    temp.account = @"sixleaves";
 //    temp.password = @"123456";
-
-    // 创建命令行接收器, 用于接收命令行参数.命令行使用格式为 open -n WDUSBClient.app --args "e397abbc1b534e9d375d35fb9d49b6bce107d5cc" "com.tencent.xin" "/Users/sixleaves/Desktop/screenshots" "suweipeng" "123456"
-    // --args后面分别是 uuid bundleID imagesStorePath account paasword
-
+//
+////     创建命令行接收器, 用于接收命令行参数.命令行使用格式为 open -n WDUSBClient.app --args "e397abbc1b534e9d375d35fb9d49b6bce107d5cc" "com.tencent.xin" "/Users/sixleaves/Desktop/screenshots" "suweipeng" "123456"
+////     --args后面分别是 uuid bundleID imagesStorePath account paasword
+//
 //    WDCommandReciver *commandReciver = [WDCommandReciver sharedInstance];
 //    WDTask *task = [commandReciver getReciveTask];
 //
@@ -71,7 +71,7 @@
 //
 //
 //    // 开始分发任务. 需提供当前工程源码所在位置。需要自行修改。
-//    [dispatcher dispatchTaskToIphone:task withPath:@"/data/WDClient/WDUSBClient"];
+//    [dispatcher dispatchTaskToIphone:temp withPath:@"/Users/sixleaves/Dropbox/AutomaticTest/WDClient/WDUSBClient"];
     
     
     
@@ -82,20 +82,22 @@
    //[self testWeChatForIOS];
         
    // Demo 3 UIKitcatalog
-   
     _buildTask = [WDTask new];
     _buildTask.uuid = @"28b7411b86649563afbc1d30091339a0a26232cc";
-    _buildTask.bundleID = @"com.sina.weibo";
+    _buildTask.bundleID = @"com.example.apple-samplecode.UIKitCatalog";
     _buildTask.imagesStorePath = @"/Users/sixleaves/Desktop/screenshots";
     _buildTask.account = @"sixleaves";
     _buildTask.password = @"123456";
-    //[_buildTask buildDriverToIPhoneWithPath:@"/Users/sixleaves/Dropbox/AutomaticTest/WDClient/WDUSBClient"];
-//
-    [self.clients addObject: [[WDClient alloc] initWithTask: _buildTask ]];
+    [_buildTask buildDriverToIPhoneWithPath:@"/Users/sixleaves/Dropbox/AutomaticTest/WDClient/WDUSBClient"];
+
+
     
-    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(16 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.clients addObject: [[WDClient alloc] initWithTask: _buildTask ]];
         [self testCatalog];
-    //});
+    });
+    
+    
    // Demo 5 微信 monkey测试
    // [self testMonkeyInWX];
 }
@@ -133,7 +135,7 @@
     for (int i = 0; i < 1; i++) {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            
+            NSLog(@"%s", __func__);
             WDClient *client = (WDClient *)self.clients[i];
             [client setBundleID: @"com.example.apple-samplecode.UIKitCatalog"];
             // 启动App
@@ -141,7 +143,7 @@
             [self testActivityIndicatorsWithClient: client];
 //            [self testAlertController: client];
             [self testPickerView: client];
-//            [self testSlider: client];
+            [self testSlider: client];
         });
   }
 }
@@ -153,13 +155,12 @@
     
     NSArray *elements = [client findElementsByClassName: kUISlider];
     for (WDElement *slider in elements) {
-        NSArray *children = slider.childrens;
-            slider.sliderValue = 0.1;
+        slider.sliderValue = 1.0;
     }
 
     
-    element = [client findElementByParticalLinkText:@"UIKitCatalog" withClassType:kUIButton];
-    [element click];
+//    element = [client findElementByParticalLinkText:@"UIKitCatalog" withClassType:kUIButton];
+//    [element click];
 }
 
 - (void)testActivityIndicatorsWithClient:(WDClient *)client {
