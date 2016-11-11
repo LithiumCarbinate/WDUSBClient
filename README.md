@@ -184,8 +184,10 @@ xcodebuild -project /Users/admini/WebDriverAgent/WebDriverAgent.xcodeproj \
 
 先提供一个可以玩的版本给大家.很想把这东西做到完美。现在工程内还有很多需要重构的代码。后续会继续提供以下功能, 更多相关功能欢迎提供建议, 我们会综合考虑尽量加进去。
 
-后面要做的功能
+以完成的
 - monkey测试.
+
+后面要做的功能
 - 脱离WDA.
 - 集成录制工具
 - 适配iOS 7, 8
