@@ -156,7 +156,7 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 }
 
 - (BOOL)startMonkeyWithMinute:(NSInteger)minute {
-    
+    NSLog(@"编译成功,开启Monkey测试");
     __block BOOL isFinishMonkey = false;
     _windowSize = [self windowSize];
     

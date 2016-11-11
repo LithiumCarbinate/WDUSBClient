@@ -12,7 +12,7 @@
 #import "WDCommandReciver.h"
 #import "YYModel.h"
 #import "ViewController.h"
-#import "MonkeyTester.h"
+#import "MasterTester.h"
 NSMutableArray * _cStrsToNSStrings(int argc, const char * argv[]);
 
 
@@ -23,6 +23,7 @@ int main(int argc, const char * argv[]) {
         NSString *uuid = [params wd_removeFirstObject];
         NSString *bundleID = [params wd_removeFirstObject];
         NSString *imageStorePath = [params wd_removeFirstObject];
+        NSString *driverRootPath = [params wd_removeFirstObject];
         NSString *account = nil;
         NSString *password = nil;
         
@@ -32,12 +33,11 @@ int main(int argc, const char * argv[]) {
         }
         
         WDTask *task = [WDTask new];
-        task.uuid = uuid, task.bundleID = bundleID, task.imagesStorePath = imageStorePath;
+        task.uuid = uuid, task.bundleID = bundleID, task.imagesStorePath = imageStorePath,  task.driverRootPath = driverRootPath;
         task.account = account, task.password = password;
         
         WDCommandReciver  *reciver = [WDCommandReciver new];
         [reciver setReciveTask: task];
-        
 
     return NSApplicationMain(argc, argv);
 }

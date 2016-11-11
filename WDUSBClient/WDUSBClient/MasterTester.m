@@ -1,12 +1,12 @@
 //
-//  MonkeyTester.m
+//  MasterTester.m
 //  WDUSBClient
 //
 //  Created by sixleaves on 16/11/10.
 //  Copyright © 2016年 netdragon. All rights reserved.
 //
 
-#import "MonkeyTester.h"
+#import "MasterTester.h"
 #import "FBHTTPOverUSBClient.h"
 #import "WDTask.h"
 #import "WDClient.h"
@@ -14,8 +14,8 @@
 #import "WDTaskDispatch.h"
 #import "WDCommandReciver.h"
 #define MAX_CLIENT_NUM 10
-@interface MonkeyTester ()
-@property (nonatomic, strong)  NSMutableArray<WDClient *>* clients;
+@interface MasterTester ()
+@property (nonatomic, strong)  WDClient * client;
 
 @property (nonatomic, strong)  WDTaskReciver *taskReciver;
 
@@ -24,8 +24,8 @@
 @property (nonatomic, assign) BOOL shouldExitApplication;
 
 @end
-static MonkeyTester *_instance = nil;
-@implementation MonkeyTester
+static MasterTester *_instance = nil;
+@implementation MasterTester
 
 
 
@@ -39,17 +39,9 @@ static MonkeyTester *_instance = nil;
     return _taskReciver;
 }
 
-- (NSArray<WDClient *> *)clients {
+- (void)runMoneky {
     
-    if (_clients == nil) {
-        _clients = [NSMutableArray arrayWithCapacity: MAX_CLIENT_NUM];
-    }
-    return _clients;
-}
 
-- (void)run {
-    
-    NSLog(@"%s", __func__);    
     WDCommandReciver *commandReciver = [WDCommandReciver sharedInstance];
     WDTask *task = [commandReciver getReciveTask];
     
@@ -57,7 +49,35 @@ static MonkeyTester *_instance = nil;
     WDTaskDispatch *dispatcher = [WDTaskDispatch new];
     
     // 开始分发任务. 需提供当前工程源码所在位置。需要自行修改。
-    [dispatcher dispatchTaskToIphone:task withPath:@"/Users/sixleaves/Dropbox/AutomaticTest/WDClient/WDUSBClient"];
+    // /Users/sixleaves/Dropbox/AutomaticTest/WDClient/WDUSBClient
+    [dispatcher dispatchTaskToIphone:task];
+}
+
+- (void)runNormalUITest {
+    
+    NSLog(@"开启自定义UI测试");
+    WDCommandReciver *commandReciver = [WDCommandReciver sharedInstance];
+    WDTask *task = [commandReciver getReciveTask];
+    
+    // 创建任务分发器
+    WDTaskDispatch *dispatcher = [WDTaskDispatch new];
+
+    // 设置驱动编译时间, 单位为秒, 自行根据环境更改
+    const NSUInteger buildDriverTime = 15;
+    
+    // 编译驱动
+    [task buildDriverToIPhone];
+
+    weakify(self);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(buildDriverTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        strongify(self);
+        NSLog(@"编译成功,开启自定义的UI测试");
+        self.client = [[WDClient alloc] initWithTask: task];
+        if (_runUITestWithClient) self.runUITestWithClient(self.client);
+        else {
+            NSLog(@"请实现自定义的UI测试");
+        }
+    });
 }
 
 

@@ -12,6 +12,7 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 - 非侵入式框架, 无需在项目中嵌入.
 
 ##Update
+- 改进了命令行功能, 使用WDUSBClient4CI进行命令行方式的调用-2016-11-11
 - 给WDElement添加了设置UISlider的方法, eg: `slider.sliderValue = 0.6`-2016-11-10
 - 给UIPickerView添加了setWheelValues:value...接口, 用于设置选中的值-2016-11-09
 - 优化了自动编译程序, 提供buildOnce.config文件, 首次运行客户端前, 需配置true来完成驱动编译-[自动化编译配置步骤](https://github.com/sixleaves/WDUSBClient/wiki/Automic-Complie)-2016-11-02

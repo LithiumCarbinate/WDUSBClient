@@ -12,6 +12,7 @@
 @interface WDTaskDispatch : NSObject
 
 @property (nonatomic, strong) WDClient *client;
+- (void)dispatchTaskToIphone:(WDTask *)task;
 - (void)dispatchTaskToIphone:(WDTask *)task withPath:(NSString *)currentPath;
 
 

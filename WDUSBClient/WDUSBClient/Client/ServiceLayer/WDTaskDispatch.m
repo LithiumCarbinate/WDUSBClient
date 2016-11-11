@@ -39,8 +39,10 @@
     
                    });
       });
-    
+}
 
+- (void)dispatchTaskToIphone:(WDTask *)task {
+    [self dispatchTaskToIphone:task withPath:task.driverRootPath];
 }
 
 @end

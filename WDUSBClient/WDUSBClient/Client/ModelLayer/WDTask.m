@@ -31,10 +31,12 @@
     return [NSString stringWithFormat:@"ps | grep %@", _uuid];
 }
 
-
+- (void)buildDriverToIPhone{
+    [self buildDriverToIPhoneWithPath: _driverRootPath];
+}
 
 - (void)buildDriverToIPhoneWithPath:(NSString *)currentProjectPath {
-    NSLog(@"%s", __func__);
+    NSLog(@"大淫~驱动编译中, 请骚后......");
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *driverScriptsDir = [NSString stringWithFormat:@"%@/Desktop/WDAScripts", NSHomeDirectory()];

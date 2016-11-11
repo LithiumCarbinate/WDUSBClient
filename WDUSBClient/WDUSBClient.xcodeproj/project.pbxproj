@@ -70,12 +70,12 @@
 		FD4F53921DD59A48008443C5 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A596C1DBA2EF40020025C /* NSObject+YYModel.m */; };
 		FD4F53931DD59CF4008443C5 /* NSArray+AddClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C16001DBBBA0100798AF2 /* NSArray+AddClient.m */; };
 		FD4F53971DD5A48E008443C5 /* NSString+ForJava.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4F53961DD5A48E008443C5 /* NSString+ForJava.m */; };
-		FD6A3FD21DD47D0500D20C6C /* MonkeyTester.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6A3FD11DD47D0500D20C6C /* MonkeyTester.m */; };
+		FD6A3FD21DD47D0500D20C6C /* MasterTester.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6A3FD11DD47D0500D20C6C /* MasterTester.m */; };
 		FD6A3FDA1DD48B5D00D20C6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6A3FD91DD48B5D00D20C6C /* main.m */; };
 		FD6A3FDE1DD48B7C00D20C6C /* WDUSBClientLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD31ED8D1DBE908500A503B0 /* WDUSBClientLib.framework */; };
-		FD6A3FDF1DD48C6A00D20C6C /* MonkeyTester.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6A3FD11DD47D0500D20C6C /* MonkeyTester.m */; };
+		FD6A3FDF1DD48C6A00D20C6C /* MasterTester.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6A3FD11DD47D0500D20C6C /* MasterTester.m */; };
 		FD6A3FE01DD48CB900D20C6C /* WDTask.h in Headers */ = {isa = PBXBuildFile; fileRef = FDA2FCA21DC3B9EE00C4440B /* WDTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD6A3FE11DD48CDA00D20C6C /* MonkeyTester.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6A3FD01DD47D0500D20C6C /* MonkeyTester.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD6A3FE11DD48CDA00D20C6C /* MasterTester.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6A3FD01DD47D0500D20C6C /* MasterTester.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD6A3FE21DD48D2600D20C6C /* WDCommandReciver.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6CEBD61DC723DE0075C258 /* WDCommandReciver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD6A3FE31DD48D3700D20C6C /* WDCommandReciver.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6CEBD71DC723DE0075C258 /* WDCommandReciver.m */; };
 		FD6A3FE41DD48D4900D20C6C /* WDTaskReciver.m in Sources */ = {isa = PBXBuildFile; fileRef = FD16EC631DC35490004E4FDD /* WDTaskReciver.m */; };
@@ -211,8 +211,8 @@
 		FD4F53891DD595FD008443C5 /* WDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDUtils.m; sourceTree = "<group>"; };
 		FD4F53951DD5A48E008443C5 /* NSString+ForJava.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ForJava.h"; sourceTree = "<group>"; };
 		FD4F53961DD5A48E008443C5 /* NSString+ForJava.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ForJava.m"; sourceTree = "<group>"; };
-		FD6A3FD01DD47D0500D20C6C /* MonkeyTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkeyTester.h; sourceTree = "<group>"; };
-		FD6A3FD11DD47D0500D20C6C /* MonkeyTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonkeyTester.m; sourceTree = "<group>"; };
+		FD6A3FD01DD47D0500D20C6C /* MasterTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterTester.h; path = ../../MasterTester.h; sourceTree = "<group>"; };
+		FD6A3FD11DD47D0500D20C6C /* MasterTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MasterTester.m; path = ../../MasterTester.m; sourceTree = "<group>"; };
 		FD6A3FD71DD48B5D00D20C6C /* WDUSBClient4CI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WDUSBClient4CI; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6A3FD91DD48B5D00D20C6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FD6CEBD61DC723DE0075C258 /* WDCommandReciver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCommandReciver.h; sourceTree = "<group>"; };
@@ -319,8 +319,6 @@
 				942959521DB71F4C000A26DB /* AppDelegate.m */,
 				942959571DB71F4C000A26DB /* ViewController.h */,
 				942959581DB71F4C000A26DB /* ViewController.m */,
-				FD6A3FD01DD47D0500D20C6C /* MonkeyTester.h */,
-				FD6A3FD11DD47D0500D20C6C /* MonkeyTester.m */,
 				9429595A1DB71F4C000A26DB /* Assets.xcassets */,
 				9429595C1DB71F4C000A26DB /* Main.storyboard */,
 				9429595F1DB71F4C000A26DB /* Info.plist */,
@@ -457,6 +455,8 @@
 		942A59611DBA2EF40020025C /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				FD6A3FD01DD47D0500D20C6C /* MasterTester.h */,
+				FD6A3FD11DD47D0500D20C6C /* MasterTester.m */,
 				FD16EC621DC35490004E4FDD /* WDTaskReciver.h */,
 				FD16EC631DC35490004E4FDD /* WDTaskReciver.m */,
 				942A59621DBA2EF40020025C /* WDClient.h */,
@@ -578,7 +578,7 @@
 				FD6A3FE21DD48D2600D20C6C /* WDCommandReciver.h in Headers */,
 				FD31EDB01DBE90CD00A503B0 /* WDClient.h in Headers */,
 				FD6A3FE01DD48CB900D20C6C /* WDTask.h in Headers */,
-				FD6A3FE11DD48CDA00D20C6C /* MonkeyTester.h in Headers */,
+				FD6A3FE11DD48CDA00D20C6C /* MasterTester.h in Headers */,
 				FD6A3FEE1DD48D8500D20C6C /* NSMutableArray+Operation.h in Headers */,
 				FD6A3FF01DD48D8500D20C6C /* NSArray+Operation.h in Headers */,
 				FD31EDB21DBE90CD00A503B0 /* NSArray+AddClient.h in Headers */,
@@ -820,7 +820,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD6A3FD21DD47D0500D20C6C /* MonkeyTester.m in Sources */,
+				FD6A3FD21DD47D0500D20C6C /* MasterTester.m in Sources */,
 				942A59761DBA2EF40020025C /* WDSize.m in Sources */,
 				942A59751DBA2EF40020025C /* WDRect.m in Sources */,
 				FDE900161DD2EE0700DF067D /* NSArray+Operation.m in Sources */,
@@ -888,7 +888,7 @@
 				FD31ED9C1DBE90A000A503B0 /* WDSize.m in Sources */,
 				FD31ED9D1DBE90A000A503B0 /* WDClassType.m in Sources */,
 				FD6A3FF71DD48D8B00D20C6C /* WDTask.m in Sources */,
-				FD6A3FDF1DD48C6A00D20C6C /* MonkeyTester.m in Sources */,
+				FD6A3FDF1DD48C6A00D20C6C /* MasterTester.m in Sources */,
 				FD4F538F1DD597CC008443C5 /* WDUtils.m in Sources */,
 				FD31ED9E1DBE90A100A503B0 /* WDClient.m in Sources */,
 				FD31ED9F1DBE90A100A503B0 /* WDElement+Queries.m in Sources */,

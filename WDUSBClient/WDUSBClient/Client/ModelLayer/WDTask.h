@@ -17,7 +17,9 @@
 @property (nonatomic, copy) NSString *account;
 @property (nonatomic, copy) NSString *password;
 
+@property (nonatomic, copy) NSString *driverRootPath;
 
 - (NSString *)commandForInstallDriverWithPath:(NSString *)path;
+- (void)buildDriverToIPhone;
 - (void)buildDriverToIPhoneWithPath:(NSString *)currentProjectPath;
 @end
