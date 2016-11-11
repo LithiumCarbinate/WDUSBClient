@@ -105,6 +105,7 @@ NSString * const WDErrorMessageWDANotStart = @"WDA Not Start!!!";
         NSDictionary *httpResJson  = @{};
         if (![WDUtils isResponseSuccess:response]) {
             NSLog(WDErrorMessageWDANotStart);
+            exit(-1);
         }
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
@@ -125,6 +126,7 @@ NSString * const WDErrorMessageWDANotStart = @"WDA Not Start!!!";
         NSDictionary *httpResJson  = @{};
         if (![WDUtils isResponseSuccess:response]) {
             NSLog(WDErrorMessageWDANotStart);
+            exit(-1);
         }
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
@@ -144,6 +146,7 @@ NSString * const WDErrorMessageWDANotStart = @"WDA Not Start!!!";
         NSDictionary *httpResJson  = @{};
         if (![WDUtils isResponseSuccess:response]) {
             NSLog(WDErrorMessageWDANotStart);
+            exit(-1);
         }
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
@@ -163,6 +166,7 @@ NSString * const WDErrorMessageWDANotStart = @"WDA Not Start!!!";
         NSDictionary *httpResJson  = @{};
         if (![WDUtils isResponseSuccess:response]) {
             NSLog(WDErrorMessageWDANotStart);
+            exit(-1);
         }
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
@@ -181,6 +185,7 @@ NSString * const WDErrorMessageWDANotStart = @"WDA Not Start!!!";
         NSDictionary *httpResJson  = @{};
         if (![WDUtils isResponseSuccess:response]) {
             NSLog(WDErrorMessageWDANotStart);
+            exit(-1);
         }
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];

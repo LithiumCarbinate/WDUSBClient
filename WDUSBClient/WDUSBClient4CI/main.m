@@ -1,25 +1,31 @@
-//
-//  main.m
-//  WDUSBClient
-//
-//  Created by admini on 16/10/19.
-//  Copyright © 2016年 netdragon. All rights reserved.
-//
-
 #import <Cocoa/Cocoa.h>
-#import "NSMutableArray+Operation.h"
-#import "WDTask.h"
-#import "WDCommandReciver.h"
-#import "YYModel.h"
-#import "ViewController.h"
-#import "MonkeyTester.h"
+//#import "NSMutableArray+Operation.h"
+//#import "WDTask.h"
+//#import "WDCommandReciver.h"
+//#import "YYModel.h"
+//#import "ViewController.h"
+//#import "MonkeyTester.h"
+
+
+#import <WDUSBClientLib/WDClient.h>
+#import <WDUSBClientLib/WDTask.h>
+#import <WDUSBClientLib/MonkeyTester.h>
+#import <WDUSBClientLib/WDCommandReciver.h>
 NSMutableArray * _cStrsToNSStrings(int argc, const char * argv[]);
 
 
 int main(int argc, const char * argv[]) {
-    
 
+    NSRunLoop   * runLoop;
+    MonkeyTester *monkey=nil; // replace with desired class
+    
+    @autoreleasepool
+    {
+        // create run loop
+        runLoop = [NSRunLoop currentRunLoop];
+        
         NSMutableArray *params = _cStrsToNSStrings(argc, argv);
+        NSLog(@"%@", params);
         NSString *uuid = [params wd_removeFirstObject];
         NSString *bundleID = [params wd_removeFirstObject];
         NSString *imageStorePath = [params wd_removeFirstObject];
@@ -31,15 +37,23 @@ int main(int argc, const char * argv[]) {
             password = [params wd_removeFirstObject];
         }
         
+        // 创建任务接收器, 接受命令行任务
         WDTask *task = [WDTask new];
         task.uuid = uuid, task.bundleID = bundleID, task.imagesStorePath = imageStorePath;
         task.account = account, task.password = password;
         
-        WDCommandReciver  *reciver = [WDCommandReciver new];
+        WDCommandReciver  *reciver = [WDCommandReciver sharedInstance];
         [reciver setReciveTask: task];
         
-
-    return NSApplicationMain(argc, argv);
+        // 创建monkey对象, 开启monkey测试
+        monkey = [MonkeyTester sharedInstance];
+        [monkey run];
+        
+        // enter run loop
+        while((!(monkey.shouldExit)) && (([runLoop runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:2]])));
+        
+    };
+    return(monkey.exitCode);
 }
 
 
@@ -54,4 +68,3 @@ NSMutableArray * _cStrsToNSStrings(int argc, const char * argv[]) {
     }
     return array;
 }
-

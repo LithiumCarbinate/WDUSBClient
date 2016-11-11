@@ -82,20 +82,18 @@
    //[self testWeChatForIOS];
         
    // Demo 3 UIKitcatalog
-    _buildTask = [WDTask new];
-    _buildTask.uuid = @"28b7411b86649563afbc1d30091339a0a26232cc";
-    _buildTask.bundleID = @"com.example.apple-samplecode.UIKitCatalog";
-    _buildTask.imagesStorePath = @"/Users/sixleaves/Desktop/screenshots";
-    _buildTask.account = @"sixleaves";
-    _buildTask.password = @"123456";
-    [_buildTask buildDriverToIPhoneWithPath:@"/Users/sixleaves/Dropbox/AutomaticTest/WDClient/WDUSBClient"];
-
-
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.clients addObject: [[WDClient alloc] initWithTask: _buildTask ]];
-        [self testCatalog];
-    });
+//    _buildTask = [WDTask new];
+//    _buildTask.uuid = @"28b7411b86649563afbc1d30091339a0a26232cc";
+//    _buildTask.bundleID = @"com.example.apple-samplecode.UIKitCatalog";
+//    _buildTask.imagesStorePath = @"/Users/sixleaves/Desktop/screenshots";
+//    _buildTask.account = @"sixleaves";
+//    _buildTask.password = @"123456";
+//    [_buildTask buildDriverToIPhoneWithPath:@"/Users/sixleaves/Dropbox/AutomaticTest/WDClient/WDUSBClient"];
+//
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.clients addObject: [[WDClient alloc] initWithTask: _buildTask ]];
+//        [self testCatalog];
+//    });
     
     
    // Demo 5 微信 monkey测试

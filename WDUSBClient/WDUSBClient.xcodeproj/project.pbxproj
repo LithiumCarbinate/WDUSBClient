@@ -24,7 +24,6 @@
 		942A59761DBA2EF40020025C /* WDSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A59601DBA2EF40020025C /* WDSize.m */; };
 		942A59771DBA2EF40020025C /* WDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A59631DBA2EF40020025C /* WDClient.m */; };
 		942A59781DBA2EF40020025C /* WDElement+Queries.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A59671DBA2EF40020025C /* WDElement+Queries.m */; };
-		942A59791DBA2EF40020025C /* WDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A59691DBA2EF40020025C /* WDUtils.m */; };
 		942A597A1DBA2EF40020025C /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A596C1DBA2EF40020025C /* NSObject+YYModel.m */; };
 		942A597B1DBA2EF40020025C /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A596E1DBA2EF40020025C /* YYClassInfo.m */; };
 		94F29DDB1DB8BD9800EA6076 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F29DDA1DB8BD9800EA6076 /* GuideVC.m */; };
@@ -39,7 +38,6 @@
 		FD31ED9E1DBE90A100A503B0 /* WDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A59631DBA2EF40020025C /* WDClient.m */; };
 		FD31ED9F1DBE90A100A503B0 /* WDElement+Queries.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A59671DBA2EF40020025C /* WDElement+Queries.m */; };
 		FD31EDA01DBE90A100A503B0 /* NSArray+AddClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C16001DBBBA0100798AF2 /* NSArray+AddClient.m */; };
-		FD31EDA11DBE90A100A503B0 /* WDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A59691DBA2EF40020025C /* WDUtils.m */; };
 		FD31EDA21DBE90A100A503B0 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A596C1DBA2EF40020025C /* NSObject+YYModel.m */; };
 		FD31EDA31DBE90A100A503B0 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A596E1DBA2EF40020025C /* YYClassInfo.m */; };
 		FD31EDA41DBE90B100A503B0 /* libWebDriverAgentUSBClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDADA29C1DBE7BB400D78242 /* libWebDriverAgentUSBClient.a */; };
@@ -51,17 +49,44 @@
 		FD31EDAA1DBE90CD00A503B0 /* PTUSBHub.h in Headers */ = {isa = PBXBuildFile; fileRef = FD31ED2D1DBE89C500A503B0 /* PTUSBHub.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD31EDAB1DBE90CD00A503B0 /* WDElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A59591DBA2EF40020025C /* WDElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD31EDAC1DBE90CD00A503B0 /* WDHttpResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A595B1DBA2EF40020025C /* WDHttpResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD31EDAD1DBE90CD00A503B0 /* WDRect.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A595D1DBA2EF40020025C /* WDRect.h */; };
-		FD31EDAE1DBE90CD00A503B0 /* WDSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A595F1DBA2EF40020025C /* WDSize.h */; };
+		FD31EDAD1DBE90CD00A503B0 /* WDRect.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A595D1DBA2EF40020025C /* WDRect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD31EDAE1DBE90CD00A503B0 /* WDSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A595F1DBA2EF40020025C /* WDSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD31EDAF1DBE90CD00A503B0 /* WDClassType.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8C15FC1DBB0E1600798AF2 /* WDClassType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD31EDB01DBE90CD00A503B0 /* WDClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A59621DBA2EF40020025C /* WDClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD31EDB11DBE90CD00A503B0 /* WDElement+Queries.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A59661DBA2EF40020025C /* WDElement+Queries.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD31EDB21DBE90CD00A503B0 /* NSArray+AddClient.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8C15FF1DBBBA0100798AF2 /* NSArray+AddClient.h */; };
-		FD31EDB31DBE90CD00A503B0 /* WDUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A59681DBA2EF40020025C /* WDUtils.h */; };
-		FD31EDB41DBE90CD00A503B0 /* NSObject+YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A596B1DBA2EF40020025C /* NSObject+YYModel.h */; };
-		FD31EDB51DBE90CD00A503B0 /* YYClassInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A596D1DBA2EF40020025C /* YYClassInfo.h */; };
-		FD31EDB61DBE90CD00A503B0 /* YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A596F1DBA2EF40020025C /* YYModel.h */; };
+		FD31EDB21DBE90CD00A503B0 /* NSArray+AddClient.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8C15FF1DBBBA0100798AF2 /* NSArray+AddClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD31EDB41DBE90CD00A503B0 /* NSObject+YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A596B1DBA2EF40020025C /* NSObject+YYModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD31EDB51DBE90CD00A503B0 /* YYClassInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A596D1DBA2EF40020025C /* YYClassInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD31EDBE1DBE92F100A503B0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD31EDBD1DBE92F100A503B0 /* Info.plist */; };
+		FD4F53821DD5941A008443C5 /* YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 942A596F1DBA2EF40020025C /* YYModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD4F538A1DD595FD008443C5 /* WDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4F53891DD595FD008443C5 /* WDUtils.m */; };
+		FD4F538B1DD596CA008443C5 /* WDCommunicationLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4F53831DD5945F008443C5 /* WDCommunicationLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD4F538C1DD596D5008443C5 /* WDModelLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = C00D989594F7CD46B50C7772 /* WDModelLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD4F538D1DD596E2008443C5 /* WDUtilExtensionLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4F53841DD59518008443C5 /* WDUtilExtensionLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD4F538E1DD597CC008443C5 /* WDUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4F53881DD595FD008443C5 /* WDUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD4F538F1DD597CC008443C5 /* WDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4F53891DD595FD008443C5 /* WDUtils.m */; };
+		FD4F53901DD59A39008443C5 /* NSArray+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE900151DD2EE0700DF067D /* NSArray+Operation.m */; };
+		FD4F53911DD59A40008443C5 /* NSMutableArray+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AA6B41DC1FF5300ECEC29 /* NSMutableArray+Operation.m */; };
+		FD4F53921DD59A48008443C5 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 942A596C1DBA2EF40020025C /* NSObject+YYModel.m */; };
+		FD4F53931DD59CF4008443C5 /* NSArray+AddClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C16001DBBBA0100798AF2 /* NSArray+AddClient.m */; };
+		FD4F53971DD5A48E008443C5 /* NSString+ForJava.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4F53961DD5A48E008443C5 /* NSString+ForJava.m */; };
+		FD6A3FD21DD47D0500D20C6C /* MonkeyTester.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6A3FD11DD47D0500D20C6C /* MonkeyTester.m */; };
+		FD6A3FDA1DD48B5D00D20C6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6A3FD91DD48B5D00D20C6C /* main.m */; };
+		FD6A3FDE1DD48B7C00D20C6C /* WDUSBClientLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD31ED8D1DBE908500A503B0 /* WDUSBClientLib.framework */; };
+		FD6A3FDF1DD48C6A00D20C6C /* MonkeyTester.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6A3FD11DD47D0500D20C6C /* MonkeyTester.m */; };
+		FD6A3FE01DD48CB900D20C6C /* WDTask.h in Headers */ = {isa = PBXBuildFile; fileRef = FDA2FCA21DC3B9EE00C4440B /* WDTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD6A3FE11DD48CDA00D20C6C /* MonkeyTester.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6A3FD01DD47D0500D20C6C /* MonkeyTester.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD6A3FE21DD48D2600D20C6C /* WDCommandReciver.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6CEBD61DC723DE0075C258 /* WDCommandReciver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD6A3FE31DD48D3700D20C6C /* WDCommandReciver.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6CEBD71DC723DE0075C258 /* WDCommandReciver.m */; };
+		FD6A3FE41DD48D4900D20C6C /* WDTaskReciver.m in Sources */ = {isa = PBXBuildFile; fileRef = FD16EC631DC35490004E4FDD /* WDTaskReciver.m */; };
+		FD6A3FE51DD48D5200D20C6C /* WDTaskDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFE1AF71DC659D20043896A /* WDTaskDispatch.m */; };
+		FD6A3FE61DD48D6500D20C6C /* NSArray+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE900151DD2EE0700DF067D /* NSArray+Operation.m */; };
+		FD6A3FE71DD48D6A00D20C6C /* NSMutableArray+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AA6B41DC1FF5300ECEC29 /* NSMutableArray+Operation.m */; };
+		FD6A3FE81DD48D7E00D20C6C /* WDTaskReciver.h in Headers */ = {isa = PBXBuildFile; fileRef = FD16EC621DC35490004E4FDD /* WDTaskReciver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD6A3FEB1DD48D7E00D20C6C /* WDTaskDispatch.h in Headers */ = {isa = PBXBuildFile; fileRef = FDFE1AF61DC659D20043896A /* WDTaskDispatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD6A3FEE1DD48D8500D20C6C /* NSMutableArray+Operation.h in Headers */ = {isa = PBXBuildFile; fileRef = FD7AA6B31DC1FF5300ECEC29 /* NSMutableArray+Operation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD6A3FF01DD48D8500D20C6C /* NSArray+Operation.h in Headers */ = {isa = PBXBuildFile; fileRef = FDE900141DD2EE0700DF067D /* NSArray+Operation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD6A3FF71DD48D8B00D20C6C /* WDTask.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA2FCA31DC3B9EE00C4440B /* WDTask.m */; };
 		FD6CEBD81DC723DE0075C258 /* WDCommandReciver.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6CEBD71DC723DE0075C258 /* WDCommandReciver.m */; };
 		FD7AA6B51DC1FF5300ECEC29 /* NSMutableArray+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AA6B41DC1FF5300ECEC29 /* NSMutableArray+Operation.m */; };
 		FD8C15FE1DBB0E1600798AF2 /* WDClassType.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */; };
@@ -109,6 +134,15 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FD6A3FD51DD48B5D00D20C6C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -150,8 +184,6 @@
 		942A59631DBA2EF40020025C /* WDClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDClient.m; sourceTree = "<group>"; };
 		942A59661DBA2EF40020025C /* WDElement+Queries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WDElement+Queries.h"; sourceTree = "<group>"; };
 		942A59671DBA2EF40020025C /* WDElement+Queries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WDElement+Queries.m"; sourceTree = "<group>"; };
-		942A59681DBA2EF40020025C /* WDUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDUtils.h; sourceTree = "<group>"; };
-		942A59691DBA2EF40020025C /* WDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDUtils.m; sourceTree = "<group>"; };
 		942A596B1DBA2EF40020025C /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
 		942A596C1DBA2EF40020025C /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
 		942A596D1DBA2EF40020025C /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
@@ -162,6 +194,7 @@
 		94F29DE01DB8C68D00EA6076 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94F29DE21DB8DED900EA6076 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		94F29DE31DB8DED900EA6076 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		C00D989594F7CD46B50C7772 /* WDModelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDModelLayer.h; sourceTree = "<group>"; };
 		FD16EC621DC35490004E4FDD /* WDTaskReciver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDTaskReciver.h; sourceTree = "<group>"; };
 		FD16EC631DC35490004E4FDD /* WDTaskReciver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDTaskReciver.m; sourceTree = "<group>"; };
 		FD31ED291DBE89C500A503B0 /* Peertalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Peertalk.h; sourceTree = "<group>"; };
@@ -171,7 +204,17 @@
 		FD31ED2D1DBE89C500A503B0 /* PTUSBHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTUSBHub.h; sourceTree = "<group>"; };
 		FD31ED8D1DBE908500A503B0 /* WDUSBClientLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WDUSBClientLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD31EDBD1DBE92F100A503B0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD3698C21DC8777200A1CDF7 /* WDMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDMacro.h; sourceTree = "<group>"; };
+		FD4F53831DD5945F008443C5 /* WDCommunicationLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDCommunicationLayer.h; sourceTree = "<group>"; };
+		FD4F53841DD59518008443C5 /* WDUtilExtensionLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDUtilExtensionLayer.h; sourceTree = "<group>"; };
+		FD4F53861DD595FD008443C5 /* WDMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDMacro.h; sourceTree = "<group>"; };
+		FD4F53881DD595FD008443C5 /* WDUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDUtils.h; sourceTree = "<group>"; };
+		FD4F53891DD595FD008443C5 /* WDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDUtils.m; sourceTree = "<group>"; };
+		FD4F53951DD5A48E008443C5 /* NSString+ForJava.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ForJava.h"; sourceTree = "<group>"; };
+		FD4F53961DD5A48E008443C5 /* NSString+ForJava.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ForJava.m"; sourceTree = "<group>"; };
+		FD6A3FD01DD47D0500D20C6C /* MonkeyTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkeyTester.h; sourceTree = "<group>"; };
+		FD6A3FD11DD47D0500D20C6C /* MonkeyTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonkeyTester.m; sourceTree = "<group>"; };
+		FD6A3FD71DD48B5D00D20C6C /* WDUSBClient4CI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WDUSBClient4CI; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD6A3FD91DD48B5D00D20C6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FD6CEBD61DC723DE0075C258 /* WDCommandReciver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCommandReciver.h; sourceTree = "<group>"; };
 		FD6CEBD71DC723DE0075C258 /* WDCommandReciver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCommandReciver.m; sourceTree = "<group>"; };
 		FD7AA6B31DC1FF5300ECEC29 /* NSMutableArray+Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Operation.h"; sourceTree = "<group>"; };
@@ -230,6 +273,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FD6A3FD41DD48B5D00D20C6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD6A3FDE1DD48B7C00D20C6C /* WDUSBClientLib.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -241,6 +292,7 @@
 				9429599E1DB76260000A26DB /* TestAppForIOS */,
 				942959B81DB76260000A26DB /* TestAppForIOSUITests */,
 				FD31ED3A1DBE8B7F00A503B0 /* WDUSBClientLib */,
+				FD6A3FD81DD48B5D00D20C6C /* WDUSBClient4CI */,
 				9429594F1DB71F4C000A26DB /* Products */,
 				942959841DB73F88000A26DB /* Frameworks */,
 			);
@@ -254,6 +306,7 @@
 				9429599D1DB76260000A26DB /* TestAppForIOS.app */,
 				942959B51DB76260000A26DB /* TestAppForIOSUITests.xctest */,
 				FD31ED8D1DBE908500A503B0 /* WDUSBClientLib.framework */,
+				FD6A3FD71DD48B5D00D20C6C /* WDUSBClient4CI */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -266,6 +319,8 @@
 				942959521DB71F4C000A26DB /* AppDelegate.m */,
 				942959571DB71F4C000A26DB /* ViewController.h */,
 				942959581DB71F4C000A26DB /* ViewController.m */,
+				FD6A3FD01DD47D0500D20C6C /* MonkeyTester.h */,
+				FD6A3FD11DD47D0500D20C6C /* MonkeyTester.m */,
 				9429595A1DB71F4C000A26DB /* Assets.xcassets */,
 				9429595C1DB71F4C000A26DB /* Main.storyboard */,
 				9429595F1DB71F4C000A26DB /* Info.plist */,
@@ -353,6 +408,7 @@
 			children = (
 				942A59521DBA2EF40020025C /* libWDAUSBClient */,
 				942A59551DBA2EF40020025C /* Peertalk */,
+				FD4F53831DD5945F008443C5 /* WDCommunicationLayer.h */,
 			);
 			path = CommunicationLayer;
 			sourceTree = "<group>";
@@ -393,6 +449,7 @@
 				FD8C15FD1DBB0E1600798AF2 /* WDClassType.m */,
 				FDA2FCA21DC3B9EE00C4440B /* WDTask.h */,
 				FDA2FCA31DC3B9EE00C4440B /* WDTask.m */,
+				C00D989594F7CD46B50C7772 /* WDModelLayer.h */,
 			);
 			path = ModelLayer;
 			sourceTree = "<group>";
@@ -415,12 +472,13 @@
 		942A59641DBA2EF40020025C /* Utils-ExtensionLayer */ = {
 			isa = PBXGroup;
 			children = (
+				FD4F53941DD5A476008443C5 /* NSString4Java */,
+				FD4F53851DD595FD008443C5 /* Macro */,
+				FD4F53871DD595FD008443C5 /* Utils */,
 				FD7AA6B21DC1FF5300ECEC29 /* NSMutableArrayExtension */,
 				942A59651DBA2EF40020025C /* ElementExtension */,
-				942A59681DBA2EF40020025C /* WDUtils.h */,
-				942A59691DBA2EF40020025C /* WDUtils.m */,
 				942A596A1DBA2EF40020025C /* YYModel */,
-				FD3698C21DC8777200A1CDF7 /* WDMacro.h */,
+				FD4F53841DD59518008443C5 /* WDUtilExtensionLayer.h */,
 			);
 			path = "Utils-ExtensionLayer";
 			sourceTree = "<group>";
@@ -456,6 +514,40 @@
 			path = WDUSBClientLib;
 			sourceTree = "<group>";
 		};
+		FD4F53851DD595FD008443C5 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				FD4F53861DD595FD008443C5 /* WDMacro.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		FD4F53871DD595FD008443C5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FD4F53881DD595FD008443C5 /* WDUtils.h */,
+				FD4F53891DD595FD008443C5 /* WDUtils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FD4F53941DD5A476008443C5 /* NSString4Java */ = {
+			isa = PBXGroup;
+			children = (
+				FD4F53951DD5A48E008443C5 /* NSString+ForJava.h */,
+				FD4F53961DD5A48E008443C5 /* NSString+ForJava.m */,
+			);
+			path = NSString4Java;
+			sourceTree = "<group>";
+		};
+		FD6A3FD81DD48B5D00D20C6C /* WDUSBClient4CI */ = {
+			isa = PBXGroup;
+			children = (
+				FD6A3FD91DD48B5D00D20C6C /* main.m */,
+			);
+			path = WDUSBClient4CI;
+			sourceTree = "<group>";
+		};
 		FD7AA6B21DC1FF5300ECEC29 /* NSMutableArrayExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,15 +575,25 @@
 				FD31EDAB1DBE90CD00A503B0 /* WDElement.h in Headers */,
 				FD31EDAC1DBE90CD00A503B0 /* WDHttpResponse.h in Headers */,
 				FD31EDAF1DBE90CD00A503B0 /* WDClassType.h in Headers */,
+				FD6A3FE21DD48D2600D20C6C /* WDCommandReciver.h in Headers */,
 				FD31EDB01DBE90CD00A503B0 /* WDClient.h in Headers */,
-				FD31EDB11DBE90CD00A503B0 /* WDElement+Queries.h in Headers */,
-				FD31EDAD1DBE90CD00A503B0 /* WDRect.h in Headers */,
-				FD31EDAE1DBE90CD00A503B0 /* WDSize.h in Headers */,
+				FD6A3FE01DD48CB900D20C6C /* WDTask.h in Headers */,
+				FD6A3FE11DD48CDA00D20C6C /* MonkeyTester.h in Headers */,
+				FD6A3FEE1DD48D8500D20C6C /* NSMutableArray+Operation.h in Headers */,
+				FD6A3FF01DD48D8500D20C6C /* NSArray+Operation.h in Headers */,
 				FD31EDB21DBE90CD00A503B0 /* NSArray+AddClient.h in Headers */,
-				FD31EDB31DBE90CD00A503B0 /* WDUtils.h in Headers */,
-				FD31EDB41DBE90CD00A503B0 /* NSObject+YYModel.h in Headers */,
+				FD6A3FE81DD48D7E00D20C6C /* WDTaskReciver.h in Headers */,
+				FD6A3FEB1DD48D7E00D20C6C /* WDTaskDispatch.h in Headers */,
 				FD31EDB51DBE90CD00A503B0 /* YYClassInfo.h in Headers */,
-				FD31EDB61DBE90CD00A503B0 /* YYModel.h in Headers */,
+				FD31EDB41DBE90CD00A503B0 /* NSObject+YYModel.h in Headers */,
+				FD31EDAE1DBE90CD00A503B0 /* WDSize.h in Headers */,
+				FD31EDAD1DBE90CD00A503B0 /* WDRect.h in Headers */,
+				FD4F538B1DD596CA008443C5 /* WDCommunicationLayer.h in Headers */,
+				FD4F53821DD5941A008443C5 /* YYModel.h in Headers */,
+				FD4F538D1DD596E2008443C5 /* WDUtilExtensionLayer.h in Headers */,
+				FD4F538E1DD597CC008443C5 /* WDUtils.h in Headers */,
+				FD4F538C1DD596D5008443C5 /* WDModelLayer.h in Headers */,
+				FD31EDB11DBE90CD00A503B0 /* WDElement+Queries.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +690,23 @@
 			productReference = FD31ED8D1DBE908500A503B0 /* WDUSBClientLib.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		FD6A3FD61DD48B5D00D20C6C /* WDUSBClient4CI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD6A3FDB1DD48B5D00D20C6C /* Build configuration list for PBXNativeTarget "WDUSBClient4CI" */;
+			buildPhases = (
+				FD6A3FD31DD48B5D00D20C6C /* Sources */,
+				FD6A3FD41DD48B5D00D20C6C /* Frameworks */,
+				FD6A3FD51DD48B5D00D20C6C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WDUSBClient4CI;
+			productName = WDUSBClient4CI;
+			productReference = FD6A3FD71DD48B5D00D20C6C /* WDUSBClient4CI */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -624,6 +743,10 @@
 						DevelopmentTeam = Q6H9MFVTL4;
 						ProvisioningStyle = Automatic;
 					};
+					FD6A3FD61DD48B5D00D20C6C = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 942959491DB71F4C000A26DB /* Build configuration list for PBXProject "WDUSBClient" */;
@@ -644,6 +767,7 @@
 				9429599C1DB76260000A26DB /* TestAppForIOS */,
 				942959B41DB76260000A26DB /* TestAppForIOSUITests */,
 				FD31ED8C1DBE908500A503B0 /* WDUSBClientLib */,
+				FD6A3FD61DD48B5D00D20C6C /* WDUSBClient4CI */,
 			);
 		};
 /* End PBXProject section */
@@ -696,6 +820,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6A3FD21DD47D0500D20C6C /* MonkeyTester.m in Sources */,
 				942A59761DBA2EF40020025C /* WDSize.m in Sources */,
 				942A59751DBA2EF40020025C /* WDRect.m in Sources */,
 				FDE900161DD2EE0700DF067D /* NSArray+Operation.m in Sources */,
@@ -708,14 +833,15 @@
 				FDFE1AF81DC659D20043896A /* WDTaskDispatch.m in Sources */,
 				942959561DB71F4C000A26DB /* main.m in Sources */,
 				942959531DB71F4C000A26DB /* AppDelegate.m in Sources */,
+				FD4F538A1DD595FD008443C5 /* WDUtils.m in Sources */,
 				FD8C16011DBBBA0100798AF2 /* NSArray+AddClient.m in Sources */,
 				FD16EC641DC35490004E4FDD /* WDTaskReciver.m in Sources */,
 				942A59781DBA2EF40020025C /* WDElement+Queries.m in Sources */,
 				942A59731DBA2EF40020025C /* WDElement.m in Sources */,
 				942A597A1DBA2EF40020025C /* NSObject+YYModel.m in Sources */,
-				942A59791DBA2EF40020025C /* WDUtils.m in Sources */,
 				942A59771DBA2EF40020025C /* WDClient.m in Sources */,
 				FD8C15FE1DBB0E1600798AF2 /* WDClassType.m in Sources */,
+				FD4F53971DD5A48E008443C5 /* NSString+ForJava.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,17 +877,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6A3FE71DD48D6A00D20C6C /* NSMutableArray+Operation.m in Sources */,
+				FD6A3FE61DD48D6500D20C6C /* NSArray+Operation.m in Sources */,
+				FD6A3FE51DD48D5200D20C6C /* WDTaskDispatch.m in Sources */,
+				FD6A3FE41DD48D4900D20C6C /* WDTaskReciver.m in Sources */,
+				FD6A3FE31DD48D3700D20C6C /* WDCommandReciver.m in Sources */,
 				FD31ED991DBE90A000A503B0 /* WDElement.m in Sources */,
 				FD31ED9A1DBE90A000A503B0 /* WDHttpResponse.m in Sources */,
 				FD31ED9B1DBE90A000A503B0 /* WDRect.m in Sources */,
 				FD31ED9C1DBE90A000A503B0 /* WDSize.m in Sources */,
 				FD31ED9D1DBE90A000A503B0 /* WDClassType.m in Sources */,
+				FD6A3FF71DD48D8B00D20C6C /* WDTask.m in Sources */,
+				FD6A3FDF1DD48C6A00D20C6C /* MonkeyTester.m in Sources */,
+				FD4F538F1DD597CC008443C5 /* WDUtils.m in Sources */,
 				FD31ED9E1DBE90A100A503B0 /* WDClient.m in Sources */,
 				FD31ED9F1DBE90A100A503B0 /* WDElement+Queries.m in Sources */,
 				FD31EDA01DBE90A100A503B0 /* NSArray+AddClient.m in Sources */,
-				FD31EDA11DBE90A100A503B0 /* WDUtils.m in Sources */,
 				FD31EDA21DBE90A100A503B0 /* NSObject+YYModel.m in Sources */,
 				FD31EDA31DBE90A100A503B0 /* YYClassInfo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD6A3FD31DD48B5D00D20C6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD4F53931DD59CF4008443C5 /* NSArray+AddClient.m in Sources */,
+				FD4F53921DD59A48008443C5 /* NSObject+YYModel.m in Sources */,
+				FD4F53911DD59A40008443C5 /* NSMutableArray+Operation.m in Sources */,
+				FD4F53901DD59A39008443C5 /* NSArray+Operation.m in Sources */,
+				FD6A3FDA1DD48B5D00D20C6C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1063,6 +1208,7 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixleaves.WDUSBClientLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1092,11 +1238,28 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixleaves.WDUSBClientLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FD6A3FDC1DD48B5D00D20C6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-Objc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FD6A3FDD1DD48B5D00D20C6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-Objc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1153,6 +1316,15 @@
 			buildConfigurations = (
 				FD31ED971DBE908500A503B0 /* Debug */,
 				FD31ED981DBE908500A503B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD6A3FDB1DD48B5D00D20C6C /* Build configuration list for PBXNativeTarget "WDUSBClient4CI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD6A3FDC1DD48B5D00D20C6C /* Debug */,
+				FD6A3FDD1DD48B5D00D20C6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

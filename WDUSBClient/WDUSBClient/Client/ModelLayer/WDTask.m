@@ -34,7 +34,8 @@
 
 
 - (void)buildDriverToIPhoneWithPath:(NSString *)currentProjectPath {
-    
+    NSLog(@"%s", __func__);
+
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *driverScriptsDir = [NSString stringWithFormat:@"%@/Desktop/WDAScripts", NSHomeDirectory()];
     NSString *fileName = [NSString stringWithFormat:@"%@.sh",_uuid];
@@ -85,16 +86,19 @@
             
         NSArray *lines = [self _runCommandWithScriptPath: processInfoScriptPath];
 //        [lines writeToFile:[driverScriptsDir stringByAppendingFormat:@"/com.txt" ] atomically:YES];
+        
         for (NSString *line in lines) {
-            if (![line isEqualToString: @""] && line != nil && [line containsString: _uuid]) {
-                NSArray  *compents = [line componentsSeparatedByString:@" "];
-                
-                for (int i =0; i<2 ; i++) {
+            
+            if (![line isEqualToString: @""] && line != nil && [line containsString: _uuid] && ![line containsString:@"WDUSBClient4CI"]) {
+                NSArray  *compents = [[line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString:@" "];
+
+                for (int i =0; i< 1; i++) {
                     NSString *pid = [compents objectAtIndex: i];
+                    
                     NSString *killCMD = [@"kill -9 " stringByAppendingString: pid];
                     system(killCMD.UTF8String);
                 }
-                
+
 
             }
         }
@@ -118,7 +122,6 @@
             NSLog(@"驱动编译失败, 请检查路径是否存在: %@", installDriverScriptPath);
         }
     });
-
 }
 
 - (NSArray<NSString *> *)_runCommandWithScriptPath:(NSString *)scriptPath{
@@ -142,8 +145,7 @@
 
 - (void)_runScriptByTerminal:(NSString *)scriptPath {
     
-    NSLog(@"%s", __func__);
-    
+
     NSString *build =
     [NSString stringWithFormat: @"tell application \"Terminal\" to do script \"sh %@ &\"", scriptPath];
     NSAppleScript *buildAS = [[NSAppleScript alloc] initWithSource: build];

@@ -540,6 +540,7 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
         NSDictionary *httpResJson  = @{};
         if (![WDUtils isResponseSuccess:response]) {
             NSLog(@"%@", WDErrorMessageWDANotStart);
+            exit(-1);
         }
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
@@ -559,6 +560,7 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
         NSDictionary *httpResJson  = @{};
         if (![WDUtils isResponseSuccess:response]) {
             NSLog(@"%@", WDErrorMessageWDANotStart);
+            exit(-1);
         }
         httpResJson = [response objectForKey:WDHttpResponseKey];
         WDHttpResponse *httpResponse = [WDHttpResponse yy_modelWithJSON:  httpResJson];
@@ -625,14 +627,14 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 
 
 - (BOOL)runTask {
+    NSLog(@"%s", __func__);
 
-    [self screenshotWithFileName:@"install"];
     if (![self startApp]) {
         [WDUtils logError: START_APP_FAILED_MESSAGE];
         return false;
     }    
-
-    if (![self startMonkey]) {
+    [self screenshotWithFileName:@"install"];
+    if (![self startMonkeyWithMinute:5]) {
         [WDUtils logError: START_MONKEY_FAILED_MESSAGE];
         return false;
     }
