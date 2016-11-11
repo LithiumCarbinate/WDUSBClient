@@ -18,21 +18,7 @@ Now, the framework only works on usb connection, so simulator doesn't support(�
 - 优化了monkey, 将monkey分离出驱动, 加入定时截图功能-2016-11-02
 - 添加了自动化编译功能.-2016-11-01
 - 添加命令行支持功能.命令格式`open -n WDUSBClient.app --args "uuid" "bundleID" "imagesStorePath" "account" "password"-`-2016-11-01
-- 修复了getVisiableCell接口错误-2016-10-28
-- 重构了部分方法-2016-10-28
-- 添加了用于和其他测试框架进行通信的WDTaskReciver类-2016-10-28
-- 添加了上下滑动功能.-2016-10-26
-- 添加了截图功能.-2016-10-26
-- 添加了一个简易版本Monkey, 后续会进行优化.-2016-10-26
-- 添加了WDUSBClientLib可直接将该库导入自己的程序中使用-2016-10-25
-- 修复了一个链接问题, 可能导致在低于OSX10.12的版本上不稳定-2016-10-25
-- 添加了`findElementByParticalLinkText:(NSString *)partialLinkText withClassType:(NSString *)classType`接口, 用于模糊匹配指定类型控件所包含的文字.-2016-10-24
-- 添加了UIKitCatelog这个程序里的四个子Demo用于演示-2016-10-24
-- 添加了查询当前元素的父元素功能.可以通过`element.parent;`获取-2016-10-23
-- 添加了查询当前元素子元素功能.可以通过`element.children;`获取-2016-10-23
-- 控件类型都以kUI开头, 如获取UITableView, 则使用kUITableView.-2016-10-22
-- 新添加微信自动发消息范例-2016-10-21
-- 直接将WDA驱动集成进来, 无需另外下载(WDA的编译请看下面介绍)-2016-10-21
+[更早的其他更新看这]https://github.com/sixleaves/WDUSBClient/wiki/Update
 
 ##Next Step Will Do(下一步会做的)
 - 添加自动登入功能.
