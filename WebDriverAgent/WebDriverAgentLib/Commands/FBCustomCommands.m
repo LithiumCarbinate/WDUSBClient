@@ -33,6 +33,8 @@
 #import <objc/message.h>
 #import "WDClassType.h"
 #import "XCUIElement+Property.h"
+#import <mach/mach.h>
+#import "FBResponseJSONPayload.h"
 NSString * const WDWindowWidthKey = @"WDWindowWidth";
 NSString * const WDWindowHeightKey = @"WDWindowHeight";
 NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
@@ -57,14 +59,55 @@ BOOL _isStopMonkey = false;
     [[FBRoute POST:@"/randomOrientation"] respondWithTarget:self action:@selector(_orientation:)],
     
     
+    [[FBRoute POST:@"/tap"] respondWithTarget:self action:@selector(handleTap:)],
+    
     [[FBRoute POST:@"/homescreen"].withoutSession respondWithTarget:self action:@selector(handleHomescreenCommand:)],
     [[FBRoute POST:@"/deactivateApp"] respondWithTarget:self action:@selector(handleDeactivateAppCommand:)],
     [[FBRoute POST:@"/timeouts"] respondWithTarget:self action:@selector(handleTimeouts:)],
+    [[FBRoute POST:@"/getMemory"] respondWithTarget:self action:@selector(getMemory:)]
+//    [[FBRoute POST:@"/exitWDA"] respondWithTarget:self action:@selector(handleExitWDACommand:)],
   ];
 }
 
 
 #pragma mark - Commands
++ (id<FBResponsePayload>)handleTap:(FBRouteRequest *)request {
+    
+    FBSession *session = request.session;
+    
+    int32_t x = [request.parameters[@"x"] intValue];
+    int32_t y = [request.parameters[@"y"] intValue];
+    NSString *strX = @(x).stringValue;
+    NSString *strY = @(y).stringValue;
+    XCUICoordinate *appCoordinate = [[XCUICoordinate alloc] initWithElement:session.application normalizedOffset:CGVectorMake(0, 0)];
+    XCUICoordinate *tapCoordinate = [[XCUICoordinate alloc] initWithCoordinate:appCoordinate pointsOffset:CGVectorMake(strX.floatValue, strY.floatValue)];
+    [FBLogger logFmt:@"tap at (%f, %f)", strX.floatValue, strY.floatValue];
+    [tapCoordinate tap];
+    return FBResponseWithOK();
+}
+
+
+
++ (id<FBResponsePayload>)getMemory:(FBRouteRequest *)request {
+    struct task_basic_info info;
+    mach_msg_type_number_t size = sizeof(info);
+    kern_return_t kerr = task_info(mach_task_self(),
+                                   TASK_BASIC_INFO,
+                                   (task_info_t)&info,
+                                   &size);
+    if( kerr == KERN_SUCCESS ) {
+        NSLog(@"Memory in use (in bytes): %lu", info.resident_size);
+        return [[FBResponseJSONPayload alloc] initWithDictionary:@{
+                                                                   @"memoryUsage" : [NSString stringWithFormat:@"Memory in use (in bytes): %lu", info.resident_size]
+                                                                   }];
+    } else {
+        NSLog(@"Error with task_info(): %s", mach_error_string(kerr));
+        return [[FBResponseJSONPayload alloc] initWithDictionary:@{
+                                                                   @"memoryUsage" : [NSString stringWithFormat:@"Error with task_info(): %s", mach_error_string(kerr)]
+                                                                   }];
+    }
+}
+
 
 + (id<FBResponsePayload>)handleHomescreenCommand:(FBRouteRequest *)request
 {

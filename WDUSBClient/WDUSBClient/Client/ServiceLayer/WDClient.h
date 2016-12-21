@@ -33,6 +33,13 @@ extern NSString * const WDUUIDKey;
 
 @property (nonatomic, copy) NSString *sessionID;
 
+// 点击指定坐标
+- (BOOL)tap:(CGPoint)point;
+
+
+// 获取当前手机上测试程序占用的CPU使用率
+- (NSString *)getMemoryUsage;
+
 // 设置要启动的包名
 @property (nonatomic, copy) NSString *bundleID;
 
@@ -100,6 +107,9 @@ extern NSString * const WDUUIDKey;
 - (BOOL)runTask;
 
 - (BOOL)runInspector;
+
+// 杀掉WDA进程
+- (void)killWDA;
 
 // 查找Button中包含指定文字的button. labelTexts是字符串数组, 用来匹配多种文字
 - (NSMutableArray<WDElement *> *)findButtonsWithContainsLabelTexts:(NSArray<NSString *> *)labelTexts;

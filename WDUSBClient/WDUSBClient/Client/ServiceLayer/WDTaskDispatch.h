@@ -9,8 +9,17 @@
 #import <Foundation/Foundation.h>
 @class WDTask;
 @class WDClient;
+@protocol WDTaskDispatchDelegate <NSObject>
+
+@optional
+
+- (BOOL)isShouldBuildDriver;
+
+@end
+
 @interface WDTaskDispatch : NSObject
 
+@property (nonatomic, weak) id<WDTaskDispatchDelegate> delegate;
 @property (nonatomic, strong) WDClient *client;
 - (void)dispatchTaskToIphone:(WDTask *)task;
 - (void)dispatchTaskToIphone:(WDTask *)task withPath:(NSString *)currentPath;

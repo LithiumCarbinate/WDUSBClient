@@ -1,12 +1,4 @@
 #import <Cocoa/Cocoa.h>
-//#import "NSMutableArray+Operation.h"
-//#import "WDTask.h"
-//#import "WDCommandReciver.h"
-//#import "YYModel.h"
-//#import "ViewController.h"
-//#import "MasterTester.h"
-
-
 #import <WDUSBClientLib/WDClient.h>
 #import <WDUSBClientLib/WDTask.h>
 #import "MasterTester.h"
@@ -29,29 +21,37 @@ int main(int argc, const char * argv[]) {
         NSString *bundleID = [params wd_removeFirstObject];
         NSString *imageStorePath = [params wd_removeFirstObject];
         NSString *driverRootPath = [params wd_removeFirstObject];
+        
+        // 新增参数, 指定测试用例和运行时间
+        NSString *testAction = [params wd_removeFirstObject];
+        NSString *runMinites = [params wd_removeFirstObject];
+        // 指定用户名和密码
         NSString *account = nil;
         NSString *password = nil;
-
-        NSLog(@"手机的UUID: %@", uuid);
-        NSLog(@"包名: %@", bundleID);
-        NSLog(@"图片存储路径: %@", imageStorePath);
-        NSLog(@"WDUSBClient根路径: %@", driverRootPath);
-
+        
         if (![params isEmpty]) {
             account = [params wd_removeFirstObject];
             password = [params wd_removeFirstObject];
         }
-        
+        NSLog(@"手机的UUID: %@", uuid);
+        NSLog(@"包名: %@", bundleID);
+        NSLog(@"图片存储路径: %@", imageStorePath);
+        NSLog(@"WDUSBClient根路径: %@", driverRootPath);
+        NSLog(@"测试账户: %@", account);
+        NSLog(@"测试密码: %@", password);
+        NSLog(@"测试用例: %@", testAction);
+        NSLog(@"monkey测试时间: %@分钟", runMinites);
         // 创建任务接收器, 接受命令行任务
         WDTask *task = [WDTask new];
         task.uuid = uuid, task.bundleID = bundleID, task.imagesStorePath = imageStorePath, task.driverRootPath = driverRootPath;
-        task.account = account, task.password = password;
+        task.testAction = testAction, task.runMinites = runMinites.integerValue, task.account = account, task.password = password;
+        
         WDCommandReciver  *reciver = [WDCommandReciver sharedInstance];
         [reciver setReciveTask: task];
         
         // 创建测试管理器对象, 开启monkey测试
         masterTester = [MasterTester sharedInstance];
-        [masterTester runMoneky];
+        [masterTester run];
 
         // 开启自定义UI测试
         [masterTester setRunUITestWithClient:^(WDClient *client) {

@@ -94,8 +94,8 @@
       <file leaf-file-name="main.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WDUSBClient4CI/main.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="705">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,9 +104,11 @@
       <file leaf-file-name="MasterTester.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WDUSBClient/MasterTester.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="390">
+              <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+              <folding>
+                <marker date="1478855191000" expanded="true" signature="1800:2002" ph="^{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -828,16 +830,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WDUSBClient/MasterTester.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="390">
+          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+          <folding>
+            <marker date="1478855191000" expanded="true" signature="1800:2002" ph="^{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WDUSBClient4CI/main.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="705">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding />
         </state>
       </provider>

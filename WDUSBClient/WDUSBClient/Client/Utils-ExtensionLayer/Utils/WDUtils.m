@@ -13,6 +13,7 @@ NSString * const START_APP_FAILED_MESSAGE = @"ERROR 1:start application failed";
 NSString * const START_MONKEY_FAILED_MESSAGE = @"ERROR 2:start monkey failed";
 NSString * const  MONEKEY_FINISHED_MESSAGE = @"SUCCESS 1:finished monkey";
 NSString * const APPLICATION_CARSH_MESSAGE =@"ERORR 3:Application Crash";
+NSString * const  INSTALL_FINISHED_MESSAGE = @"SUCCESS 2:finished install";
 NSString * const OTHER_MESSAGE = @"ERROR *:undefine error";
 
 @implementation WDUtils

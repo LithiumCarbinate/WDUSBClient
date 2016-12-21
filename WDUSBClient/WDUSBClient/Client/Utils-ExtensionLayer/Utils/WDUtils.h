@@ -13,6 +13,8 @@ extern NSString * const START_APP_FAILED_MESSAGE;
 extern NSString * const START_MONKEY_FAILED_MESSAGE;
 extern NSString * const MONEKEY_FINISHED_MESSAGE;
 extern NSString * const APPLICATION_CARSH_MESSAGE;
+extern NSString * const INSTALL_FINISHED_MESSAGE;
+
 @interface WDUtils : NSObject
 
 + (BOOL)isResponseSuccess:(NSDictionary *)response;

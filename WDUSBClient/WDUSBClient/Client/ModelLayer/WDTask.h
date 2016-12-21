@@ -18,6 +18,9 @@
 @property (nonatomic, copy) NSString *password;
 
 @property (nonatomic, copy) NSString *driverRootPath;
+@property (nonatomic, copy) NSString *testAction;
+// 设置monkey测试时间
+@property (nonatomic, assign) NSInteger runMinites;
 
 - (NSString *)commandForInstallDriverWithPath:(NSString *)path;
 - (void)buildDriverToIPhone;

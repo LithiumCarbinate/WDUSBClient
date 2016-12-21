@@ -63,6 +63,28 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 @implementation WDClient
 
 
+- (void)tap:(CGPoint)point {
+    
+    __block BOOL isSuccess = false;
+    NSString *tapcmd = [NSString stringWithFormat:@"/session/%@/tap", _sessionID];
+    __block dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    weakify(self);
+    [self dispatchMethod:kWDPOST
+                endpoint:tapcmd
+              parameters:@{@"x" : @(point.x),
+                           @"y" : @(point.y)
+                           }
+              completion:^(NSDictionary *response, NSError *requestError) {
+                  
+                  strongify(self);
+                  if ([WDUtils isResponseSuccess:response]) {
+                      isSuccess = true;
+                  }
+                  dispatch_semaphore_signal(sema);
+              }];
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+}
+
 - (instancetype)initWithDeviceUDID:(NSString *)deviceUDID {
     
     if (self = [super initWithDeviceUDID:deviceUDID]) {
@@ -407,10 +429,17 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 
 - (void)pressHome {
     [self dispatchMethod:kWDPOST endpoint:@"/homescreen" parameters:@{}  completion:^(NSDictionary *response, NSError *requestError) {
-                           NSLog(@"%@", response);                                                               
-    
+                           NSLog(@"%@", response);
                                                                               }];
 }
+
+
+- (void)killWDA {
+    [self dispatchMethod:kWDPOST endpoint:@"/exitWDA" parameters:@{}  completion:^(NSDictionary *response, NSError *requestError) {
+        NSLog(@"%@", response);
+    }];
+}
+
 
 - (void)deactiveAppWithDuration:(NSInteger)duration {
     [self dispatchMethod:kWDPOST endpoint:@"" parameters:@{@"duration":@(duration)}  completion:^(NSDictionary *response, NSError *requestError) {
@@ -628,17 +657,27 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 
 - (BOOL)runTask {
     NSLog(@"%s", __func__);
-
-    if (![self startApp]) {
-        [WDUtils logError: START_APP_FAILED_MESSAGE];
-        return false;
-    }    
-    [self screenshotWithFileName:@"install"];
-    if (![self startMonkeyWithMinute:5]) {
-        [WDUtils logError: START_MONKEY_FAILED_MESSAGE];
-        return false;
+    // monkey test
+    if ([_task.testAction isEqualToString:@"monkey"]) {
+        if (![self startApp]) {
+            [WDUtils logError: START_APP_FAILED_MESSAGE];
+            return false;
+        }
+        if (![self startMonkeyWithMinute: _task.runMinites]) {
+            [WDUtils logError: START_MONKEY_FAILED_MESSAGE];
+            return false;
+        }
+        return true;
+    }else if ([_task.testAction isEqualToString:@"install"]) { // login test
+        
+        if (![self startApp]) {
+            [WDUtils logError: START_APP_FAILED_MESSAGE];
+            return false;
+        }
+        [self screenshotWithFileName:@"install"];
+        return true;
     }
-    return true;
+    return false;
 }
 
 

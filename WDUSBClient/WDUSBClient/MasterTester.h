@@ -21,7 +21,9 @@
 - (int)exitCode;
 + (instancetype)sharedInstance;
 
+// 开启测试
+- (void)run;
 // 进行自定义的UI测试, 需要调用改方法, 并实现方法内的函数
 - (void)runNormalUITest;
-- (void)runMoneky ;
+//- (void)runMoneky ;
 @end

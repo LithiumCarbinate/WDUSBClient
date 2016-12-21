@@ -12,6 +12,16 @@
 
 static char * const kParentElementKey = "parentElement";
 static char * const kWDUUID = "wd_uuid";
+static char * const kMemory = "wd_memory";
+
+- (void)setAppMemoryUsage:(NSString *)appMemoryUsage {
+    objc_setAssociatedObject(self, kMemory, appMemoryUsage, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (NSString *)appMemoryUsage {
+  return  objc_getAssociatedObject(self, kMemory);
+}
+
 - (void)setParentElement:(XCUIElement *)parentElement {
     objc_setAssociatedObject(self, kParentElementKey, parentElement, OBJC_ASSOCIATION_RETAIN);
 }

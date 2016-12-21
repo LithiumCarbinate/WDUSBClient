@@ -14,7 +14,7 @@
 #import "WDTaskDispatch.h"
 #import "WDCommandReciver.h"
 #define MAX_CLIENT_NUM 10
-@interface MasterTester ()
+@interface MasterTester () <WDTaskDispatchDelegate>
 @property (nonatomic, strong)  WDClient * client;
 
 @property (nonatomic, strong)  WDTaskReciver *taskReciver;
@@ -39,19 +39,40 @@ static MasterTester *_instance = nil;
     return _taskReciver;
 }
 
-- (void)runMoneky {
-    
-
+- (void)run {
     WDCommandReciver *commandReciver = [WDCommandReciver sharedInstance];
     WDTask *task = [commandReciver getReciveTask];
     
     // 创建任务分发器
     WDTaskDispatch *dispatcher = [WDTaskDispatch new];
+    dispatcher.delegate = self;
     
     // 开始分发任务. 需提供当前工程源码所在位置。需要自行修改。
     // /Users/sixleaves/Dropbox/AutomaticTest/WDClient/WDUSBClient
     [dispatcher dispatchTaskToIphone:task];
 }
+
+
+//- (void)runMoneky {
+//    
+//
+//    WDCommandReciver *commandReciver = [WDCommandReciver sharedInstance];
+//    WDTask *task = [commandReciver getReciveTask];
+//    
+//    // 创建任务分发器
+//    WDTaskDispatch *dispatcher = [WDTaskDispatch new];
+//    dispatcher.delegate = self;
+//    
+//    // 开始分发任务. 需提供当前工程源码所在位置。需要自行修改。
+//    // /Users/sixleaves/Dropbox/AutomaticTest/WDClient/WDUSBClient
+//    [dispatcher dispatchTaskToIphone:task];
+//}
+
+- (BOOL)isShouldBuildDriver {
+    return YES;
+}
+
+
 
 - (void)runNormalUITest {
     

@@ -92,6 +92,7 @@ inline static NSDictionary *FBDictionaryResponseWithElement(XCUIElement *element
   if (!compact) {
     dictionary[@"parent"] = FBDictionaryResponseWithElement(element.parentElement, element.parentElement.wd_uuid, compact);
     dictionary[@"type"] = element.wdType;
+    dictionary[@"memory"] = element.appMemoryUsage?element.appMemoryUsage:[NSNull null];
     dictionary[@"label"] = element.wdLabel ?: [NSNull null];
   }
   return dictionary.copy;

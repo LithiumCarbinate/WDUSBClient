@@ -12,5 +12,5 @@
 
 @property (nonatomic, strong) XCUIElement *parentElement;
 @property (nonatomic, strong) NSString *wd_uuid;
-
+@property (nonatomic, strong) NSString *appMemoryUsage;
 @end

@@ -12,7 +12,7 @@
 @implementation NSMutableArray (Operation)
 
 - (id)wd_removeLastObject {
-
+    
     id lastObj = [self lastObject];
     [self removeLastObject];
     return lastObj;    
