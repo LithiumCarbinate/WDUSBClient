@@ -273,7 +273,7 @@ NSString * const WDErrorMessageWDANotStart = @"WDA Not Start!!!";
     __block BOOL isSendMessageSuccess = false;
     NSString *endPoint = [NSString stringWithFormat:@"/session/%@/element/%@/swipe", self.client.sessionID, self.elementID];
     dispatch_semaphore_t signal = dispatch_semaphore_create(0);
-    [self.client dispatchMethod:kWDPOST endpoint:endPoint parameters:@{WDSwipeDirectionKey : direction} completion:^(NSDictionary *response, NSError *requestError) {
+    [self.client dispatchMethod:kWDGET endpoint:endPoint parameters:@{WDSwipeDirectionKey : direction} completion:^(NSDictionary *response, NSError *requestError) {
         if ([WDUtils isResponseSuccess: response]) isSendMessageSuccess = true;
         dispatch_semaphore_signal(signal);
     }];

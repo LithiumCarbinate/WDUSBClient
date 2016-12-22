@@ -82,7 +82,7 @@ NSString * const WDSwipeDirectionKey = @"direction";
     FBElementCache *elementCache = request.session.elementCache;
     XCUIElement *element = [elementCache elementForUUID:request.parameters[@"uuid"]];
     NSString *direction = [[request.parameters objectForKey: WDSwipeDirectionKey] lowercaseString];
-    
+//    [FBLogger logFmt:@"element = %@, dir = %@", element, direction];
     if (direction == nil) [element swipeRight];
     if ([direction isEqualToString:@"left"]) [element swipeLeft];
     if ([direction isEqualToString:@"right"]) [element swipeRight];
