@@ -60,6 +60,7 @@ BOOL _isStopMonkey = false;
     
     
     [[FBRoute POST:@"/tap"] respondWithTarget:self action:@selector(handleTap:)],
+    [[FBRoute POST:@"/drag"] respondWithTarget:self action:@selector(handleDragCommand:)],
     
     [[FBRoute POST:@"/homescreen"].withoutSession respondWithTarget:self action:@selector(handleHomescreenCommand:)],
     [[FBRoute POST:@"/deactivateApp"] respondWithTarget:self action:@selector(handleDeactivateAppCommand:)],
@@ -71,6 +72,24 @@ BOOL _isStopMonkey = false;
 
 
 #pragma mark - Commands
+
++ (id<FBResponsePayload>)handleDragCommand:(FBRouteRequest *)request {
+    FBSession *session = request.session;
+    NSInteger fromX = [request.parameters[@"fromX"] intValue];
+    NSInteger fromY = [request.parameters[@"fromY"] intValue];;
+    NSInteger toX = [request.parameters[@"toX"] intValue];
+    NSInteger toY = [request.parameters[@"toY"] intValue];
+    CGFloat duration = [request.parameters[@"duration"] intValue];
+    CGVector startPoint = CGVectorMake((double)fromX, (double)fromY);
+    CGVector endPoint = CGVectorMake(toX, toY);
+    XCUICoordinate *appCoordinate = [[XCUICoordinate alloc] initWithElement:session.application normalizedOffset:CGVectorMake(0, 0)];
+    XCUICoordinate *endCoordinate = [[XCUICoordinate alloc] initWithCoordinate:appCoordinate pointsOffset:endPoint];
+    XCUICoordinate *startCoordinate = [[XCUICoordinate alloc] initWithCoordinate:appCoordinate pointsOffset:startPoint];
+    [FBLogger logFmt:@"drag from (%@, %@) to (%@, %@)", @(fromX), @(fromY), @(toX), @(toY)];
+    [startCoordinate pressForDuration:duration thenDragToCoordinate:endCoordinate];
+    return FBResponseWithOK();
+}
+
 + (id<FBResponsePayload>)handleTap:(FBRouteRequest *)request {
     
     FBSession *session = request.session;

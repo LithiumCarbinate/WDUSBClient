@@ -62,6 +62,30 @@ NSString * const WDMonkeyRunningTimeKey = @"WDMonkeyRunningTime";
 
 @implementation WDClient
 
+- (void)swipeFrom:(CGPoint)fromPoint to:(CGPoint)toPoint duration:(CGFloat)duration{
+    
+    __block BOOL isSuccess = false;
+    NSString *tapcmd = [NSString stringWithFormat:@"/session/%@/drag", _sessionID];
+    __block dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    weakify(self);
+    [self dispatchMethod:kWDPOST
+                endpoint:tapcmd
+              parameters:@{@"fromX" : @(fromPoint.x),
+                           @"fromY" : @(fromPoint.y),
+                           @"toX" : @(toPoint.x),
+                           @"toY" : @(toPoint.y),
+                           @"duration" : @(duration)
+                           }
+              completion:^(NSDictionary *response, NSError *requestError) {
+                  
+                  strongify(self);
+                  if ([WDUtils isResponseSuccess:response]) {
+                      isSuccess = true;
+                  }
+                  dispatch_semaphore_signal(sema);
+              }];
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+}
 
 - (void)tap:(CGPoint)point {
     

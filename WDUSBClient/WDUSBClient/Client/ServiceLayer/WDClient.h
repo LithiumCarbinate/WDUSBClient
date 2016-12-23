@@ -33,6 +33,9 @@ extern NSString * const WDUUIDKey;
 
 @property (nonatomic, copy) NSString *sessionID;
 
+
+- (void)swipeFrom:(CGPoint)fromPoint to:(CGPoint)toPoint duration:(CGFloat)duration;
+
 // 点击指定坐标
 - (BOOL)tap:(CGPoint)point;
 
