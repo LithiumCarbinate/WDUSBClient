@@ -75,11 +75,11 @@ BOOL _isStopMonkey = false;
 
 + (id<FBResponsePayload>)handleDragCommand:(FBRouteRequest *)request {
     FBSession *session = request.session;
-    NSInteger fromX = [request.parameters[@"fromX"] intValue];
-    NSInteger fromY = [request.parameters[@"fromY"] intValue];;
-    NSInteger toX = [request.parameters[@"toX"] intValue];
-    NSInteger toY = [request.parameters[@"toY"] intValue];
-    CGFloat duration = [request.parameters[@"duration"] intValue];
+    NSInteger fromX = [request.parameters[@"fromX"] integerValue];
+    NSInteger fromY = [request.parameters[@"fromY"] integerValue];;
+    NSInteger toX = [request.parameters[@"toX"] integerValue];
+    NSInteger toY = [request.parameters[@"toY"] integerValue];
+    CGFloat duration = [request.parameters[@"duration"] floatValue];
     CGVector startPoint = CGVectorMake((double)fromX, (double)fromY);
     CGVector endPoint = CGVectorMake(toX, toY);
     XCUICoordinate *appCoordinate = [[XCUICoordinate alloc] initWithElement:session.application normalizedOffset:CGVectorMake(0, 0)];
